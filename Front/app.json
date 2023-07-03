@@ -1,6 +1,10 @@
 {
     "pages": [
-        "pages/index/index"
+        "pages/index/index",
+        "pages/PeiZhenXiaDan/PeiZhenXiaDan",
+        "pages/PeiZhenXiaDan_YouXiangPeiZhen/PeiZhenXiaDan_YouXiangPeiZhen",
+        "pages/OtherService/OtherService",
+        "pages/My/My"
     ],
     "window": {
         "backgroundTextStyle": "light",
