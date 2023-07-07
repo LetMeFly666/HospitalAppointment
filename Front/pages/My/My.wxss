@@ -1,10 +1,14 @@
 /* pages/My/My.wxss */
+page {
+    background-color: rgb(242, 242, 242);
+}
 /* Common */
 .boxWithShadow {
     border-radius: 6rpx;
-    box-shadow: 0 6rpx 8rpx 0 rgba(0, 0, 0, 0.24), 0 8rpx 12rpx 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 2rpx 2px 0 rgba(0, 0, 0, 0.24), 0 2rpx 2rpx 0 rgba(0, 0, 0, 0.19);
     margin-left: 20rpx;
     margin-right: 20rpx;
+    background-color: #ffffff;
 }
 
 .textLeft {
@@ -77,7 +81,7 @@
 
 #viewForImageAndNameRight .refresh-img {
     margin-left: 10rpx;
-    margin-right: 30rpx;
+    margin-right: 50rpx;
     margin-top: 100rpx;
     width: 50rpx;
     height: 50rpx
