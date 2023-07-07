@@ -22,6 +22,24 @@
     margin-right: 30rpx;
 }
 
+.fourButtons {
+    height: 170rpx;
+    display: flex;
+    justify-content: space-around;
+}
+
+.eachButtonOfFour {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.eachButtonOfFour image {
+    width: 75rpx;
+    height: 75rpx;
+}
+
 /* 个人头像、姓名 */
 #viewForImageAndName {
     height: 250rpx;
@@ -95,25 +113,7 @@
     border-bottom:1rpx solid gray;
 }
 
-#fourButtons {
-    height: 170rpx;
-    display: flex;
-    justify-content: space-around;
-}
-
-.eachButtonOfFour {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.eachButtonOfFour image {
-    width: 75rpx;
-    height: 75rpx;
-}
-
-.eachButtonOfFour view {
+#fourButtonsMyOrder .eachButtonOfFour view {
     font-size: 28rpx;
 }
 
@@ -136,4 +136,23 @@
     justify-content: center;
     margin-right: 10rpx;
     font-size: 30rpx;
+}
+
+/* 我的工具 */
+#viewForMyTools {
+    margin-top: 20rpx;
+    margin-bottom: 20rpx;
+}
+
+#myToolLine {
+    display: flex;
+    justify-content: space-between;
+    height: 100rpx;
+    border-bottom:1rpx solid gray;
+}
+
+#fourButtonsMyTool .eachButtonOfFour view {
+    font-size: 30rpx;
+    font-family: '黑体';
+    margin-top: 8rpx;
 }
