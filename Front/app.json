@@ -12,6 +12,29 @@
         "navigationBarTitleText": "Weixin",
         "navigationBarTextStyle": "black"
     },
+    "tabBar": {
+      "list": [{
+        "pagePath": "pages/index/index",
+        "text": "主页",
+        "iconPath": "images/icon/home.png",
+        "selectedIconPath": "images/icon/home-selected.png"
+      }, {
+        "pagePath": "pages/PeiZhenXiaDan/PeiZhenXiaDan",
+        "text": "陪诊下单",
+        "iconPath": "images/icon/share.png",
+        "selectedIconPath": "images/icon/share-selected.png"
+      }, {
+        "pagePath": "pages/OtherService/OtherService",
+        "text": "其他产品",
+        "iconPath": "images/icon/functionList.png",
+        "selectedIconPath": "images/icon/functionList-selected.png"
+      }, {
+        "pagePath": "pages/My/My",
+        "text": "我的",
+        "iconPath": "images/icon/my.png",
+        "selectedIconPath": "images/icon/my-selected.png"
+      }]
+    },
     "style": "v2",
     "sitemapLocation": "sitemap.json"
 }
