@@ -1,1 +1,63 @@
 /* pages/My/My.wxss */
+#viewForImageAndName {
+    height: 250rpx;
+    display: flex;
+    justify-content: space-between;
+}
+
+#viewForImageAndNameLeft {
+    display: flex;
+    margin-left: 50rpx;
+    margin-top: 50rpx;
+}
+
+#viewForImageAndNameLeft .avatar {
+    height: 150rpx;
+    width: 150rpx;
+    border-radius: 100%;
+}
+
+#viewForImageAndNameLeft .name {
+    margin-left: 20rpx;
+    margin-top: 40rpx;
+    font-size: 40rpx;
+    font-weight: 550;
+}
+
+#viewForImageAndNameRight {
+    display: flex;
+}
+
+#viewForImageAndNameRight .update-text {
+    margin-top: 105rpx;
+    color: #8a8a8a;
+}
+
+#viewForImageAndNameRight .refresh-img {
+    margin-left: 10rpx;
+    margin-right: 30rpx;
+    margin-top: 100rpx;
+    width: 50rpx;
+    height: 50rpx
+}
+
+#viewForKeFuAndJiuZhenRen {
+    display: flex;
+    justify-content: space-around;
+    border-radius: 6rpx;
+    box-shadow: 0 12rpx 15rpx 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+    height: 200rpx;
+}
+
+#viewForKeFuAndJiuZhenRen .left, .right {
+    margin-top: 80rpx;
+    display: flex;
+}
+
+#viewForKeFuAndJiuZhenRen image {
+    height: 50rpx;
+    width: 50rpx;
+    margin-right: 8rpx;
+}

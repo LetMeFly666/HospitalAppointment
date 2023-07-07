@@ -1,3 +1,25 @@
 <!--pages/My/My.wxml-->
-<text>pages/My/My.wxml</text>
-<text>我的</text>
+
+<!-- 个人头像、姓名 -->
+<view id='viewForImageAndName'>
+    <view id='viewForImageAndNameLeft'>
+        <image class='avatar' src="/images/img/avatar-girl01.jpg" />
+        <view class='name'>崔瞧普</view>
+    </view>
+    <view id='viewForImageAndNameRight'>
+        <view class='update-text'>更新信息</view>
+        <image class='refresh-img' src='/images/icon/refresh.png' />
+    </view>
+</view>
+
+<!-- 我的客服、就诊人管理 -->
+<view id='viewForKeFuAndJiuZhenRen'>
+    <view class='left'>
+        <image src='/images/icon/message.png' />
+        <view class='text'>我的客服</view>
+    </view>
+    <view class='right'>
+        <image src='/images/icon/settings.png' />
+        <view class='text'>就诊人管理</view>
+    </view>
+</view>
