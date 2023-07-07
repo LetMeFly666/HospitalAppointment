@@ -116,3 +116,24 @@
 .eachButtonOfFour view {
     font-size: 28rpx;
 }
+
+/* 我是推广员 */
+#viewForPromotor {
+    height: 140rpx;
+    margin-top: 20rpx;
+    display: flex;
+    justify-content: space-between;
+}
+
+#promotorRight {
+    height: 100%;
+    display: flex;
+}
+
+#wealthIs0 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 10rpx;
+    font-size: 30rpx;
+}

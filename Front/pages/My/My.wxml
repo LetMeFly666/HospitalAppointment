@@ -49,3 +49,12 @@
         </view>
     </view>
 </view>
+
+<!-- 我是推广员 -->
+<view id='viewForPromotor' class='boxWithShadow'>
+    <view class='textLeft'>我是推广员</view>
+    <view id='promotorRight'>
+        <view id='wealthIs0'>你的财富值为0，要努力噢~</view>
+        <view class='rightArrow'>></view>
+    </view>
+</view>
