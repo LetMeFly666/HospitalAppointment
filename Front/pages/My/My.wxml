@@ -13,7 +13,7 @@
 </view>
 
 <!-- 我的客服、就诊人管理 -->
-<view id='viewForKeFuAndJiuZhenRen'>
+<view id='viewForKeFuAndJiuZhenRen' class='boxWithShadow'>
     <view class='left'>
         <image src='/images/icon/message.png' />
         <view class='text'>我的客服</view>
@@ -21,5 +21,31 @@
     <view class='right'>
         <image src='/images/icon/settings.png' />
         <view class='text'>就诊人管理</view>
+    </view>
+</view>
+
+<!-- 我的订单 -->
+<view id='viewForMyOrder' class='boxWithShadow'>
+    <view id='myOrderLine'>
+        <view class='textLeft'>我的订单</view>
+        <view class='rightArrow'>></view>
+    </view>
+    <view id='fourButtons'>
+        <view class='eachButtonOfFour'>
+            <image src='/images/icon/wallet.png'></image>
+            <view>待付款</view>
+        </view>
+        <view class='eachButtonOfFour'>
+            <image src='/images/icon/package-plain.png'></image>
+            <view>待发货</view>
+        </view>
+        <view class='eachButtonOfFour'>
+            <image src='/images/icon/pacakge-3d.png'></image>
+            <view>待收货</view>
+        </view>
+        <view class='eachButtonOfFour'>
+            <image src='/images/icon/afterSales.png'></image>
+            <view>售后</view>
+        </view>
     </view>
 </view>
