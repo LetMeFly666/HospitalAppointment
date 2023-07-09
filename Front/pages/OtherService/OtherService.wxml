@@ -78,3 +78,37 @@
         </view>
     </view>
 </view>
+
+<!-- 2列表 -->
+<view class="twoNavigatorContainer">
+    <view class="eachNavigatorOf2">
+        <view class="forLeftImage">
+            <image src="/images/img/serviceType2_01.jpg" />
+        </view>
+        <view class="forMiddleText">
+            <view class="middleTextUpper">代办问诊</view>
+            <view class="middleTextLower">代客户到机构咨询及代开检查单服务</view>
+        </view>
+        <view class="forRightPrice">
+            <view class="forRightPrice2TextContainer">
+                <text class="truePrice">188</text>
+                <text class="unitOfPrice">元/次</text>
+            </view>
+        </view>
+    </view>
+    <view class="eachNavigatorOf2">
+        <view class="forLeftImage">
+            <image src="/images/img/serviceType2_01.jpg" />
+        </view>
+        <view class="forMiddleText">
+            <view class="middleTextUpper">送取结果</view>
+            <view class="middleTextLower">送/取结果到家服务(不包含运费)，服务仅限当天有效</view>
+        </view>
+        <view class="forRightPrice">
+            <view class="forRightPrice2TextContainer">
+                <text class="truePrice">98</text>
+                <text class="unitOfPrice">元/次</text>
+            </view>
+        </view>
+    </view>
+</view>
