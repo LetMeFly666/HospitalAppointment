@@ -53,6 +53,8 @@ swiper image {
     display: flex;
     justify-content: space-around;
     margin-top: 30rpx;
+    margin-left: 20rpx;
+    margin-right: 20rpx;
 }
 
 .button4each {
@@ -63,6 +65,10 @@ swiper image {
 .button4eachImg {
     width: 100rpx;
     height: 100rpx;
+}
+
+.button4eachText {
+    white-space: nowrap;
 }
 
 /* 医院导航框14个 */
