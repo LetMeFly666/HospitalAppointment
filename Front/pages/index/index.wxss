@@ -45,8 +45,19 @@ swiper image {
     padding-left: 20rpx;
 }
 
-/* .search-right image {
-    width: 80rpx;
-    height: 80rpx;
-    vertical-align: middle;
-} */
+/* 5按钮 */
+.button4container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30rpx;
+}
+
+.button4each {
+    width: 18%;
+    text-align: center;
+}
+
+.button4eachImg {
+    width: 100rpx;
+    height: 100rpx;
+}

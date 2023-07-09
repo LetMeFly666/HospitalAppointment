@@ -26,3 +26,27 @@
         搜索
     </view>
 </view>
+
+<!-- 5按钮 -->
+<view class="button4container">
+    <view class="button4each">
+        <image class="button4eachImg" src="/images/icon/message2.png"></image>
+        <view class="button4eachText">诊前咨询</view>
+    </view>
+    <view class="button4each">
+        <image class="button4eachImg" src="/images/icon/timer.png"></image>
+        <view class="button4eachText">诊前约号</view>
+    </view>
+    <view class="button4each">
+        <image class="button4eachImg" src="/images/icon/stethoscope.png"></image>
+        <view class="button4eachText">代办问诊</view>
+    </view>
+    <view class="button4each">
+        <image class="button4eachImg" src="/images/icon/doc.png"></image>
+        <view class="button4eachText">送取结果</view>
+    </view>
+    <view class="button4each">
+        <image class="button4eachImg" src="/images/icon/pill.png"></image>
+        <view class="button4eachText">代办买药</view>
+    </view>
+</view>
