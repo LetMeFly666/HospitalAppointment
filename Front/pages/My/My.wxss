@@ -3,6 +3,10 @@ page {
     background-color: rgb(242, 242, 242);
 }
 /* Common */
+.fakeButton {
+    display: contents;
+}
+
 .boxWithShadow {
     border-radius: 6rpx;
     box-shadow: 0 2rpx 2px 0 rgba(0, 0, 0, 0.24), 0 2rpx 2rpx 0 rgba(0, 0, 0, 0.19);
@@ -97,6 +101,10 @@ page {
 #viewForKeFuAndJiuZhenRen .left, .right {
     margin-top: 80rpx;
     display: flex;
+}
+
+#underFakeButton0 {
+    
 }
 
 #viewForKeFuAndJiuZhenRen image {
