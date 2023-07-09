@@ -15,6 +15,13 @@
           "scene": null
         },
         {
+          "name": "陪诊下单",
+          "pathName": "pages/PeiZhenXiaDan/PeiZhenXiaDan",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "其他服务",
           "pathName": "pages/OtherService/OtherService",
           "query": "",

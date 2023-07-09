@@ -48,6 +48,7 @@
 
 .theFirstGold {
     color: #a58c54;
+    font-weight: bold;
 }
 
 .middleTextLower {
