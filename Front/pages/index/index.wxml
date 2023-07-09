@@ -1,4 +1,19 @@
 <!--index.wxml-->
-<view class="container">
-  首页
-</view>
+
+<!-- 轮播图 -->
+<swiper indicator-dots circular autoplay interval='2000'>
+    <swiper-item>
+        <image src='/images/img/banner.jpg'></image>
+    </swiper-item>
+    <swiper-item>
+        <image src='/images/img/banner.jpg'></image>
+    </swiper-item>
+    <swiper-item>
+        <image src='/images/img/banner.jpg'></image>
+    </swiper-item>
+    <swiper-item>
+        <image src='/images/img/banner.jpg'></image>
+    </swiper-item>
+</swiper>
+
+<!-- 搜索框 -->

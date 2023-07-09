@@ -1,1 +1,14 @@
 /**index.wxss**/
+
+/* 轮播图 */
+swiper {
+    height: 250rpx;
+    padding: 20rpx;
+}
+
+swiper image {
+    height: 100%;
+    width: 100%;
+}
+
+/* 搜索框 */
