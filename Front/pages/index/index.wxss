@@ -1,4 +1,7 @@
 /**index.wxss**/
+page {
+    background-color: rgb(253, 253, 253);
+}
 
 /* 轮播图 */
 swiper {
@@ -60,4 +63,56 @@ swiper image {
 .button4eachImg {
     width: 100rpx;
     height: 100rpx;
+}
+
+/* 医院导航框14个 */
+.viewFor14Hospitals {
+    background-color: white;
+}
+
+.hospitalItem {
+    margin-top: 20rpx;
+    display: flex;
+    padding: 15rpx;
+    border-radius: 20rpx;
+    box-shadow: 1rpx 1rpx 15rpx #dddddd;
+}
+
+.hospitalLeft image{
+    width: 260rpx;
+    height: 160rpx;
+    display: block;
+    margin-right: 20rpx;
+}
+
+.hospitalRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hospitalInfoLine1 text {
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+.textLeft {
+    color:brown;
+    margin-right: 40rpx;
+}
+
+.hospitalInfoLine3 {
+    width: 440rpx;
+}
+
+.hospitalInfoLine3 text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
 }

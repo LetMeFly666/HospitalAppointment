@@ -3,16 +3,16 @@
 <!-- 轮播图 -->
 <swiper indicator-dots circular autoplay interval='2000'>
     <swiper-item>
-        <image src='/images/img/banner.jpg'></image>
+        <image src='/images/img/banner.jpg' />
     </swiper-item>
     <swiper-item>
-        <image src='/images/img/banner.jpg'></image>
+        <image src='/images/img/banner.jpg' />
     </swiper-item>
     <swiper-item>
-        <image src='/images/img/banner.jpg'></image>
+        <image src='/images/img/banner.jpg' />
     </swiper-item>
     <swiper-item>
-        <image src='/images/img/banner.jpg'></image>
+        <image src='/images/img/banner.jpg' />
     </swiper-item>
 </swiper>
 
@@ -30,23 +30,44 @@
 <!-- 5按钮 -->
 <view class="button4container">
     <view class="button4each">
-        <image class="button4eachImg" src="/images/icon/message2.png"></image>
+        <image class="button4eachImg" src="/images/icon/message2.png" />
         <view class="button4eachText">诊前咨询</view>
     </view>
     <view class="button4each">
-        <image class="button4eachImg" src="/images/icon/timer.png"></image>
+        <image class="button4eachImg" src="/images/icon/timer.png" />
         <view class="button4eachText">诊前约号</view>
     </view>
     <view class="button4each">
-        <image class="button4eachImg" src="/images/icon/stethoscope.png"></image>
+        <image class="button4eachImg" src="/images/icon/stethoscope.png" />
         <view class="button4eachText">代办问诊</view>
     </view>
     <view class="button4each">
-        <image class="button4eachImg" src="/images/icon/doc.png"></image>
+        <image class="button4eachImg" src="/images/icon/doc.png" />
         <view class="button4eachText">送取结果</view>
     </view>
     <view class="button4each">
-        <image class="button4eachImg" src="/images/icon/pill.png"></image>
+        <image class="button4eachImg" src="/images/icon/pill.png" />
         <view class="button4eachText">代办买药</view>
+    </view>
+</view>
+
+<!-- 医院导航框14个 -->
+<view class="viewFor14Hospitals">
+    <view class="hospitalItem" wx:for="{{hospitalList}}" wx:key="index">
+        <view class="hospitalLeft">
+            <image src="{{item.img}}" />
+        </view>
+        <view class="hospitalRight">
+            <view class="hospitalInfoLine1">
+                <text>{{item.name}}</text>
+            </view>
+            <view class="hospitalInfoLine2">
+                <text class="textLeft">{{item.rank}}</text>
+                <text class="textRight">{{item.type}}</text>
+            </view>
+            <view class="hospitalInfoLine3">
+                <text>{{item.description}}</text>
+            </view>
+        </view>
     </view>
 </view>
