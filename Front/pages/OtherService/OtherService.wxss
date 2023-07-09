@@ -1,1 +1,47 @@
 /* pages/OtherService/OtherService.wxss */
+
+/* 其他服务四个字 */
+.just4character {
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10rpx;
+    font-size: large;
+}
+
+/* 8个导航框 */
+.eightNavigatorContainer {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20rpx;
+}
+
+.eachNavigatorOf8 {
+    display: flex;
+    justify-content: space-between;
+    padding: 10rpx;
+    width: calc(50% - 10rpx * 2 - 1rpx * 2);
+    border: 1rpx solid #efefef;
+    border-radius: 4rpx;
+}
+
+.forLeftText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.leftTextUpper {
+    display: block;
+    font-weight: bold;
+}
+
+.leftTextLower {
+    font-size: small;
+    margin-top: 10rpx;
+    color:dimgray;
+}
+
+.forRightPic image {
+    width: 180rpx;
+    height: 180rpx;
+}

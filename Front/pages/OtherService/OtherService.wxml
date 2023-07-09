@@ -1,3 +1,80 @@
 <!--pages/OtherService/OtherService.wxml-->
-<text>pages/OtherService/OtherService.wxml</text>
-<text>其他服务</text>
+
+<!-- 其他服务四个字 -->
+<view class="just4character">其他服务</view>
+
+<!-- 8个导航框 -->
+<view class="eightNavigatorContainer">
+    <view class="eachNavigatorOf8">
+        <view class="forLeftText">
+            <text class="leftTextUpper">高端体检</text>
+            <text class="leftTextLower">优质服务</text>
+        </view>
+        <view class="forRightPic">
+            <image src="/images/img/service01.jpg" />
+        </view>
+    </view>
+    <view class="eachNavigatorOf8">
+        <view class="forLeftText">
+            <text class="leftTextUpper">中端体检</text>
+            <text class="leftTextLower">医院体检</text>
+        </view>
+        <view class="forRightPic">
+            <image src="/images/img/service01.jpg" />
+        </view>
+    </view>
+    <view class="eachNavigatorOf8">
+        <view class="forLeftText">
+            <text class="leftTextUpper">养老服务</text>
+            <text class="leftTextLower">西安养老</text>
+        </view>
+        <view class="forRightPic">
+            <image src="/images/img/service01.jpg" />
+        </view>
+    </view>
+    <view class="eachNavigatorOf8">
+        <view class="forLeftText">
+            <text class="leftTextUpper">康复理疗</text>
+            <text class="leftTextLower">医养结合</text>
+        </view>
+        <view class="forRightPic">
+            <image src="/images/img/service01.jpg" />
+        </view>
+    </view>
+    <view class="eachNavigatorOf8">
+        <view class="forLeftText">
+            <text class="leftTextUpper">专车接送</text>
+            <text class="leftTextLower">安全高效</text>
+        </view>
+        <view class="forRightPic">
+            <image src="/images/img/service01.jpg" />
+        </view>
+    </view>
+    <view class="eachNavigatorOf8">
+        <view class="forLeftText">
+            <text class="leftTextUpper">临床招募</text>
+            <text class="leftTextLower">免费就医</text>
+        </view>
+        <view class="forRightPic">
+            <image src="/images/img/service01.jpg" />
+        </view>
+    </view>
+    <view class="eachNavigatorOf8">
+        <view class="forLeftText">
+            <text class="leftTextUpper">发布悬赏</text>
+            <text class="leftTextLower">诉求与赏金</text>
+        </view>
+        <view class="forRightPic">
+            <image src="/images/img/service01.jpg" />
+        </view>
+    </view>
+    <view class="eachNavigatorOf8">
+        <view class="forLeftText">
+            <text class="leftTextUpper">其他服务</text>
+            <text class="leftTextLower">商家发布</text>
+        </view>
+        <view class="forRightPic">
+            <image src="/images/img/service01.jpg" />
+        </view>
+    </view>
+</view>

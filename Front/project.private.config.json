@@ -13,6 +13,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "其他服务",
+          "pathName": "pages/OtherService/OtherService",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }
