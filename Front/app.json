@@ -25,7 +25,7 @@
         "selectedIconPath": "images/icon/share-selected.png"
       }, {
         "pagePath": "pages/OtherService/OtherService",
-        "text": "其他产品",
+        "text": "其他服务",
         "iconPath": "images/icon/functionList.png",
         "selectedIconPath": "images/icon/functionList-selected.png"
       }, {
