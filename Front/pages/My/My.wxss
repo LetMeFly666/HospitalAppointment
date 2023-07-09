@@ -4,7 +4,7 @@ page {
 }
 /* Common */
 .boxWithShadow {
-    border-radius: 6rpx;
+    border-radius: 20rpx;
     box-shadow: 0 2rpx 2px 0 rgba(0, 0, 0, 0.24), 0 2rpx 2rpx 0 rgba(0, 0, 0, 0.19);
     margin-left: 20rpx;
     margin-right: 20rpx;
