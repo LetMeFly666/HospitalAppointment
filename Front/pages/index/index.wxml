@@ -17,3 +17,12 @@
 </swiper>
 
 <!-- 搜索框 -->
+<view class="search-container">
+    <view class="search-left">
+        <image src="/images/icon/search.png" />
+        <input type="text" placeholder="商品搜索：请输入商品关键字" />
+    </view>
+    <view class="search-right">
+        搜索
+    </view>
+</view>

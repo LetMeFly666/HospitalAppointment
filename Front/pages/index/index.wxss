@@ -12,3 +12,41 @@ swiper image {
 }
 
 /* 搜索框 */
+.search-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10rpx 20rpx;
+    box-sizing: border-box;
+    height: 100rpx;
+}
+
+.search-left {
+    background-color: #eee;
+    flex: 2;
+    border-radius: 40rpx;
+    height: 100%;
+}
+
+.search-left image {
+    width: 58rpx;
+    height: 58rpx;
+    padding: 10rpx 20rpx 10rpx 10rpx;
+    vertical-align: middle;
+}
+
+.search-left input {
+    display: inline-block;
+    vertical-align: middle;
+    width: calc(100% - 88rpx);
+}
+
+.search-right {
+    padding-left: 20rpx;
+}
+
+/* .search-right image {
+    width: 80rpx;
+    height: 80rpx;
+    vertical-align: middle;
+} */
