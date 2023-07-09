@@ -4,7 +4,75 @@
 .bannerIMG {
     position: absolute;
     left: 0;
+    top: 0;
     width: 100%;
     display: block;
     z-index: -999;
+}
+
+/* 10个链接框 */
+.tenNavigatorContainer {
+    margin-top: 320rpx;
+}
+
+.eachNavigatorOf10 {
+    display: flex;
+    height: 200rpx;
+    justify-content: left;
+    background-color: white;
+    border-radius: 20rpx;
+    box-shadow: 1rpx 1rpx 15rpx #dddddd;
+    margin: 30rpx 18rpx;
+}
+
+.forLeftImage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 20rpx;
+}
+
+.forLeftImage image {
+    width: 120rpx;
+    height: 120rpx;
+}
+
+.forMiddleText {
+    width: 415rpx;
+    margin-left: 30rpx;
+}
+
+.middleTextUpper {
+    margin-top: 30rpx;
+}
+
+.theFirstGold {
+    color: #a58c54;
+}
+
+.middleTextLower {
+    font-size: small;
+    color:dimgray;
+    margin-top: 20rpx;
+}
+
+.forRightPrice {
+    width: 205rpx;
+    margin-left: 14rpx;
+    margin-right: 20rpx;
+}
+
+.forRightPrice {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.forRightPrice2TextContainer {
+    color: #a98033;
+}
+
+.truePrice {
+    font-weight: bold;
+    font-size: x-large;
 }

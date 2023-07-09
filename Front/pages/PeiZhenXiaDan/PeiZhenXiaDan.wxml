@@ -2,11 +2,29 @@
  * @Author: LetMeFly
  * @Date: 2023-07-03 21:15:24
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-07-09 21:13:26
+ * @LastEditTime: 2023-07-09 21:37:41
 -->
 <!--pages/PeiZhenXiaDan/PeiZhenXiaDan.wxml-->
 
 <!-- banner -->
 <image class="bannerIMG" src="/images/img/banner02.jpg" />
 
-<view>666</view>
+<!-- 10个链接框 -->
+<view class="tenNavigatorContainer">
+    <navigator class="eachNavigatorOf10" url="/pages/PeiZhenXiaDan_YouXiangPeiZhen/PeiZhenXiaDan_YouXiangPeiZhen?name={{item.title}}&id={{item.id}}" wx:for="{{serviceType}}" wx:key="id">
+        <view class="forLeftImage">
+            <image src="{{item.img}}" />
+        </view>
+        <view class="forMiddleText">
+            <view class="middleTextUpper theFirstGold" wx:if="{{item.id == 1}}">{{item.title}}</view>
+            <view class="middleTextUpper" wx:else>{{item.title}}</view>
+            <view class="middleTextLower">{{item.description}}</view>
+        </view>
+        <view class="forRightPrice">
+            <view class="forRightPrice2TextContainer">
+                <text class="truePrice">{{item.price}}</text>
+                <text class="unitOfPrice">元/次</text>
+            </view>
+        </view>
+    </navigator>
+</view>
