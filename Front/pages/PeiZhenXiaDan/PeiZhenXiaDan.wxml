@@ -1,3 +1,12 @@
+<!--
+ * @Author: LetMeFly
+ * @Date: 2023-07-03 21:15:24
+ * @LastEditors: LetMeFly
+ * @LastEditTime: 2023-07-09 21:13:26
+-->
 <!--pages/PeiZhenXiaDan/PeiZhenXiaDan.wxml-->
-<text>pages/PeiZhenXiaDan/PeiZhenXiaDan.wxml</text>
-<text>陪诊下单</text>
+
+<!-- banner -->
+<image class="bannerIMG" src="/images/img/banner02.jpg" />
+
+<view>666</view>
