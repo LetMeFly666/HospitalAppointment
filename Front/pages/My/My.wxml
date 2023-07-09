@@ -16,9 +16,7 @@
 <view id='viewForKeFuAndJiuZhenRen' class='boxWithShadow'>
     <view class='left'>
         <image src='/images/icon/message.png' />
-        <button class='fakeButton' open-type='feedback'>
-            <view class='text' id='underFakeButton0'>我的客服</view>
-        </button>
+        <view class='text'>我的客服</view>
     </view>
     <view class='right'>
         <image src='/images/icon/settings.png' />
