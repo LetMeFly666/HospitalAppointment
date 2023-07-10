@@ -126,3 +126,35 @@ page {
     margin-left: 10rpx;
     color: dimgray;
 }
+
+/* 支付按钮 */
+.hiddenView {
+    height: 160rpx;
+}
+
+.payContainer {
+    position: fixed;
+    height: 120rpx;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.blueButton {
+    height: 80rpx;
+    width: 70%;
+    background-color: #4957fe;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 40rpx;
+}
+
+.payText {
+    color: white;
+}

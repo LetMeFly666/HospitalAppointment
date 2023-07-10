@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-07-03 21:16:46
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-07-10 16:45:27
+ * @LastEditTime: 2023-07-10 17:01:42
 -->
 <!--pages/PeiZhenXiaDan_YouXiangPeiZhen/PeiZhenXiaDan_YouXiangPeiZhen.wxml-->
 
@@ -61,3 +61,9 @@
 </view>
 
 <!-- 支付按钮 -->
+<view class="hiddenView"></view>
+<view class="payContainer">
+    <view class="blueButton">
+        <view class="payText">立即预约 ￥588</view>
+    </view>
+</view>
