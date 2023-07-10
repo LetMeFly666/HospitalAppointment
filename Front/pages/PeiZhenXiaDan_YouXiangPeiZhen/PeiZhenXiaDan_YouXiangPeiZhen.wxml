@@ -1,4 +1,24 @@
 <!--pages/PeiZhenXiaDan_YouXiangPeiZhen/PeiZhenXiaDan_YouXiangPeiZhen.wxml-->
-<text>pages/PeiZhenXiaDan_YouXiangPeiZhen/PeiZhenXiaDan_YouXiangPeiZhen.wxml</text>
-<text>陪诊下单 - 优享陪诊</text>
-<text>尊贵VIP</text>
+<!-- https://www.cnblogs.com/dyy-dida/p/9635497.html -->
+<view class='nav'>
+    <block wx:for="{{nav}}" wx:key="key">
+        <view class="{{ curIndex === item.id ? 'txt' : ''}}" data-id="{{item.id}}" bindtap="navTap">{{item.title}}
+        </view>
+    </block>
+</view>
+<scroll-view>
+    <block wx:for="{{list}}" wx:key="key">
+        <block wx:if="{{curNav == 0 }}">
+            <view class='msg'>
+                <text class='name'>{{item.name}}</text>
+                <text class='price'>{{item.price}}</text>
+            </view>
+        </block>
+        <block wx:elif="{{curNav == item.type }}">
+            <view class='msg'>
+                <text class='name'>{{item.name}}</text>
+                <text class='price'>{{item.price}}</text>
+            </view>
+        </block>
+    </block>
+</scroll-view>
