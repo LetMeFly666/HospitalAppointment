@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-07-03 21:16:46
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-07-10 15:48:29
+ * @LastEditTime: 2023-07-10 16:45:27
 -->
 <!--pages/PeiZhenXiaDan_YouXiangPeiZhen/PeiZhenXiaDan_YouXiangPeiZhen.wxml-->
 
@@ -28,3 +28,36 @@
     <view bindtap="clickBar" data-id="{{0}}" class="{{conticeOrNotice === 0 ? 'choosed' : 'normal'}}">服务内容</view>
     <view bindtap="clickBar" data-id="{{1}}" class="{{conticeOrNotice === 1 ? 'choosed' : 'normal'}} secondView">服务须知</view>
 </view>
+
+<!-- 服务内容&服务须知的具体内容 -->
+<view class="realInfoContainer">
+    <view wx:if="{{conticeOrNotice === 0}}" class="serviceView">
+        <image class="serviceImg" mode="widthFix" src="/images/img/serviceContent.jpg" />
+    </view>
+    <view wx:else class="noticeView">
+        <view class="noticeTitle firstTitle">服务说明</view>
+        <view class="noticeContent">
+            <text class="circledTh">1</text>
+            <text class="noticeContentRealContent">就诊前至少24小时，我们会告知规划的就诊流程，提醒就诊注意试想，如果携带就诊所需证件和资料、就诊时间、区号步骤等信息，我们会以短信形式发送到预约人手机。</text>
+        </view>
+        <view class="noticeContent">
+            <text class="circledTh">2</text>
+            <text class="noticeContentRealContent">就诊成功后，我们会进行电话回访，询问了解就诊情况，用户建议以及客户满意度等。</text>
+        </view>
+        <view class="noticeTitle">注意事项</view>
+        <view class="noticeContent">
+            <text class="circledTh">1</text>
+            <text class="noticeContentRealContent">预约的医生停诊等特俗情况，平台将会对您进行通知确认，若有其他情况请联系客服。</text>
+        </view>
+        <view class="noticeContent">
+            <text class="circledTh">2</text>
+            <text class="noticeContentRealContent">本服务仅为用户体哦那个协助，因各大医院就诊患者数量很大，并不承诺可以成功按照用户要求的时间成功挂号，如在要求时间内未完成挂号，会全额退款。</text>
+        </view>
+        <view class="noticeContent">
+            <text class="circledTh">3</text>
+            <text class="noticeContentRealContent">支付完成后，退款我们会根据实际情况进行相应处理，如您有任何疑问请拨打首页客服热线</text>
+        </view>
+    </view>
+</view>
+
+<!-- 支付按钮 -->

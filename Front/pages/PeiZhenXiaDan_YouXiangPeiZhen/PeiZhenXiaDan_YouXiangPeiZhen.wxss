@@ -75,3 +75,54 @@ page {
     font-size: small;
     margin-top: 6rpx;
 }
+
+/* 服务内容&服务须知的具体内容 */
+.realInfoContainer {
+    margin-top: 20rpx;
+    margin-left: 60rpx;
+    margin-right: 60rpx;
+    background-color: white;
+    border-radius: 20rpx;
+    box-shadow: 1rpx 1rpx 15rpx #dddddd;
+}
+
+.serviceView {
+    text-align: center;
+}
+
+.serviceImg {
+    width: 460rpx;
+    margin-top: 80rpx;
+    margin-bottom: 80rpx;
+}
+
+.noticeView {
+    padding: 50rpx 30rpx 60rpx 30rpx;
+}
+
+.noticeTitle {
+    margin-top: 80rpx;
+    font-weight: bold;
+}
+
+.firstTitle {
+    margin-top: 10rpx;
+}
+
+.noticeContent {
+    margin-top: 40rpx;
+}
+
+.circledTh {
+    display: inline-block;
+    background-color: #4562f8;
+    color: white;
+    border-radius: 100%;
+    width: 42rpx;
+    text-align: center;
+}
+
+.noticeContentRealContent {
+    margin-left: 10rpx;
+    color: dimgray;
+}
