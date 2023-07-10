@@ -1,33 +1,11 @@
 /* pages/PeiZhenXiaDan_YouXiangPeiZhen/PeiZhenXiaDan_YouXiangPeiZhen.wxss */
-.nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 150rpx;
-}
 
-.nav view {
-    width: 33.33%;
-    text-align: center;
-}
-
-.txt {
-    color: #f00;
-}
-
-.msg {
-    height: 150rpx;
-    display: flex;
-    align-items: center;
-    border: 1px solid #ddd;
-    padding: 0 60rpx;
-}
-
-.msg text {
+/* banner图 */
+.bannerIMG {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
     display: block;
-}
-
-.msg .name {
-    width: 300rpx;
-    margin-right: 30rpx;
+    z-index: -999;
 }

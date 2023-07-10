@@ -34,6 +34,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "陪诊下单-具体点击效果",
+          "pathName": "pages/PeiZhenXiaDan_YouXiangPeiZhen/PeiZhenXiaDan_YouXiangPeiZhen",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }
