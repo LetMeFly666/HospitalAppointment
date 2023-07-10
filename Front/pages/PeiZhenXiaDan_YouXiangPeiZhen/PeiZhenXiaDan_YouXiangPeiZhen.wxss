@@ -1,4 +1,7 @@
 /* pages/PeiZhenXiaDan_YouXiangPeiZhen/PeiZhenXiaDan_YouXiangPeiZhen.wxss */
+page {
+    background-color: #f4f8fb;
+}
 
 /* banner图 */
 .bannerIMG {
@@ -8,4 +11,46 @@
     width: 100%;
     display: block;
     z-index: -999;
+}
+
+/* 上方介绍框 */
+.introAtTop {
+    margin-top: 340rpx;
+    margin-left: 30rpx;
+    margin-right: 30rpx;
+    background-color: white;
+    border-radius: 30rpx;
+    padding: 35rpx;
+}
+
+.introAtTopInfo {
+    color: dimgray;
+}
+
+.introAtTopPrice {
+    display: flex;
+    margin-top: 20rpx;
+    height: auto;
+}
+
+.introAtTopPricePrice2 {
+    display: flex;
+    color: #4562f8;
+}
+
+.introAtTopPricePriceNum {
+    font-size: 50rpx;
+    font-weight: bold;
+}
+
+.introAtTopPricePriceUnit {
+    margin-top: 16rpx;
+    margin-left: 4rpx;
+}
+
+.introAtTopPriceOldPrice {
+    margin-top: 16rpx;
+    margin-left: 30rpx;
+    color: silver;
+    text-decoration: line-through;
 }

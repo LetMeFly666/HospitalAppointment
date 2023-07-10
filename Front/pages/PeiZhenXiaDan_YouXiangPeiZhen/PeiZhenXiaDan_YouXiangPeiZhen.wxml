@@ -3,3 +3,16 @@
 <!-- banner图 -->
 <image class="bannerIMG" src="/images/img/banner03.jpg" />
 
+<!-- 上方介绍框 -->
+<view class="introAtTop">
+    <view class="introAtTopInfo">
+        代替患者在医院内跑腿。例如，带患者排队，楼上楼下缴费，提取化验报告等。诊前直到，全程陪诊，代取结果，车接车送。
+    </view>
+    <view class="introAtTopPrice">
+        <view class="introAtTopPricePrice2">
+            <view class="introAtTopPricePriceNum">588</view>
+            <view class="introAtTopPricePriceUnit">元/次</view>
+        </view>
+        <view class="introAtTopPriceOldPrice">1,088元/次数</view>
+    </view>
+</view>
