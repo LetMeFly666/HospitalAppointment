@@ -54,3 +54,24 @@ page {
     color: silver;
     text-decoration: line-through;
 }
+
+/* 服务内容 服务须知 */
+.serviceAndNoticeText {
+    margin-top: 20rpx;
+    display: flex;
+    margin-left: 60rpx;
+}
+
+.secondView {
+    margin-left: 60rpx;
+}
+
+.choosed {
+    color: blue;
+    font-weight: bold;
+}
+
+.normal {
+    font-size: small;
+    margin-top: 6rpx;
+}

@@ -5,7 +5,12 @@ Page({
      * 页面的初始数据
      */
     data: {
-        
+        conticeOrNotice: 0
+    },
+
+    clickBar(event) {
+        this.setData({conticeOrNotice: event.target.dataset.id});
+        console.log(typeof event.target.dataset.id);
     },
 
     /**
