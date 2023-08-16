@@ -1,3 +1,9 @@
+<!--
+ * @Author: LetMeFly
+ * @Date: 2023-08-15 22:32:21
+ * @LastEditors: LetMeFly
+ * @LastEditTime: 2023-08-16 16:18:11
+-->
 # HospitalAppointment
 
 微信小程序 - 医院预约
@@ -34,4 +40,6 @@
 ## TODO
 
 - [ ] 搭建(django的)图片服务
-- [ ] 
+- [ ] 首页banner地址替换
+- [ ] 首页5图标替换
+- [ ] 首页14医院信息替换
