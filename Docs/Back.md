@@ -2,9 +2,13 @@
  * @Author: LetMeFly
  * @Date: 2023-08-15 22:11:19
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-08-16 16:19:57
+ * @LastEditTime: 2023-08-17 16:52:58
 -->
 # 后端接口
+
+除非特殊说明，否则以下所有接口的前缀均为```https://www.letmefly.xyz/LetHA```（该端口的所有请求将被转发到该项目的后端）。
+
+例如```/static/pic/banner/1.png```的完整地址为```https://www.letmefly.xyz/LetHA/static/pic/banner/1.png```
 
 ## 图片服务
 
