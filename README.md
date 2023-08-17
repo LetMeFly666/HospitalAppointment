@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-08-15 22:32:21
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-08-17 17:45:57
+ * @LastEditTime: 2023-08-17 17:53:49
 -->
 # HospitalAppointment
 
@@ -51,4 +51,3 @@
 - [ ] 首页banner地址替换
 - [ ] 首页5图标替换
 - [ ] 首页14医院信息替换
- 
