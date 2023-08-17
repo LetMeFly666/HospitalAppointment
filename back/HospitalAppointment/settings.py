@@ -75,8 +75,12 @@ WSGI_APPLICATION = 'HospitalAppointment.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'HOST': Secrets.DATABASE_ADDRESS,
+        'PORT': '3306',
+        'USER': Secrets.DATABASE_USER,
+        'PASSWORD': Secrets.DATABASE_PASSWORD,
+        'NAME': Secrets.DATABASE_NAME,
     }
 }
 
