@@ -51,7 +51,7 @@ App({
     }, {
         id: '7',
         logo: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/西安国际医学中心医院-Logo.webp',
-        fullView: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/西安国际医学中心医院-全景照.jpg',
+        fullView: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/西安国际医学中心医院-全景照.webp',
         expertImg: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/西安国际医学中心医院-专家介绍.jpg',
         name: '西安国际医学中心医院',
         rank: '三甲',
