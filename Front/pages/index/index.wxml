@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-07-03 18:08:50
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-08-30 21:43:58
+ * @LastEditTime: 2023-08-30 21:47:02
 -->
 <!--index.wxml-->
 
@@ -61,7 +61,7 @@
 <view class="viewFor14Hospitals">
     <navigator url="/pages/OneHospital/OneHospital?id={{item.id}}" class="hospitalItem" wx:for="{{hospitalList}}" wx:key="id">
         <view class="hospitalLeft">
-            <image src="{{item.img}}" />
+            <image src="{{item.logo}}" />
         </view>
         <view class="hospitalRight">
             <view class="hospitalInfoLine1">
