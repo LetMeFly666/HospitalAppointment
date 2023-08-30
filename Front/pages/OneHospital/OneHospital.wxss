@@ -1,4 +1,7 @@
 /* pages/OneHospital/OneHospital.wxss */
+page {
+    background-color: rgb(242, 242, 242);
+}
 
 /* banner */
 .bannerIMG {
@@ -13,9 +16,40 @@
 /* 四个按钮 */
 .grid-list {
     margin-top: 40rpx;
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+    border-radius: 20rpx;
+    box-shadow: 0 2rpx 2px 0 rgba(0, 0, 0, 0.24), 0 2rpx 2rpx 0 rgba(0, 0, 0, 0.19);
+    padding-left: 20rpx;
+    padding-right: 20rpx;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;
+}
+
+.grid-item {
+    width: 50%;
+    display: flex;
+    margin-bottom: 20rpx;
+    box-sizing: border-box;
+}
+
+.grid-item text {
+    margin: auto;
+    font-weight: bold;
 }
 
 .grid-item image {
-    width: 200rpx;
-    height: 200rpx;
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+    width: 160rpx;
+    height: 160rpx;
+}
+
+#grid-item-1, #grid-item-2 {
+    border-bottom: 1rpx solid #efefef;
+}
+
+#grid-item-1, #grid-item-3 {
+    border-right: 1rpx solid #efefef;
 }
