@@ -4,7 +4,7 @@ Page({
     data: {
         hospitalList: []
     },
-    onload: function(options) {
+    onLoad: function(options) {
         this.setData({
             hospitalList: app.hospitalList
         });
