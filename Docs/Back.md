@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-08-15 22:11:19
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-08-17 16:52:58
+ * @LastEditTime: 2023-08-30 10:20:47
 -->
 # 后端接口
 
@@ -17,7 +17,7 @@
 ### 首页banner
 
 + ```GET: /static/pic/banner/1.png```
-+ ```GET: /static/pic/banner/2.png```
++ ```GET: /static/pic/banner/2.jpg```
 + ```GET: /static/pic/banner/3.png```
 + ```GET: /static/pic/banner/4.png```
 
