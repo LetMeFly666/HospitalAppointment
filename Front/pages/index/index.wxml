@@ -3,16 +3,16 @@
 <!-- 轮播图 -->
 <swiper indicator-dots circular autoplay interval='2000'>
     <swiper-item>
-        <image src='/images/img/banner.jpg' />
+        <image src='https://www.letmefly.xyz/LetHA/static/pic/banner/1.png' />
     </swiper-item>
     <swiper-item>
-        <image src='/images/img/banner.jpg' />
+        <image src='https://www.letmefly.xyz/LetHA/static/pic/banner/2.png' />
     </swiper-item>
     <swiper-item>
-        <image src='/images/img/banner.jpg' />
+        <image src='https://www.letmefly.xyz/LetHA/static/pic/banner/3.png' />
     </swiper-item>
     <swiper-item>
-        <image src='/images/img/banner.jpg' />
+        <image src='https://www.letmefly.xyz/LetHA/static/pic/banner/4.png' />
     </swiper-item>
 </swiper>
 
