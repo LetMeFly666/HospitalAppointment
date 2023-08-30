@@ -1,2 +1,30 @@
+<!--
+ * @Author: LetMeFly
+ * @Date: 2023-08-30 21:31:06
+ * @LastEditors: LetMeFly
+ * @LastEditTime: 2023-08-30 22:06:58
+-->
 <!--pages/OneHospital/OneHospital.wxml-->
-<text>pages/OneHospital/OneHospital.wxml</text>
+
+<!-- banner -->
+<image class="bannerIMG" src="{{hospitalInfo.fullView}}"/>
+
+<!-- 四个按钮 -->
+<view class="grid-list">
+    <view class="grid-item">
+        <text>医院介绍</text>
+        <image src="{{hospitalInfo.logo}}"></image>
+    </view>
+    <view class="grid-item">
+        <text>位置导航</text>
+        <image src="/images/icon/navigator.png"></image>
+    </view>
+    <view class="grid-item">
+        <text>专家介绍</text>
+        <image></image>
+    </view>
+    <view class="grid-item">
+        <text>陪诊案例</text>
+        <image></image>
+    </view>
+</view>

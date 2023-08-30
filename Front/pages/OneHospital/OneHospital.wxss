@@ -1,1 +1,21 @@
 /* pages/OneHospital/OneHospital.wxss */
+
+/* banner */
+.bannerIMG {
+    /* position: absolute; */
+    left: 0;
+    top: 0;
+    width: 100%;
+    display: block;
+    z-index: -999;
+}
+
+/* 四个按钮 */
+.grid-list {
+    margin-top: 40rpx;
+}
+
+.grid-item image {
+    width: 200rpx;
+    height: 200rpx;
+}

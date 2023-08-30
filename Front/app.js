@@ -3,84 +3,112 @@ App({
     hospitalList: [{
         id: '1',
         logo: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/西京医院-Logo.png',
+        fullView: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/西京医院-全景照.jpg',  // 全景
+        expertImg: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/西京医院-专家介绍.png',  // 专家介绍、陪诊案例
         name: '西京医院',
         rank: '三甲',
         type: '综合医院'
     }, {
         id: '2',
         logo: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/唐都医院-Logo.png',
+        fullView: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/唐都医院-全景照.jpg',
+        expertImg: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/唐都医院-专家介绍.jpg',
         name: '唐都医院',
         rank: '三甲',
         type: '综合医院'
     }, {
         id: '3',
         logo: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/西安交通大学第一附属医院-Logo.jpg',
+        fullView: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/西安交通大学第一附属医院-全景照.jpg',
+        expertImg: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/西安交通大学第一附属医院-专家介绍.jpg',
         name: '西安交通大学第一附属医院',
         rank: '三甲',
         type: '综合医院'
     }, {
         id: '4',
         logo: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/西安交通大学第二附属医院-Logo.jpg',
+        fullView: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/西安交通大学第二附属医院-全景照.jpg',
+        expertImg: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/西安交通大学第二附属医院-专家介绍.webp',
         name: '西安交通大学第二附属医院',
         rank: '三甲',
         type: '综合医院'
     }, {
         id: '5',
         logo: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/陕西省人民医院-Logo.jpg',
+        fullView: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/陕西省人民医院-全景照.jpg',
+        expertImg: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/陕西省人民医院-专家介绍.jpg',
         name: '陕西省人民医院',
         rank: '三甲',
         type: '综合医院'
     }, {
         id: '6',
         logo: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/陕西省肿瘤医院-Logo.png',
+        fullView: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/陕西省肿瘤医院-全景照.jpg',
+        expertImg: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/陕西省肿瘤医院-专家介绍.webp',
         name: '陕西省肿瘤医院',
         rank: '三甲',
         type: '综合医院'
     }, {
         id: '7',
         logo: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/西安国际医学中心医院-Logo.webp',
+        fullView: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/西安国际医学中心医院-全景照.jpg',
+        expertImg: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/西安国际医学中心医院-专家介绍.jpg',
         name: '西安国际医学中心医院',
         rank: '三甲',
         type: '综合医院'
     }, {
         id: '8',
         logo: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/西安市人民医院（西安市第四医院）-Logo.png',
+        fullView: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/西安市人民医院（西安市第四医院）-全景照.jpg',
+        expertImg: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/西安市人民医院（西安市第四医院）-专家介绍.jpg',
         name: '西安市人民医院（西安市第四医院）',
         rank: '三甲',
         type: '综合医院'
     }, {
         id: '9',
         logo: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/陕西省中医医院-Logo.webp',
+        fullView: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/陕西省中医医院-全景照.png',
+        expertImg: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/陕西省中医医院-专家介绍.webp',
         name: '陕西省中医医院',
         rank: '三甲',
         type: '综合医院'
     }, {
         id: '10',
         logo: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/西安市儿童医院-Logo.webp',
+        fullView: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/西安市儿童医院-全景照.jpeg',
+        expertImg: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/西安市儿童医院-专家介绍.jpeg',
         name: '西安市儿童医院',
         rank: '三甲',
         type: '综合医院'
     }, {
         id: '11',
         logo: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/西北妇女儿童医院-Logo.png',
+        fullView: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/西北妇女儿童医院-全景照.jpg',
+        expertImg: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/西北妇女儿童医院-专家介绍.jpg',
         name: '西北妇女儿童医院',
         rank: '三甲',
         type: '综合医院'
     }, {
         id: '12',
         logo: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/西安市中心医院-Logo.png',
+        fullView: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/西安市中心医院-全景照.jpg',
+        expertImg: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/西安市中心医院-专家介绍.jpg',
         name: '西安市中心医院',
         rank: '三甲',
         type: '综合医院'
     }, {
         id: '13',
         logo: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/西安高新医院-Logo.jpg',
+        fullView: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/西安高新医院-全景照.jpg',
+        expertImg: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/西安高新医院-专家介绍.jpg',
         name: '西安高新医院',
         rank: '三甲',
         type: '综合医院'
     }, {
         id: '14',
         logo: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/西安市红会医院-Logo.png',
+        fullView: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/西安市红会医院-全景照.jpg',
+        expertImg: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/西安市红会医院-专家介绍.jpg',
         name: '西安市红会医院',
         rank: '三甲',
         type: '综合医院'
