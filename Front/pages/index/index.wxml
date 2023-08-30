@@ -65,9 +65,6 @@
                 <text class="textLeft">{{item.rank}}</text>
                 <text class="textRight">{{item.type}}</text>
             </view>
-            <view class="hospitalInfoLine3">
-                <text>{{item.description}}</text>
-            </view>
         </view>
     </view>
 </view>

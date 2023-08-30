@@ -85,10 +85,11 @@ swiper image {
 }
 
 .hospitalLeft image{
-    width: 260rpx;
+    width: 160rpx;
     height: 160rpx;
     display: block;
-    margin-right: 20rpx;
+    margin-left: 30rpx;
+    margin-right: 50rpx;
 }
 
 .hospitalRight {
@@ -104,6 +105,11 @@ swiper image {
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
+    margin-top: 20rpx;
+}
+
+.hospitalInfoLine2 {
+    margin-bottom: 30rpx;
 }
 
 .textLeft {
