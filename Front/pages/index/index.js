@@ -62,7 +62,7 @@ Page({
             rank: '三甲',
             type: '综合医院'
         }, {
-            img: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/西安高新医院-Logo.png',
+            img: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/西安高新医院-Logo.jpg',
             name: '西安高新医院',
             rank: '三甲',
             type: '综合医院'
