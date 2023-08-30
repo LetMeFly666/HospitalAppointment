@@ -2,89 +2,75 @@
 Page({
     data: {
         hospitalList: [{
-            img: '/images/img/hospital01.jpg',
-            name: '北京医院',
+            img: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/西京医院-Logo.png',
+            name: '西京医院',
             rank: '三甲',
-            type: '综合医院',
-            description: '重点科室: 医院设又国家级重点学科9个，并且有2.2e7个床位，足够容纳所有北京人'
+            type: '综合医院'
         }, {
-            img: '/images/img/hospital01.jpg',
-            name: '这是一个名字非常长的医院这是一个名字非常长的医院这是一个名字非常长的医院这是一个名字非常长的医院',
+            img: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/唐都医院-Logo.png',
+            name: '唐都医院',
             rank: '三甲',
-            type: '综合医院',
-            description: '简介02'
+            type: '综合医院'
         }, {
-            img: '/images/img/hospital01.jpg',
-            name: '医院03',
+            img: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/西安交通大学第一附属医院-Logo.jpg',
+            name: '西安交通大学第一附属医院',
             rank: '三甲',
-            type: '综合医院',
-            description: '简介03'
+            type: '综合医院'
         }, {
-            img: '/images/img/hospital01.jpg',
-            name: '医院04',
+            img: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/西安交通大学第二附属医院-Logo.jpg',
+            name: '西安交通大学第二附属医院',
             rank: '三甲',
-            type: '综合医院',
-            description: '简介04'
+            type: '综合医院'
         }, {
-            img: '/images/img/hospital01.jpg',
-            name: '医院05',
+            img: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/陕西省人民医院-Logo.jpg',
+            name: '陕西省人民医院',
             rank: '三甲',
-            type: '综合医院',
-            description: '简介05'
+            type: '综合医院'
         }, {
-            img: '/images/img/hospital01.jpg',
-            name: '医院06',
+            img: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/陕西省肿瘤医院-Logo.png',
+            name: '陕西省肿瘤医院',
             rank: '三甲',
-            type: '综合医院',
-            description: '简介06'
+            type: '综合医院'
         }, {
-            img: '/images/img/hospital01.jpg',
-            name: '医院07',
+            img: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/西安国际医学中心医院-Logo.webp',
+            name: '西安国际医学中心医院',
             rank: '三甲',
-            type: '综合医院',
-            description: '简介07'
+            type: '综合医院'
         }, {
-            img: '/images/img/hospital01.jpg',
-            name: '医院08',
+            img: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/西安市人民医院（西安市第四医院）-Logo.png',
+            name: '西安市人民医院（西安市第四医院）',
             rank: '三甲',
-            type: '综合医院',
-            description: '简介08'
+            type: '综合医院'
         }, {
-            img: '/images/img/hospital01.jpg',
-            name: '医院09',
+            img: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/陕西省中医医院-Logo.webp',
+            name: '陕西省中医医院',
             rank: '三甲',
-            type: '综合医院',
-            description: '简介09'
+            type: '综合医院'
         }, {
-            img: '/images/img/hospital01.jpg',
-            name: '医院10',
+            img: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/西安市儿童医院-Logo.webp',
+            name: '西安市儿童医院',
             rank: '三甲',
-            type: '综合医院',
-            description: '简介10'
+            type: '综合医院'
         }, {
-            img: '/images/img/hospital01.jpg',
-            name: '医院11',
+            img: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/西北妇女儿童医院-Logo.png',
+            name: '西北妇女儿童医院',
             rank: '三甲',
-            type: '综合医院',
-            description: '简介11'
+            type: '综合医院'
         }, {
-            img: '/images/img/hospital01.jpg',
-            name: '医院12',
+            img: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/西安市中心医院-Logo.png',
+            name: '西安市中心医院',
             rank: '三甲',
-            type: '综合医院',
-            description: '简介12'
+            type: '综合医院'
         }, {
-            img: '/images/img/hospital01.jpg',
-            name: '医院13',
+            img: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/西安高新医院-Logo.png',
+            name: '西安高新医院',
             rank: '三甲',
-            type: '综合医院',
-            description: '简介13'
+            type: '综合医院'
         }, {
-            img: '/images/img/hospital01.jpg',
-            name: '医院14',
+            img: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/西安市红会医院-Logo.png',
+            name: '西安市红会医院',
             rank: '三甲',
-            type: '综合医院',
-            description: '简介14'
+            type: '综合医院'
         }]
     }
 })
