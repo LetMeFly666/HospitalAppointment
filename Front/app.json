@@ -4,7 +4,8 @@
         "pages/PeiZhenXiaDan/PeiZhenXiaDan",
         "pages/PeiZhenXiaDan_YouXiangPeiZhen/PeiZhenXiaDan_YouXiangPeiZhen",
         "pages/OtherService/OtherService",
-        "pages/My/My"
+        "pages/My/My",
+        "pages/OneHospital/OneHospital"
     ],
     "window": {
         "backgroundTextStyle": "light",

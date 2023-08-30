@@ -41,6 +41,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "单个医院-具体",
+          "pathName": "pages/OneHospital/OneHospital",
+          "query": "id=1",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }
