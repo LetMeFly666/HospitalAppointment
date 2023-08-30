@@ -20,11 +20,11 @@ page {
     margin-right: 20rpx;
     border-radius: 20rpx;
     box-shadow: 0 2rpx 2px 0 rgba(0, 0, 0, 0.24), 0 2rpx 2rpx 0 rgba(0, 0, 0, 0.19);
+    background-color: white;
     padding-left: 20rpx;
     padding-right: 20rpx;
     display: flex;
     flex-wrap: wrap;
-    background-color: white;
 }
 
 .grid-item {
@@ -52,4 +52,38 @@ page {
 
 #grid-item-1, #grid-item-3 {
     border-right: 1rpx solid #efefef;
+}
+
+/* 电话 */
+.phonecallView {
+    margin-top: 40rpx;
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+    border-radius: 20rpx;
+    box-shadow: 0 2rpx 2px 0 rgba(0, 0, 0, 0.24), 0 2rpx 2rpx 0 rgba(0, 0, 0, 0.19);
+    background-color: white;
+    padding: 20rpx;
+    display: flex;
+}
+
+.phonecallView image {
+    width: 160rpx;
+    height: 160rpx;
+}
+
+.phonecallRight {
+    margin-left: 40rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.phonecallRightUp {
+    font-weight: bold;
+    font-size: larger;
+    margin-top: 20rpx;
+}
+
+.phonecallRightBottom {
+    font-size: larger;
 }

@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-08-30 21:31:06
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-08-30 23:06:55
+ * @LastEditTime: 2023-08-30 23:23:07
 -->
 <!--pages/OneHospital/OneHospital.wxml-->
 
@@ -26,5 +26,14 @@
     <view class="grid-item" id="grid-item-4">
         <text>陪诊案例</text>
         <image src="{{hospitalInfo.expertImg}}"></image>
+    </view>
+</view>
+
+<!-- 电话 -->
+<view class="phonecallView" catchtap='make1phonecall'>
+    <image src="/images/icon/logo.png"></image>
+    <view class="phonecallRight">
+        <view class="phonecallRightUp">咨询电话</view>
+        <view class="phonecallRightBottom">177-9591-8257</view>
     </view>
 </view>

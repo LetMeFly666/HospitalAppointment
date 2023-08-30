@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-08-30 21:31:06
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-08-30 21:53:37
+ * @LastEditTime: 2023-08-30 23:23:43
  */
 // pages/OneHospital/OneHospital.js
 const app = getApp();
@@ -14,6 +14,12 @@ Page({
     data: {
         id: '',
         hospitalInfo: {}
+    },
+
+    make1phonecall: function() {
+        wx.makePhoneCall({
+            phoneNumber: '17795918257',
+          })
     },
 
     /**
