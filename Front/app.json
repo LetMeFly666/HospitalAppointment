@@ -5,7 +5,8 @@
         "pages/PeiZhenXiaDan_YouXiangPeiZhen/PeiZhenXiaDan_YouXiangPeiZhen",
         "pages/OtherService/OtherService",
         "pages/My/My",
-        "pages/OneHospital/OneHospital"
+        "pages/OneHospital/OneHospital",
+        "pages/HospitalIntro/HospitalIntro"
     ],
     "window": {
         "backgroundTextStyle": "light",
