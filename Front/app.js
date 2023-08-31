@@ -50,7 +50,7 @@ App({
         logo: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/西安交通大学第二附属医院-Logo.jpg',
         fullView: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/西安交通大学第二附属医院-全景照.jpg',
         expertImg: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/西安交通大学第二附属医院-专家介绍.webp',
-        introView: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/西京医院-全景照.jpg',  // 同全景照
+        introView: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/西安交通大学第二附属医院-全景照.jpg',  // 同全景照
         name: '西安交通大学第二附属医院',
         rank: '三甲',
         type: '综合医院',
@@ -80,7 +80,7 @@ App({
         logo: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/陕西省肿瘤医院-Logo.png',
         fullView: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/陕西省肿瘤医院-全景照.jpg',
         expertImg: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/陕西省肿瘤医院-专家介绍.webp',
-        introView: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/陕西省肿瘤医院-全景照.png',  // 同全景照
+        introView: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/陕西省肿瘤医院-全景照.jpg',  // 同全景照
         name: '陕西省肿瘤医院',
         rank: '三甲',
         type: '综合医院',

@@ -1,1 +1,14 @@
 /* pages/HospitalIntro/HospitalIntro.wxss */
+page {
+    background-color: rgb(242, 242, 242);
+}
+
+/* banner */
+.bannerIMG {
+    /* position: absolute; */
+    left: 0;
+    top: 0;
+    width: 100%;
+    display: block;
+    z-index: -999;
+}
