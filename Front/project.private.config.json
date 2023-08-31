@@ -48,6 +48,13 @@
           "query": "id=1",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "医院介绍",
+          "pathName": "pages/HospitalIntro/HospitalIntro",
+          "query": "id=1",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

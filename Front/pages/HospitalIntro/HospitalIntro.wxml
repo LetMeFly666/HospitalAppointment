@@ -1,2 +1,7 @@
 <!--pages/HospitalIntro/HospitalIntro.wxml-->
-<text>pages/HospitalIntro/HospitalIntro.wxml</text>
+
+<!-- 医院介绍 -->
+
+<!-- banner -->
+<image class="bannerIMG" src="{{hospitalInfo.introView}}"/>
+
