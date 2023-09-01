@@ -6,7 +6,9 @@
         "pages/OtherService/OtherService",
         "pages/My/My",
         "pages/OneHospital/OneHospital",
-        "pages/HospitalIntro/HospitalIntro"
+        "pages/HospitalIntro/HospitalIntro",
+        "pages/ExpertsList/ExpertsList",
+        "pages/OneExpert/OneExpert"
     ],
     "window": {
         "backgroundTextStyle": "light",

@@ -55,6 +55,13 @@
           "query": "id=1",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "单个专家",
+          "pathName": "pages/OneExpert/OneExpert",
+          "query": "id=10",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }
