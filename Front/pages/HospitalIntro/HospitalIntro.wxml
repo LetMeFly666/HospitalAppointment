@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-08-31 11:57:11
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-09-01 10:57:44
+ * @LastEditTime: 2023-09-01 12:00:43
 -->
 <!--pages/HospitalIntro/HospitalIntro.wxml-->
 <!-- 医院介绍 -->
@@ -12,7 +12,8 @@
 
 <!-- 文字介绍 -->
 <view class="intro">
-    <block wx:for="{{hospitalInfo.introContent}}" wx:key="id">
+    <rich-text nodes="{{hospitalInfo.introContent}}"></rich-text>
+    <!-- <block wx:for="{{hospitalInfo.introContent}}" wx:key="id">
         <view>{{item}}</view>
-    </block>
+    </block> -->
 </view>

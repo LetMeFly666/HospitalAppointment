@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-08-31 11:57:11
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-09-01 11:01:22
+ * @LastEditTime: 2023-09-01 12:03:46
  */
 // pages/HospitalIntro/HospitalIntro.js
 const app = getApp();
@@ -17,8 +17,14 @@ Page({
     },
 
     parseContent(content) {
+        // content = String(content);
+        // return content.split('\n');
         content = String(content);
-        return content.split('\n');
+        content = content.split('\n').join('</p><p class="rich-p" style="margin-top: 20px">');
+        console.log(content)
+        content = '<p class="rich-p">' + content + '</p>';
+        console.log(content)
+        return content;
     },
 
     /**

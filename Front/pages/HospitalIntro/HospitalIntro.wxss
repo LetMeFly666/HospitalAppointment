@@ -24,7 +24,7 @@ page {
     padding: 40rpx;
 }
 
-.intro view {
+.rich-p {
     text-indent: 2em;
     font-size: large;
     line-height: 1.5em;
