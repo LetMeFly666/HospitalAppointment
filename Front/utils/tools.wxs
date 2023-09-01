@@ -2,13 +2,15 @@
  * @Author: LetMeFly
  * @Date: 2023-09-01 10:30:43
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-09-01 10:35:04
+ * @LastEditTime: 2023-09-01 10:43:59
  */
 
 /* 对长文本（好几段）处理 */
 function parseContent(content) {
     // content.split('\n')
-    return "666" + content;
+    var reg = getRegExp('\\\\n', 'g');  // 还不支持const。。。
+    console.log(content)
+    return content.replace(reg, '\n&nbsp;&nbsp;&nbsp;&nbsp;');
 }
 
 module.exports = {
