@@ -4,3 +4,7 @@
 <!-- banner -->
 <image class="bannerIMG" src="{{hospitalInfo.introView}}"/>
 
+<!-- 文字介绍 -->
+<view class="intro">
+    <text>{{hospitalInfo.introContent}}</text>
+</view>

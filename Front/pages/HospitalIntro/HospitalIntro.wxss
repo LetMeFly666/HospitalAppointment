@@ -5,10 +5,30 @@ page {
 
 /* banner */
 .bannerIMG {
-    /* position: absolute; */
+    position: absolute;
     left: 0;
     top: 0;
     width: 100%;
     display: block;
     z-index: -999;
+}
+
+/* 文字介绍 */
+.intro {
+    margin-top: 380rpx;
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+    border-radius: 20rpx;
+    box-shadow: 0 2rpx 2px 0 rgba(0, 0, 0, 0.24), 0 2rpx 2rpx 0 rgba(0, 0, 0, 0.19);
+    background-color: white;
+    padding: 40rpx;
+}
+
+.intro text {
+    text-indent: 2em;
+    font-size: large;
+    line-height: 1.5em;
+    letter-spacing: 1px;
+    word-spacing: 4px;
+    text-align: left;
 }
