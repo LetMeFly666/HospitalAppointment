@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-09-01 22:46:41
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-09-01 22:57:28
+ * @LastEditTime: 2023-09-01 23:08:59
  */
 // pages/OneExpert/OneExpert.js
 const app = getApp();
@@ -14,6 +14,13 @@ Page({
     data: {
         id: '',
         expertInfo: {}
+    },
+
+    imageView: function(event) {
+        console.log(event);
+        wx.previewImage({
+            urls: [event.currentTarget.dataset.src]
+        });
     },
 
     /**

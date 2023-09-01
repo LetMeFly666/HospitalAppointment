@@ -2,13 +2,13 @@
  * @Author: LetMeFly
  * @Date: 2023-09-01 22:46:41
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-09-01 22:55:18
+ * @LastEditTime: 2023-09-01 23:07:54
 -->
 <!--pages/OneExpert/OneExpert.wxml-->
 <!-- 单个专家 -->
 
 <!-- banner -->
-<image class="bannerIMG" mode="aspectFits" src="{{expertInfo.pic2}}"/>
+<image class="bannerIMG" mode="aspectFit" src="{{expertInfo.pic2}}" bindtap="imageView" data-src="{{expertInfo.pic2}}"/>
 
 <!-- 文字介绍 -->
 <view class="intro">
