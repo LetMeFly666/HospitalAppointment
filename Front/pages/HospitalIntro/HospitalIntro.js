@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-08-31 11:57:11
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-08-31 11:59:58
+ * @LastEditTime: 2023-09-01 11:01:22
  */
 // pages/HospitalIntro/HospitalIntro.js
 const app = getApp();
@@ -16,6 +16,11 @@ Page({
         hospitalInfo: {}
     },
 
+    parseContent(content) {
+        content = String(content);
+        return content.split('\n');
+    },
+
     /**
      * 生命周期函数--监听页面加载
      */
@@ -27,6 +32,9 @@ Page({
                 break;
             }
         }
+
+        hospitalInfo.introContent = this.parseContent(hospitalInfo.introContent);
+
         this.setData({
             id: options.id,
             hospitalInfo: hospitalInfo

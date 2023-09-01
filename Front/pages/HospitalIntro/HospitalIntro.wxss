@@ -28,4 +28,5 @@ page {
     text-indent: 2em;
     font-size: large;
     line-height: 1.5em;
+    margin-top: 20rpx;
 }
