@@ -24,11 +24,8 @@ page {
     padding: 40rpx;
 }
 
-.intro text {
+.intro view {
     text-indent: 2em;
     font-size: large;
     line-height: 1.5em;
-    letter-spacing: 1px;
-    word-spacing: 4px;
-    text-align: left;
 }

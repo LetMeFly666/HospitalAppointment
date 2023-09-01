@@ -1,0 +1,16 @@
+/*
+ * @Author: LetMeFly
+ * @Date: 2023-09-01 10:30:43
+ * @LastEditors: LetMeFly
+ * @LastEditTime: 2023-09-01 10:35:04
+ */
+
+/* 对长文本（好几段）处理 */
+function parseContent(content) {
+    // content.split('\n')
+    return "666" + content;
+}
+
+module.exports = {
+    parseContent: parseContent
+}
