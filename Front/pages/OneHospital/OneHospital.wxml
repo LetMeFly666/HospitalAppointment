@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-08-30 21:31:06
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-08-31 12:16:03
+ * @LastEditTime: 2023-09-02 12:11:21
 -->
 <!--pages/OneHospital/OneHospital.wxml-->
 
@@ -11,7 +11,7 @@
 
 <!-- 四个按钮 -->
 <view class="grid-list">
-    <navigator  url="/pages/HospitalIntro/HospitalIntro?id={{id}}" class="grid-item" id="grid-item-1">
+    <navigator url="/pages/HospitalIntro/HospitalIntro?id={{id}}" class="grid-item" id="grid-item-1">
         <text>医院介绍</text>
         <image src="{{hospitalInfo.logo}}"></image>
     </navigator>
@@ -19,10 +19,10 @@
         <text>位置导航</text>
         <image src="/images/icon/navigator.png"></image>
     </view>
-    <view class="grid-item" id="grid-item-3">
+    <navigator url="/pages/ExpertsList/ExpertsList?id={{id}}" class="grid-item" id="grid-item-3">
         <text>专家介绍</text>
         <image src="{{hospitalInfo.expertImg}}"></image>
-    </view>
+    </navigator>
     <view class="grid-item" id="grid-item-4">
         <text>陪诊案例</text>
         <image src="{{hospitalInfo.expertImg}}"></image>
