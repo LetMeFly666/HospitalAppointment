@@ -12,7 +12,7 @@
 
 /* 10个链接框 */
 .tenNavigatorContainer {
-    margin-top: 320rpx;
+    margin-top: 390rpx;
 }
 
 .eachNavigatorOf10 {

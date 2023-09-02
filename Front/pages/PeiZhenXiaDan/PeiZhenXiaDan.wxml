@@ -2,12 +2,12 @@
  * @Author: LetMeFly
  * @Date: 2023-07-03 21:15:24
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-09-02 12:50:07
+ * @LastEditTime: 2023-09-02 12:54:54
 -->
 <!--pages/PeiZhenXiaDan/PeiZhenXiaDan.wxml-->
 
 <!-- banner -->
-<image class="bannerIMG" src="https://www.letmefly.xyz/LetHA/static/pic/banner/PeiZhen.png" />
+<image class="bannerIMG" mode="aspectFit" src="https://www.letmefly.xyz/LetHA/static/pic/banner/PeiZhen.png" />
 
 <!-- 10个链接框 -->
 <view class="tenNavigatorContainer">
@@ -18,7 +18,6 @@
         <view class="forMiddleText">
             <view class="middleTextUpper theFirstGold" wx:if="{{item.id == 1}}">{{item.title}}</view>
             <view class="middleTextUpper" wx:else>{{item.title}}</view>
-            <view class="middleTextLower">{{item.description}}</view>
         </view>
         <view class="forRightPrice">
             <view class="forRightPrice2TextContainer">
