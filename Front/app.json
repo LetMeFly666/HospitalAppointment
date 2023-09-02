@@ -8,7 +8,8 @@
         "pages/OneHospital/OneHospital",
         "pages/HospitalIntro/HospitalIntro",
         "pages/ExpertsList/ExpertsList",
-        "pages/OneExpert/OneExpert"
+        "pages/OneExpert/OneExpert",
+        "pages/PeiZhen_Example/PeiZhen_Example"
     ],
     "window": {
         "backgroundTextStyle": "light",

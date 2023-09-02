@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-08-30 21:31:06
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-09-02 12:11:21
+ * @LastEditTime: 2023-09-02 12:24:37
 -->
 <!--pages/OneHospital/OneHospital.wxml-->
 
@@ -23,10 +23,10 @@
         <text>专家介绍</text>
         <image src="{{hospitalInfo.expertImg}}"></image>
     </navigator>
-    <view class="grid-item" id="grid-item-4">
+    <vavigator url="/pages/PeiZhen_Example/PeiZhen_Example?id={{id}}" class="grid-item" id="grid-item-4">
         <text>陪诊案例</text>
         <image src="{{hospitalInfo.expertImg}}"></image>
-    </view>
+    </vavigator>
 </view>
 
 <!-- 电话 -->
