@@ -74,38 +74,13 @@ page {
 }
 
 .forMiddleText {
-    width: 390rpx;
+    width: 100%;
     margin-left: 30rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .middleTextUpper {
     font-size: large;
-    margin-top: 30rpx;
-}
-
-.middleTextLower {
-    font-size: small;
-    color:dimgray;
-    margin-top: 20rpx;
-}
-
-.forRightPrice {
-    width: 195rpx;
-    margin-left: 26rpx;
-    margin-right: 20rpx;
-}
-
-.forRightPrice {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.forRightPrice2TextContainer {
-    color: #a98033;
-}
-
-.truePrice {
-    font-weight: bold;
-    font-size: x-large;
 }

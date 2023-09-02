@@ -7,8 +7,8 @@
 <view class="eightNavigatorContainer">
     <view class="eachNavigatorOf8">
         <view class="forLeftText">
-            <text class="leftTextUpper">高端体检</text>
-            <text class="leftTextLower">优质服务</text>
+            <text class="leftTextUpper">暂未开放</text>
+            <text class="leftTextLower">敬请期待</text>
         </view>
         <view class="forRightPic">
             <image src="/images/img/service01.jpg" />
@@ -16,8 +16,8 @@
     </view>
     <view class="eachNavigatorOf8">
         <view class="forLeftText">
-            <text class="leftTextUpper">中端体检</text>
-            <text class="leftTextLower">医院体检</text>
+            <text class="leftTextUpper">暂未开放</text>
+            <text class="leftTextLower">敬请期待</text>
         </view>
         <view class="forRightPic">
             <image src="/images/img/service01.jpg" />
@@ -25,8 +25,8 @@
     </view>
     <view class="eachNavigatorOf8">
         <view class="forLeftText">
-            <text class="leftTextUpper">养老服务</text>
-            <text class="leftTextLower">西安养老</text>
+            <text class="leftTextUpper">暂未开放</text>
+            <text class="leftTextLower">敬请期待</text>
         </view>
         <view class="forRightPic">
             <image src="/images/img/service01.jpg" />
@@ -34,8 +34,8 @@
     </view>
     <view class="eachNavigatorOf8">
         <view class="forLeftText">
-            <text class="leftTextUpper">康复理疗</text>
-            <text class="leftTextLower">医养结合</text>
+            <text class="leftTextUpper">暂未开放</text>
+            <text class="leftTextLower">敬请期待</text>
         </view>
         <view class="forRightPic">
             <image src="/images/img/service01.jpg" />
@@ -43,8 +43,8 @@
     </view>
     <view class="eachNavigatorOf8">
         <view class="forLeftText">
-            <text class="leftTextUpper">专车接送</text>
-            <text class="leftTextLower">安全高效</text>
+            <text class="leftTextUpper">暂未开放</text>
+            <text class="leftTextLower">敬请期待</text>
         </view>
         <view class="forRightPic">
             <image src="/images/img/service01.jpg" />
@@ -52,8 +52,8 @@
     </view>
     <view class="eachNavigatorOf8">
         <view class="forLeftText">
-            <text class="leftTextUpper">临床招募</text>
-            <text class="leftTextLower">免费就医</text>
+            <text class="leftTextUpper">暂未开放</text>
+            <text class="leftTextLower">敬请期待</text>
         </view>
         <view class="forRightPic">
             <image src="/images/img/service01.jpg" />
@@ -61,8 +61,8 @@
     </view>
     <view class="eachNavigatorOf8">
         <view class="forLeftText">
-            <text class="leftTextUpper">发布悬赏</text>
-            <text class="leftTextLower">诉求与赏金</text>
+            <text class="leftTextUpper">暂未开放</text>
+            <text class="leftTextLower">敬请期待金</text>
         </view>
         <view class="forRightPic">
             <image src="/images/img/service01.jpg" />
@@ -70,8 +70,8 @@
     </view>
     <view class="eachNavigatorOf8">
         <view class="forLeftText">
-            <text class="leftTextUpper">其他服务</text>
-            <text class="leftTextLower">商家发布</text>
+            <text class="leftTextUpper">暂未开放</text>
+            <text class="leftTextLower">敬请期待</text>
         </view>
         <view class="forRightPic">
             <image src="/images/img/service01.jpg" />
@@ -86,14 +86,7 @@
             <image src="/images/img/serviceType2_01.jpg" />
         </view>
         <view class="forMiddleText">
-            <view class="middleTextUpper">代办问诊</view>
-            <view class="middleTextLower">代客户到机构咨询及代开检查单服务</view>
-        </view>
-        <view class="forRightPrice">
-            <view class="forRightPrice2TextContainer">
-                <text class="truePrice">188</text>
-                <text class="unitOfPrice">元/次</text>
-            </view>
+            <view class="middleTextUpper">陪诊服务案例（暂未开放）</view>
         </view>
     </view>
     <view class="eachNavigatorOf2">
@@ -101,14 +94,7 @@
             <image src="/images/img/serviceType2_01.jpg" />
         </view>
         <view class="forMiddleText">
-            <view class="middleTextUpper">送取结果</view>
-            <view class="middleTextLower">送/取结果到家服务(不包含运费)，服务仅限当天有效</view>
-        </view>
-        <view class="forRightPrice">
-            <view class="forRightPrice2TextContainer">
-                <text class="truePrice">98</text>
-                <text class="unitOfPrice">元/次</text>
-            </view>
+            <view class="middleTextUpper">陪诊员展示（暂未开放）</view>
         </view>
     </view>
 </view>
