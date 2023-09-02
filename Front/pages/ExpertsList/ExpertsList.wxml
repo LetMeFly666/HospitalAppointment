@@ -1,0 +1,21 @@
+<!--
+ * @Author: LetMeFly
+ * @Date: 2023-09-01 22:46:41
+ * @LastEditors: LetMeFly
+ * @LastEditTime: 2023-09-02 10:36:45
+-->
+<!--pages/ExpertsList/ExpertsList.wxml-->
+<!-- 专家列表 -->
+
+<!-- banner -->
+<image class="bannerIMG" src="{{hospitalInfo.introView}}"/>
+
+<!-- 列表 -->
+
+<navigator class="item" wx:for="{{expertList}}" wx:key="id" url="/pages/OneExpert/OneExpert?id={{item.id}}">
+    <image src="{{item.pic1}}"></image>
+    <view class="rightInfo">
+        <view class="name">{{item.name}}</view>
+        <view class="intro">{{item.description}}</view>
+    </view>
+</navigator>

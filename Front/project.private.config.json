@@ -62,6 +62,13 @@
           "query": "id=10",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "专家列表",
+          "pathName": "pages/ExpertsList/ExpertsList",
+          "query": "id=1",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

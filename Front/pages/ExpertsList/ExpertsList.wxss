@@ -1,0 +1,57 @@
+/* pages/ExpertsList/ExpertsList.wxss */
+page {
+    background-color: rgb(242, 242, 242);
+}
+
+/* banner */
+.bannerIMG {
+    left: 0;
+    top: 0;
+    width: 100%;
+    display: block;
+    z-index: -999;
+}
+
+/* 列表 */
+
+.item {
+    margin-top: 120rpx;
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+    border-radius: 20rpx;
+    box-shadow: 0 2rpx 2px 0 rgba(0, 0, 0, 0.24), 0 2rpx 2rpx 0 rgba(0, 0, 0, 0.19);
+    background-color: white;
+    padding-left: 20rpx;
+    padding-right: 20rpx;
+    position: relative;
+    height: 450rpx;
+}
+
+.item image {
+    position: absolute;
+    top: -60rpx;
+    width: 300rpx;
+    height: 480rpx;
+    margin-left: 16rpx;
+    border-radius: 5%;
+}
+
+.item .rightInfo {
+    margin-left: 350rpx;
+}
+
+.item .rightInfo .name {
+    position: absolute;
+    margin-top: 50rpx;
+    font-weight: bold;
+    font-size: large;
+}
+
+.item .rightInfo .intro {
+    position: absolute;
+    margin-top: 120rpx;
+    height: 8em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* white-space: nowrap;  */
+}

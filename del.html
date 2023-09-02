@@ -1,0 +1,29 @@
+<!--
+ * @Author: LetMeFly
+ * @Date: 2023-09-02 10:06:28
+ * @LastEditors: LetMeFly
+ * @LastEditTime: 2023-09-02 10:06:29
+-->
+<div id="a">
+    <div id="b">我要浮出去！</div>
+</div>
+<style>
+    #a {
+        width: 400px;
+        height: 100px;
+        background: rgb(0, 0, 0);
+        position: relative;
+        /*父元素>相对定位*/
+    }
+
+    #b {
+        width: 150px;
+        height: 50px;
+        background: rgb(185, 155, 255);
+        position: absolute;
+        /*子元素>绝对定位*/
+        top: -30px;
+        /*控制浮出*/
+        /* left:XX; */
+    }
+</style>
