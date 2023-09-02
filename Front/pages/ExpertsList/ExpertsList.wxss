@@ -50,6 +50,7 @@ page {
 .item .rightInfo .intro {
     position: absolute;
     margin-top: 120rpx;
+    margin-right: 40rpx;
     height: 8em;
     overflow: hidden;
     text-overflow: ellipsis;
