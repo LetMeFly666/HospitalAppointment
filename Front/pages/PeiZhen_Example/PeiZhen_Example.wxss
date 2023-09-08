@@ -1,1 +1,46 @@
 /* pages/PeiZhenExample/PeiZhenExample.wxss */
+page {
+    background-color: rgb(242, 242, 242);
+}
+
+/* 5个案例 */
+.eachItem {    
+    display: flex;
+    height: 200rpx;
+    justify-content: left;
+    background-color: white;
+    border-radius: 20rpx;
+    box-shadow: 1rpx 1rpx 15rpx #dddddd;
+    margin: 30rpx 18rpx;
+}
+
+.forLeftImage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 20rpx;
+}
+
+.forLeftImage image {
+    width: 260rpx;
+    height: 160rpx;
+}
+
+.rightText {
+    margin-left: 30rpx;
+}
+
+.top {
+    margin-top: 40rpx;
+    font-size: large;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+.bottom {
+    margin-top: 10rpx;
+    font-size: large;
+}

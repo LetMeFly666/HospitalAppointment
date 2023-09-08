@@ -2,9 +2,20 @@
  * @Author: LetMeFly
  * @Date: 2023-09-02 12:20:49
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-09-02 12:25:13
+ * @LastEditTime: 2023-09-08 16:01:21
 -->
 <!--pages/PeiZhenExample/PeiZhenExample.wxml-->
 <!-- 陪诊案例 -->
 
-暂无案例
+<!-- 5个案例 -->
+<view class="fiveItem">
+    <view class="eachItem" wx:for="{{exampleInfo}}" wx:key="id">
+        <view class="forLeftImage">
+            <image src="{{hospitalInfo.expertImg}}"></image>
+        </view>
+        <view class="rightText">
+            <view class="top">陪诊医院：{{hospitalInfo.name}}</view>
+            <view class="bottom">时间：{{item}}</view>
+        </view>
+    </view>
+</view>
