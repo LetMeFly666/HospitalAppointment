@@ -37,7 +37,7 @@
         </view>
         <view class='eachButtonOfFour'>
             <image src='/images/icon/package-plain.png'></image>
-            <view>待发货</view>
+            <view>已付款</view>
         </view>
         <view class='eachButtonOfFour'>
             <image src='/images/icon/pacakge-3d.png'></image>
@@ -45,7 +45,7 @@
         </view>
         <view class='eachButtonOfFour'>
             <image src='/images/icon/afterSales.png'></image>
-            <view>售后</view>
+            <view>已完成</view>
         </view>
     </view>
 </view>
@@ -53,7 +53,4 @@
 <!-- 申请成为陪诊员 -->
 <view id='viewForPromotor' class='boxWithShadow'>
     <view class='textLeft'>申请成为陪诊员</view>
-    <view id='promotorRight'>
-        <view class='rightArrow'>></view>
-    </view>
 </view>

@@ -126,10 +126,6 @@ page {
     height: 140rpx;
     margin-top: 20rpx;
     display: flex;
-    justify-content: space-between;
-}
-
-#promotorRight {
-    height: 100%;
-    display: flex;
+    justify-content: center;
+    font-size: larger;
 }
