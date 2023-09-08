@@ -58,28 +58,3 @@
         <view class='rightArrow'>></view>
     </view>
 </view>
-
-<!-- 我的工具 -->
-<view id='viewForMyTools' class='boxWithShadow'>
-    <view id='myToolLine'>
-        <view class='textLeft'>我的订单</view>
-    </view>
-    <view id='fourButtonsMyTool' class='fourButtons'>
-        <view class='eachButtonOfFour'>
-            <image src='/images/icon/address.png'></image>
-            <view>地址管理</view>
-        </view>
-        <view class='eachButtonOfFour'>
-            <image src='/images/icon/shoppingCart.png'></image>
-            <view>购物车</view>
-        </view>
-        <view class='eachButtonOfFour'>
-            <image src='/images/icon/favorite.png'></image>
-            <view>我的收藏</view>
-        </view>
-        <view class='eachButtonOfFour'>
-            <image src='/images/icon/form.png'></image>
-            <view>我的表单</view>
-        </view>
-    </view>
-</view>

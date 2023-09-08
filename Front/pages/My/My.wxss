@@ -141,22 +141,3 @@ page {
     margin-right: 10rpx;
     font-size: 30rpx;
 }
-
-/* 我的工具 */
-#viewForMyTools {
-    margin-top: 20rpx;
-    margin-bottom: 20rpx;
-}
-
-#myToolLine {
-    display: flex;
-    justify-content: space-between;
-    height: 100rpx;
-    border-bottom:1rpx solid gray;
-}
-
-#fourButtonsMyTool .eachButtonOfFour view {
-    font-size: 30rpx;
-    font-family: '黑体';
-    margin-top: 8rpx;
-}
