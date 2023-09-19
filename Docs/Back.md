@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-08-15 22:11:19
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-09-19 17:31:45
+ * @LastEditTime: 2023-09-19 17:40:06
 -->
 # 后端接口
 
@@ -61,3 +61,11 @@
 
 ## 陪诊员管理
 
+数据库```Runner```：
+
+|字段|类型|描述|
+|:--:|:--:|:--:|
+|id|INT|django的userid|
+|name|VARCHAR(16)|陪诊员姓名|
+|phone|VARCHAR(32)|手机号|
+|status|VARCHAR(5)|状态（申请中/已拒绝/已接收）（后续可能增加）|
