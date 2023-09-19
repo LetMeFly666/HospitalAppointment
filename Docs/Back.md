@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-08-15 22:11:19
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-09-19 10:06:16
+ * @LastEditTime: 2023-09-19 17:31:45
 -->
 # 后端接口
 
@@ -35,7 +35,7 @@
 
 数据库```User```：
 
-|字段|类型||描述
+|字段|类型|描述|
 |:--:|:--:|:--:|
 |userid|INT|自定义的userid|
 |wx_openid|VARCHAR(512)|微信openid|
@@ -43,3 +43,21 @@
 |wx_unionid|VARCHAR(512)|微信unionid（May空？）|
 |nickname|VARCHAR(32)|用户昵称|
 |avatar_url|VARCHAR(256)|用户头像链接（注意检查是否失效）|
+
+## 就诊人管理
+
+数据库```Friend```：
+
+|字段|类型|描述|
+|:--:|:--:|:--:|
+|id|INT|django的userid|
+|friend|INT|是谁的就诊人（User.userid的外键）|
+|if18|VARCHAR(1)|是否已18周岁（y/n）|
+|name|VARCHAR(16)|就诊人姓名|
+|sex|VARCHAR(1)|性别(b/g)|
+|phone|VARCHAR(32)|手机号|
+|idcard|VARCHAR(32)|身份证号|
+|relation|VARCHAR(32)|就诊人关系（父母/子女/兄弟姐妹/本人/夫妻/其他）|
+
+## 陪诊员管理
+
