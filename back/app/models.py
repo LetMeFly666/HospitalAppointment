@@ -2,7 +2,7 @@
 Author: LetMeFly
 Date: 2023-09-19 10:00:24
 LastEditors: LetMeFly
-LastEditTime: 2023-09-20 16:05:33
+LastEditTime: 2023-09-20 16:07:42
 '''
 from django.db import models
 
@@ -43,7 +43,7 @@ class Log(models.Model):
     requestTime = models.DateTimeField()
     ifpaid = models.CharField(max_length=1)
     paidtime = models.IntegerField(blank=True)
-    paidmoneyTimes100 = models.TimeField()
+    paidmoneyTimes100 = models.TimeField(default=0)
     iffinish = models.CharField(max_length=1)
     whofinished = models.CharField(max_length=1, blank=True)
     more = models.CharField(max_length=10240, blank=True)

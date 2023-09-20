@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-08-15 22:11:19
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-09-20 16:04:17
+ * @LastEditTime: 2023-09-20 16:08:14
 -->
 # 后端接口
 
@@ -91,7 +91,7 @@
 
 ## 金额管理
 
-数据库```Money```（更像是表“Log”的一个视图）：
+数据库```Money```（更像是表“Log”非零money的一个视图）：
 
 |字段|类型|描述|
 |:--:|:--:|:--:|
