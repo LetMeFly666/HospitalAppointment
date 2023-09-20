@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-08-15 22:11:19
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-09-19 17:40:06
+ * @LastEditTime: 2023-09-20 15:38:16
 -->
 # 后端接口
 
@@ -69,3 +69,22 @@
 |name|VARCHAR(16)|陪诊员姓名|
 |phone|VARCHAR(32)|手机号|
 |status|VARCHAR(5)|状态（申请中/已拒绝/已接收）（后续可能增加）|
+
+## 陪诊记录
+
+数据库```Log```：
+
+|字段|类型|描述|
+|:--:|:--:|:--:|
+|id|INT|django的userid|
+|hospitalid|INT|医院id（1-14）|
+|serviceid|INT|服务id（1）|
+|userid|INT|发起用户的id|
+|friendid|INT|就诊人id|
+|requestTime|TIME|发起服务请求的时间|
+|ifpaid|VARCHAR(1)|是否支付(y/n)|
+|paidtime|TIME|支付时间|
+|paidmoneyTimes100|INT|支付金额（单位是分！！！）使用整数避免了浮点数误差|
+|iffinish|VARCHAR(1)|是否已经陪诊完成(y/n)|
+|whofinished|INT|谁完成的陪诊（陪诊员ID）|
+|more|VARCHAR(65535)|备注|
