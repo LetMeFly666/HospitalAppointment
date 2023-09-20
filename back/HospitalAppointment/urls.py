@@ -1,3 +1,9 @@
+'''
+Author: LetMeFly
+Date: 2023-08-17 16:37:36
+LastEditors: LetMeFly
+LastEditTime: 2023-09-20 17:13:05
+'''
 """HospitalAppointment URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -18,8 +24,10 @@ from django.urls import path
 from django.views import static
 from django.conf.urls import url
 from django.conf import settings
+from app import interface
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^static/(?P<path>.*)$', static.serve, {'document_root': settings.STATIC_ROOT}, name='static'),
+    url('hello', interface.User.helloWorld)
 ]
