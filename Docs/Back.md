@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-08-15 22:11:19
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-09-20 15:38:16
+ * @LastEditTime: 2023-09-20 16:04:17
 -->
 # 后端接口
 
@@ -50,7 +50,7 @@
 
 |字段|类型|描述|
 |:--:|:--:|:--:|
-|id|INT|django的userid|
+|id|INT|django的id|
 |friend|INT|是谁的就诊人（User.userid的外键）|
 |if18|VARCHAR(1)|是否已18周岁（y/n）|
 |name|VARCHAR(16)|就诊人姓名|
@@ -65,7 +65,7 @@
 
 |字段|类型|描述|
 |:--:|:--:|:--:|
-|id|INT|django的userid|
+|id|INT|django的id|
 |name|VARCHAR(16)|陪诊员姓名|
 |phone|VARCHAR(32)|手机号|
 |status|VARCHAR(5)|状态（申请中/已拒绝/已接收）（后续可能增加）|
@@ -76,7 +76,7 @@
 
 |字段|类型|描述|
 |:--:|:--:|:--:|
-|id|INT|django的userid|
+|id|INT|django的id|
 |hospitalid|INT|医院id（1-14）|
 |serviceid|INT|服务id（1）|
 |userid|INT|发起用户的id|
@@ -88,3 +88,14 @@
 |iffinish|VARCHAR(1)|是否已经陪诊完成(y/n)|
 |whofinished|INT|谁完成的陪诊（陪诊员ID）|
 |more|VARCHAR(65535)|备注|
+
+## 金额管理
+
+数据库```Money```（更像是表“Log”的一个视图）：
+
+|字段|类型|描述|
+|:--:|:--:|:--:|
+|id|INT|django的id|
+|logid|INT|哪次记录收取的（对应的Log数据库的id）|
+|moneyTimes100|INT|这次收取了多少钱（和Log表中paidmoneyTimes100相同）|
+|time|TIME|交易完成时间（和Log表中的paidtime相同）|

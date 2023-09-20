@@ -2,7 +2,7 @@
 Author: LetMeFly
 Date: 2023-09-19 10:00:24
 LastEditors: LetMeFly
-LastEditTime: 2023-09-20 15:54:42
+LastEditTime: 2023-09-20 16:05:33
 '''
 from django.db import models
 
@@ -47,3 +47,10 @@ class Log(models.Model):
     iffinish = models.CharField(max_length=1)
     whofinished = models.CharField(max_length=1, blank=True)
     more = models.CharField(max_length=10240, blank=True)
+
+
+class Money(models.Model):
+    id = models.IntegerField(primary_key=True)
+    logid = models.IntegerField()
+    moneyTimes100 = models.IntegerField()
+    time = models.DateTimeField()
