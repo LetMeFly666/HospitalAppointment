@@ -2,11 +2,11 @@
 Author: LetMeFly
 Date: 2023-09-20 16:16:47
 LastEditors: LetMeFly
-LastEditTime: 2023-09-21 21:45:45
+LastEditTime: 2023-09-21 21:48:32
 Description: 人员相关（用户信息、 就诊人、陪诊员）
 '''
 from django.http import HttpResponse
-import models
+from app import models
 import Secrets
 import requests
 
