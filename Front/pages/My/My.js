@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-07-03 21:19:26
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-09-21 21:44:28
+ * @LastEditTime: 2023-09-21 21:53:01
  */
 // pages/My/My.js
 Page({
@@ -11,10 +11,15 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+        nickName: '未登录',
+        avatar: 'https://www.letmefly.xyz/LetHA/static/pic/expert/000-1.jpg'
     },
 
     login() {
+
+        
+        return;
+
         function realLogin(nickname, avatar) {
             wx.login({
                 success(res) {
