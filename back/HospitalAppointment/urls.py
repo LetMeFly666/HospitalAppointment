@@ -2,7 +2,7 @@
 Author: LetMeFly
 Date: 2023-08-17 16:37:36
 LastEditors: LetMeFly
-LastEditTime: 2023-09-21 22:05:24
+LastEditTime: 2023-09-21 22:14:07
 '''
 """HospitalAppointment URL Configuration
 
