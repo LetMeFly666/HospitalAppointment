@@ -68,6 +68,10 @@ page {
     margin-top: 40rpx;
     font-size: 40rpx;
     font-weight: 550;
+    width: 250rpx;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
 }
 
 #viewForImageAndNameRight {
