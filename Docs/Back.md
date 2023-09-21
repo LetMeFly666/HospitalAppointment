@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-08-15 22:11:19
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-09-20 16:08:14
+ * @LastEditTime: 2023-09-21 10:37:47
 -->
 # 后端接口
 
@@ -24,6 +24,10 @@
 ## 服务相关
 
 下单、登录、个人单号...
+
+### 个人-登录
+
+```GET: user/login```
 
 ## 支付相关
 

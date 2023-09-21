@@ -1,12 +1,18 @@
+<!--
+ * @Author: LetMeFly
+ * @Date: 2023-07-03 21:19:26
+ * @LastEditors: LetMeFly
+ * @LastEditTime: 2023-09-21 11:31:36
+-->
 <!--pages/My/My.wxml-->
 
 <!-- 个人头像、姓名 -->
 <view id='viewForImageAndName'>
     <view id='viewForImageAndNameLeft'>
         <image class='avatar' src="/images/img/avatar-girl01.jpg" />
-        <view class='name'>崔瞧普</view>
+        <view class='name'>未登录</view>
     </view>
-    <view id='viewForImageAndNameRight'>
+    <view id='viewForImageAndNameRight' bindtap='login'>
         <view class='update-text'>更新信息</view>
         <image class='refresh-img' src='/images/icon/refresh.png' />
     </view>

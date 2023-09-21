@@ -2,7 +2,7 @@
 Author: LetMeFly
 Date: 2023-08-17 16:37:36
 LastEditors: LetMeFly
-LastEditTime: 2023-09-20 17:13:05
+LastEditTime: 2023-09-21 11:30:33
 '''
 """HospitalAppointment URL Configuration
 
@@ -29,5 +29,6 @@ from app import interface
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^static/(?P<path>.*)$', static.serve, {'document_root': settings.STATIC_ROOT}, name='static'),
-    url('hello', interface.User.helloWorld)
+    url('hello', interface.User.helloWorld),
+    url('login/', interface.User.login),
 ]
