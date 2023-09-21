@@ -2,7 +2,7 @@
 Author: LetMeFly
 Date: 2023-08-17 16:37:36
 LastEditors: LetMeFly
-LastEditTime: 2023-09-21 11:30:33
+LastEditTime: 2023-09-21 22:05:24
 '''
 """HospitalAppointment URL Configuration
 
@@ -28,7 +28,10 @@ from app import interface
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'^static/(?P<path>.*)$', static.serve, {'document_root': settings.STATIC_ROOT}, name='static'),
     url('hello', interface.User.helloWorld),
     url('login/', interface.User.login),
 ]
+
+# 很奇怪，DEBUG=False下加上下面那个才能访问到图片；DEBUG=True下加上下面的那个又访问不到图片了
+if not settings.DEBUG:
+    urlpatterns.append(url(r'^static/(?P<path>.*)$', static.serve, {'document_root': settings.STATIC_ROOT}, name='static'))
