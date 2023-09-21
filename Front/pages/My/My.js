@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-07-03 21:19:26
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-09-21 21:53:01
+ * @LastEditTime: 2023-09-21 22:26:53
  */
 // pages/My/My.js
 Page({
@@ -16,10 +16,6 @@ Page({
     },
 
     login() {
-
-        
-        return;
-
         function realLogin(nickname, avatar) {
             wx.login({
                 success(res) {
@@ -44,10 +40,13 @@ Page({
             desc: '获取昵称和头像',
             success: (res) => {
                 const nickName = res.userInfo.nickName;
-                const avatarUrl = res.userInfo.avatarUrl;
+                const avatar = res.userInfo.avatarUrl;
                 console.log(nickName);
-                console.log(avatarUrl);
-                realLogin(nickName, avatarUrl);
+                console.log(avatar);
+                this.setData({nickName: nickName, avatar: avatar});
+                wx.setStorage({key: 'nickName', data: nickName});
+                wx.setStorage({key: 'avatar', data: avatar});
+                realLogin(nickName, avatar);
             },
             fail: () => {
                 wx.showToast({
@@ -63,7 +62,14 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad(options) {
-
+        const nickName = wx.getStorageSync('nickName');
+        if (nickName) {
+            this.setData({nickName: nickName});
+        }
+        const avatar = wx.getStorageSync('avatar');
+        if (avatar) {
+            this.setData({avatar: avatar});
+        }
     },
 
     /**
