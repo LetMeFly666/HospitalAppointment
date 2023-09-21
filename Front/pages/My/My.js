@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-07-03 21:19:26
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-09-21 21:23:55
+ * @LastEditTime: 2023-09-21 21:44:28
  */
 // pages/My/My.js
 Page({
@@ -15,19 +15,41 @@ Page({
     },
 
     login() {
-        wx.login({
-            success(res) {
-                if (res.code) {
-                    wx.request({
-                        url: 'https://www.letmefly.xyz/LetHA/login/',
-                        data: {
-                          code: res.code
-                        }
-                    })
+        function realLogin(nickname, avatar) {
+            wx.login({
+                success(res) {
+                    if (res.code) {
+                        wx.request({
+                            url: 'https://www.letmefly.xyz/LetHA/login/',
+                            data: {
+                              code: res.code,
+                              nickname: nickname,
+                              avatar: avatar
+                            }
+                        })
+                    }
+                    else {
+                        console.log('登录失败！' + res.errMsg);
+                    }
                 }
-                else {
-                    console.log('登录失败！' + res.errMsg);
-                }
+            });
+        }
+
+        wx.getUserProfile({
+            desc: '获取昵称和头像',
+            success: (res) => {
+                const nickName = res.userInfo.nickName;
+                const avatarUrl = res.userInfo.avatarUrl;
+                console.log(nickName);
+                console.log(avatarUrl);
+                realLogin(nickName, avatarUrl);
+            },
+            fail: () => {
+                wx.showToast({
+                    title: '获取用户信息失败！',
+                    icon: 'error',
+                    duration: 1000
+                });
             }
         });
     },

@@ -2,10 +2,11 @@
 Author: LetMeFly
 Date: 2023-09-20 16:16:47
 LastEditors: LetMeFly
-LastEditTime: 2023-09-21 21:30:07
+LastEditTime: 2023-09-21 21:45:45
 Description: 人员相关（用户信息、 就诊人、陪诊员）
 '''
 from django.http import HttpResponse
+import models
 import Secrets
 import requests
 
@@ -16,6 +17,8 @@ def helloWorld(reqeust):
 
 def login(request):
     code = request.GET.get('code')
+    nickname = request.GET.get('nickname')
+    avatarUrl = request.GET.get('avatar')
     response = requests.get(
         url='https://api.weixin.qq.com/sns/jscode2session',
         params={
@@ -25,6 +28,11 @@ def login(request):
             'grant_type': 'authorization_code'
         }
     )
-    print(response)
-    print(response.text)
+    data = response.json()
+    openid = data.get('openid')
+    sessionKey = data.get('session_key')
+    unionid = data.get('unionid', '')
+
+    
+    
     
