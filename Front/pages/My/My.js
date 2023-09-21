@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-07-03 21:19:26
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-09-21 21:19:38
+ * @LastEditTime: 2023-09-21 21:23:55
  */
 // pages/My/My.js
 Page({
@@ -19,7 +19,7 @@ Page({
             success(res) {
                 if (res.code) {
                     wx.request({
-                        url: 'https://www.letmefly.xyz/LetHA/login',
+                        url: 'https://www.letmefly.xyz/LetHA/login/',
                         data: {
                           code: res.code
                         }

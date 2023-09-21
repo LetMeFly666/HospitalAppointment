@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-08-15 22:32:21
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-08-17 17:53:49
+ * @LastEditTime: 2023-09-21 21:29:21
 -->
 # HospitalAppointment
 
@@ -35,6 +35,8 @@
    DATABASE_NAME = 'HospitalAppointment'
    DATABASE_USER = 'user'
    DATABASE_PASSWORD = '123'
+   APP_ID = 'wx5c50bcb971eb5819'
+   APP_SECRET = 'shfi3uyf292938748910uaffkjhebhxh'
    ```
 7. 在```Back```目录下执行以下命令：
    1. ```python manage.py makemigrations```
