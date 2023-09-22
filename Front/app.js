@@ -1,4 +1,5 @@
 // app.js
+// 备案号：陕ICP备2023012297号-1X
 App({
     hospitalList: [{
         id: '1',
