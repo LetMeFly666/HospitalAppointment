@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-07-03 21:19:26
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-09-24 22:38:33
+ * @LastEditTime: 2023-09-24 22:47:45
  */
 // pages/My/My.js
 Page({
@@ -45,6 +45,7 @@ Page({
             });
         }
 
+        // http://mmbiz.qpic.cn/mmbiz_gif/LPhefoq7ngYufibnYc5KkQ1p8Be0ZHIafsDyHiamVzcVfcLcdakUibXpfU93PTmye62r7iamRGWtMrbSOje5HhAgzQ/0?wx_fmt=gif
         wx.getUserProfile({
             desc: '获取昵称和头像',
             success: (res) => {
