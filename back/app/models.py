@@ -2,14 +2,14 @@
 Author: LetMeFly
 Date: 2023-09-19 10:00:24
 LastEditors: LetMeFly
-LastEditTime: 2023-09-24 21:54:21
+LastEditTime: 2023-09-24 22:08:00
 '''
 from django.db import models
 
 # Create your models here.
 class User(models.Model):
     userid = models.AutoField(primary_key=True)  # 这里primary_key=True一定要写，不然django会自动创建一个名为id的字段作为主键
-    wx_openid = models.CharField(max_length=512)
+    wx_openid = models.CharField(max_length=512, unique=True)
     wx_session_key = models.CharField(max_length=512)
     wx_unionid = models.CharField(max_length=512)
     nickname = models.CharField(max_length=32)
