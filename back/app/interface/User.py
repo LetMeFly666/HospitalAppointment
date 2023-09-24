@@ -2,7 +2,7 @@
 Author: LetMeFly
 Date: 2023-09-20 16:16:47
 LastEditors: LetMeFly
-LastEditTime: 2023-09-21 21:48:32
+LastEditTime: 2023-09-24 20:13:36
 Description: 人员相关（用户信息、 就诊人、陪诊员）
 '''
 from django.http import HttpResponse
@@ -32,6 +32,8 @@ def login(request):
     openid = data.get('openid')
     sessionKey = data.get('session_key')
     unionid = data.get('unionid', '')
+    models.User.objects.update_or_create(defaults={'openid': openid}, wx_session_key=sessionKey, wx_unionid=unionid, nickname=nickname, avatar_url=avatarUrl)
+    return HttpResponse('ok')
 
     
     
