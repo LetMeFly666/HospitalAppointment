@@ -2,13 +2,15 @@
 Author: LetMeFly
 Date: 2023-09-20 16:16:47
 LastEditors: LetMeFly
-LastEditTime: 2023-09-24 21:59:16
+LastEditTime: 2023-09-24 22:21:43
 Description: 人员相关（用户信息、 就诊人、陪诊员）
 '''
 from django.http import HttpResponse
 from app import models
+from app.baseFunction import randmod
 import Secrets
 import requests
+
 
 
 def helloWorld(reqeust):
@@ -30,9 +32,10 @@ def login(request):
     )
     data = response.json()
     openid = data.get('openid')
+    warrant = randmod.randCN(32)
     sessionKey = data.get('session_key')
     unionid = data.get('unionid', '')
-    models.User.objects.update_or_create(defaults={'wx_session_key': sessionKey, 'wx_unionid': unionid, 'nickname': nickname, 'avatar_url': avatarUrl}, wx_openid=openid)
+    models.User.objects.update_or_create(defaults={'wx_session_key': sessionKey, 'wx_unionid': unionid, 'nickname': nickname, 'avatar_url': avatarUrl, 'warrant': warrant}, wx_openid=openid)
     return HttpResponse('ok')
 
     

@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-08-15 22:32:21
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-09-21 22:32:43
+ * @LastEditTime: 2023-09-24 22:13:24
 -->
 # HospitalAppointment
 
@@ -49,8 +49,8 @@
 
 ## TODO
 
-- [ ] 登录功能的后端实现
 - [ ] 对登录是否失效的检测（有头像≠登录中）
+- [x] 登录功能的后端实现
 - [x] 搭建(django的)图片服务
 - [x] 首页banner地址替换
 - [x] 首页5图标替换

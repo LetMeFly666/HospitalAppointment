@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-08-15 22:11:19
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-09-21 10:37:47
+ * @LastEditTime: 2023-09-24 22:15:41
 -->
 # 后端接口
 
@@ -42,7 +42,8 @@
 |字段|类型|描述|
 |:--:|:--:|:--:|
 |userid|INT|自定义的userid|
-|wx_openid|VARCHAR(512)|微信openid|
+|wx_openid|VARCHAR(255)|微信openid|
+|warrant|VARCHAR(32)|自定义的warrant|
 |wx_session_key|VARCHAR(512)|微信session_key|
 |wx_unionid|VARCHAR(512)|微信unionid（May空？）|
 |nickname|VARCHAR(32)|用户昵称|
