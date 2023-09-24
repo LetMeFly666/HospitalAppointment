@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-07-03 21:19:26
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-09-24 22:12:26
+ * @LastEditTime: 2023-09-24 22:25:07
  */
 // pages/My/My.js
 Page({
@@ -27,7 +27,8 @@ Page({
                               nickname: nickname,
                               avatar: avatar
                             },
-                            success() {
+                            success(res) {
+                                console.log(res);
                                 wx.showToast({
                                     title: '登录成功！',
                                     icon: 'success',
