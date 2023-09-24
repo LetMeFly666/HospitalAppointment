@@ -2,13 +2,13 @@
 Author: LetMeFly
 Date: 2023-09-19 10:00:24
 LastEditors: LetMeFly
-LastEditTime: 2023-09-20 16:07:42
+LastEditTime: 2023-09-24 21:54:21
 '''
 from django.db import models
 
 # Create your models here.
 class User(models.Model):
-    userid = models.IntegerField(primary_key=True)  # 这里primary_key=True一定要写，不然django会自动创建一个名为id的字段作为主键
+    userid = models.AutoField(primary_key=True)  # 这里primary_key=True一定要写，不然django会自动创建一个名为id的字段作为主键
     wx_openid = models.CharField(max_length=512)
     wx_session_key = models.CharField(max_length=512)
     wx_unionid = models.CharField(max_length=512)
@@ -17,7 +17,7 @@ class User(models.Model):
 
 
 class Friend(models.Model):
-    id = models.IntegerField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     friend = models.IntegerField()
     if18 = models.CharField(max_length=1)
     name = models.CharField(max_length=16)
@@ -28,14 +28,14 @@ class Friend(models.Model):
 
 
 class Runner(models.Model):
-    id = models.IntegerField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=16)
     phone = models.CharField(max_length=32)
     status = models.CharField(max_length=5)
 
 
 class Log(models.Model):
-    id =  models.IntegerField(primary_key=True)
+    id =  models.AutoField(primary_key=True)
     hospitalid = models.IntegerField()
     serviceid = models.IntegerField()
     userid = models.IntegerField()
@@ -50,7 +50,7 @@ class Log(models.Model):
 
 
 class Money(models.Model):
-    id = models.IntegerField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     logid = models.IntegerField()
     moneyTimes100 = models.IntegerField()
     time = models.DateTimeField()
