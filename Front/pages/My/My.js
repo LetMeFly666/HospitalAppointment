@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-07-03 21:19:26
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-09-24 22:25:07
+ * @LastEditTime: 2023-09-24 22:38:33
  */
 // pages/My/My.js
 Page({
@@ -28,7 +28,8 @@ Page({
                               avatar: avatar
                             },
                             success(res) {
-                                console.log(res);
+                                const warrant = res.data.warrant;
+                                wx.setStorage({key: 'warrant', data: warrant});
                                 wx.showToast({
                                     title: '登录成功！',
                                     icon: 'success',
@@ -78,6 +79,27 @@ Page({
         if (avatar) {
             this.setData({avatar: avatar});
         }
+        const that = this;
+
+        wx.checkSession({
+            success() {
+
+            },
+            fail() {
+                if (nickName) {  // 说明之前设置过
+                    wx.showToast({
+                        title: '登录失效，请重新登录',
+                        icon: 'error',
+                        duration: 1000
+                    });
+                    wx.removeStorage({key: 'nickName'});
+                }
+                if (avatar) {
+                    wx.removeStorage({key: 'avatar'})
+                }
+                that.setData({nickName: '未登录', avatar: 'https://www.letmefly.xyz/LetHA/static/pic/expert/000-1.jpg'});
+            }
+        });
     },
 
     /**
