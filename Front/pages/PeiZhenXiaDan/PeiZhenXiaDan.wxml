@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-07-03 21:15:24
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-09-02 12:54:54
+ * @LastEditTime: 2023-11-25 23:14:23
 -->
 <!--pages/PeiZhenXiaDan/PeiZhenXiaDan.wxml-->
 
@@ -11,19 +11,19 @@
 
 <!-- 10个链接框 -->
 <view class="tenNavigatorContainer">
-    <navigator class="eachNavigatorOf10" url="/pages/PeiZhenXiaDan_YouXiangPeiZhen/PeiZhenXiaDan_YouXiangPeiZhen?name={{item.title}}&id={{item.id}}" wx:for="{{serviceType}}" wx:key="id">
+    <navigator class="eachNavigatorOf10" url="/pages/PeiZhenXiaDan_YouXiangPeiZhen/PeiZhenXiaDan_YouXiangPeiZhen?name={{item.title}}&id={{item.id}}&price={{item.price}}" wx:for="{{serviceType}}" wx:key="id">
         <view class="forLeftImage">
             <image src="/images/img/PeiZhen-ServiceListPic.jpg" />
         </view>
-        <view class="forMiddleText">
-            <view class="middleTextUpper theFirstGold" wx:if="{{item.id == 1}}">{{item.title}}</view>
-            <view class="middleTextUpper" wx:else>{{item.title}}</view>
+        <view class="forText">
+            <view class="textUpper theFirstGold" wx:if="{{item.id == 1}}">{{item.title}}</view>
+            <view class="textUpper" wx:else>{{item.title}}</view>
+            <view class="textLower">{{item.price}}</view>
         </view>
-        <view class="forRightPrice">
+        <!-- <view class="forRightPrice">
             <view class="forRightPrice2TextContainer">
                 <text class="truePrice">{{item.price}}</text>
-                <text class="unitOfPrice">元/次</text>
             </view>
-        </view>
+        </view> -->
     </navigator>
 </view>

@@ -1,9 +1,9 @@
 /* pages/PeiZhenXiaDan_YouXiangPeiZhen/PeiZhenXiaDan_YouXiangPeiZhen.wxss */
-page {
+/* page {
     background-color: #f4f8fb;
 }
 
-/* banner图 */
+banner图
 .bannerIMG {
     position: absolute;
     left: 0;
@@ -13,7 +13,7 @@ page {
     z-index: -999;
 }
 
-/* 上方介绍框 */
+方介绍框
 .introAtTop {
     margin-top: 340rpx;
     margin-left: 30rpx;
@@ -55,7 +55,7 @@ page {
     text-decoration: line-through;
 }
 
-/* 服务内容 服务须知 */
+服务内容 服务须知
 .serviceAndNoticeText {
     margin-top: 20rpx;
     display: flex;
@@ -76,7 +76,7 @@ page {
     margin-top: 6rpx;
 }
 
-/* 服务内容&服务须知的具体内容 */
+服务内容&服务须知的具体内容
 .realInfoContainer {
     margin-top: 20rpx;
     margin-left: 60rpx;
@@ -125,23 +125,43 @@ page {
 .noticeContentRealContent {
     margin-left: 10rpx;
     color: dimgray;
+} */
+
+/* 上方图片 */
+image {
+    width: 100%;
 }
 
 /* 支付按钮 */
 .hiddenView {
-    height: 160rpx;
+    height: 120rpx;
+}
+
+.hiddenView2 {
+    height: 240rpx;
 }
 
 .payContainer {
     position: fixed;
     height: 120rpx;
-    bottom: 0;
     width: 100%;
     background-color: white;
     align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.payContainerOnly1 {
+    bottom: 0;
+}
+
+.payContainer1of2 {
+    bottom: 120rpx;
+}
+
+.payContainer2of2 {
+    bottom: 0rpx;
 }
 
 .blueButton {

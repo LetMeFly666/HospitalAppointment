@@ -2,14 +2,15 @@
  * @Author: LetMeFly
  * @Date: 2023-07-03 21:16:46
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-07-10 17:01:42
+ * @LastEditTime: 2023-11-26 12:30:06
 -->
 <!--pages/PeiZhenXiaDan_YouXiangPeiZhen/PeiZhenXiaDan_YouXiangPeiZhen.wxml-->
 
-<!-- banner图 -->
+
+<!-- banner图 
 <image class="bannerIMG" src="/images/img/banner03.jpg" />
 
-<!-- 上方介绍框 -->
+上方介绍框
 <view class="introAtTop">
     <view class="introAtTopInfo">
         代替患者在医院内跑腿。例如，带患者排队，楼上楼下缴费，提取化验报告等。诊前直到，全程陪诊，代取结果，车接车送。
@@ -23,13 +24,13 @@
     </view>
 </view>
 
-<!-- 服务内容 服务须知 -->
+服务内容 服务须知
 <view class="serviceAndNoticeText">
     <view bindtap="clickBar" data-id="{{0}}" class="{{conticeOrNotice === 0 ? 'choosed' : 'normal'}}">服务内容</view>
     <view bindtap="clickBar" data-id="{{1}}" class="{{conticeOrNotice === 1 ? 'choosed' : 'normal'}} secondView">服务须知</view>
 </view>
 
-<!-- 服务内容&服务须知的具体内容 -->
+服务内容&服务须知的具体内容
 <view class="realInfoContainer">
     <view wx:if="{{conticeOrNotice === 0}}" class="serviceView">
         <image class="serviceImg" mode="widthFix" src="/images/img/serviceContent.jpg" />
@@ -58,12 +59,36 @@
             <text class="noticeContentRealContent">支付完成后，退款我们会根据实际情况进行相应处理，如您有任何疑问请拨打首页客服热线</text>
         </view>
     </view>
-</view>
+</view> -->
+
+<!-- 背景图片 -->
+<image wx:if="{{picName}}" src="https://www.letmefly.xyz/LetHA/static/pic/service/{{picName}}.jpeg" mode="widthFix" />
+<!-- <image wx:if="{{picName}}" src="/images/img/01.特需门诊VIP陪诊服务.jpeg" mode="widthFix" /> -->
 
 <!-- 支付按钮 -->
-<view class="hiddenView"></view>
-<view class="payContainer">
-    <view class="blueButton">
-        <view class="payText">立即预约 ￥588</view>
+<view wx:if="{{price.length > 1}}">
+    <view class="hiddenView2">
+        <view wx:for="{{price}}" wx:key="index" class="payContainer payContainer{{index + 1}}of2">
+            <view class="blueButton">
+                <view class="payText">立即预约 {{item}}</view>
+            </view>
+        </view>
     </view>
 </view>
+<view wx:else>
+    <view class="hiddenView">
+        <view class="payContainer payContainerOnly1">
+            <view class="blueButton">
+                <view class="payText">立即预约 {{price[0]}}</view>
+            </view>
+        </view>
+    </view>
+</view>
+<!-- <view wx:for="{{price}}" wx:key="id">
+    <view class="hiddenView"></view>
+    <view class="payContainer">
+        <view class="blueButton">
+            <view class="payText">立即预约 {{item}}</view>
+        </view>
+    </view>
+</view> -->

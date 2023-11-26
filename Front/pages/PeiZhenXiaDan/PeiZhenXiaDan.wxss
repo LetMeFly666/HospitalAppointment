@@ -37,13 +37,13 @@
     height: 120rpx;
 }
 
-.forMiddleText {
-    width: 415rpx;
+.forText {
+    /* width: 415rpx; */
     margin-left: 30rpx;
 }
 
-.middleTextUpper {
-    margin-top: 30rpx;
+.textUpper {
+    margin-top: 40rpx;
 }
 
 .theFirstGold {
@@ -51,29 +51,7 @@
     font-weight: bold;
 }
 
-.middleTextLower {
-    font-size: small;
-    color:dimgray;
-    margin-top: 20rpx;
-}
-
-.forRightPrice {
-    width: 205rpx;
-    margin-left: 14rpx;
-    margin-right: 20rpx;
-}
-
-.forRightPrice {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.forRightPrice2TextContainer {
+.textLower {
+    margin-top: 40rpx;
     color: #a98033;
-}
-
-.truePrice {
-    font-weight: bold;
-    font-size: x-large;
 }

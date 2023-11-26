@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-07-03 21:15:24
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-09-02 12:55:27
+ * @LastEditTime: 2023-11-25 23:31:36
  */
 // pages/PeiZhenXiaDan/PeiZhenXiaDan.js
 Page({
@@ -13,44 +13,48 @@ Page({
     data: {
         serviceType: [{
             id: 1,
-            title: '特需门诊VIP陪诊',
-            price: '588'
+            title: '特需门诊VIP陪诊服务',
+            price: '￥588/次',
         }, {
             id: 2,
-            title: '军、警、消及家属陪诊',
-            price: '688'
+            title: '军警消及家属陪诊服务',
+            price: '￥150/半天，￥300/天'
         }, {
             id: 3,
-            title: '全心陪诊（半天/全天）',
-            price: '788'
+            title: '全心全程VIP陪诊服务',
+            price: '￥600/半天，￥880/天'
         }, {
             id: 4,
-            title: 'VIP陪诊（半天/全天）',
-            price: '888'
+            title: '全心全程陪诊服务',
+            price: '￥198/半天，￥388/天'
         }, {
             id: 5,
-            title: '陪诊超时服务',
-            price: '988'
+            title: '全心服务专家约诊.png',
+            price: '￥360/次'
         }, {
             id: 6,
-            title: '门诊约号',
-            price: '88'
+            title: '全心服务其他服务',
+            price: '￥0/次'
         }, {
             id: 7,
-            title: '专家约诊',
-            price: '188'
+            title: '全心服务门诊约号',
+            price: '￥59/次'
         }, {
             id: 8,
-            title: '代办问诊',
-            price: '288'
+            title: '全心服务代办问诊',
+            price: '￥200/次'
         }, {
             id: 9,
-            title: '代取结果',
-            price: '388'
+            title: '全心服务代取结果',
+            price: '￥50/次'
         }, {
             id: 10,
-            title: '代办买药',
-            price: '488'
+            title: '全心服务病案打印',
+            price: '￥100/次'
+        }, {
+            id: 11,
+            title: '全心服务代开药品',
+            price: '￥100/次'
         }]
     },
 
