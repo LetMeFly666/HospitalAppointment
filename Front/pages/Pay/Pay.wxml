@@ -1,0 +1,4 @@
+<!--pages/Pay/Pay.wxml-->
+<view>{{priceWithText}}</view>
+<view>{{serviceName}}</view>
+<view>{{id}}</view>

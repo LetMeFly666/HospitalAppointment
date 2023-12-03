@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-07-03 21:16:46
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-11-26 12:30:06
+ * @LastEditTime: 2023-12-03 18:44:12
 -->
 <!--pages/PeiZhenXiaDan_YouXiangPeiZhen/PeiZhenXiaDan_YouXiangPeiZhen.wxml-->
 
@@ -69,8 +69,8 @@
 <view wx:if="{{price.length > 1}}">
     <view class="hiddenView2">
         <view wx:for="{{price}}" wx:key="index" class="payContainer payContainer{{index + 1}}of2">
-            <view class="blueButton">
-                <view class="payText">立即预约 {{item}}</view>
+            <view class="blueButton" catchtap="toPay" data-price="{{item}}">
+                <view class="payText" catchtap="toPay" data-price="{{item}}">立即预约 {{item}}</view>
             </view>
         </view>
     </view>
@@ -78,8 +78,8 @@
 <view wx:else>
     <view class="hiddenView">
         <view class="payContainer payContainerOnly1">
-            <view class="blueButton">
-                <view class="payText">立即预约 {{price[0]}}</view>
+            <view class="blueButton" catchtap="toPay" data-price="{{price[0]}}">
+                <view class="payText" catchtap="toPay" data-price="{{price[0]}}">立即预约 {{price[0]}}</view>
             </view>
         </view>
     </view>

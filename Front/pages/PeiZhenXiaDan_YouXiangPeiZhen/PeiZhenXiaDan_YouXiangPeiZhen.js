@@ -25,6 +25,13 @@ Page({
         picName: ''
     },
 
+    toPay(event) {
+        console.log(event.target.dataset);
+        const priceWithText = event.target.dataset.price;
+        const url = '/pages/Pay/Pay?priceWithText=' + priceWithText + '&serviceName=' + this.data.serviceName + '&id=' + this.data.id;
+        wx.redirectTo({'url': url});
+    },
+
     // clickBar(event) {
     //     this.setData({conticeOrNotice: event.target.dataset.id});
     //     console.log(typeof event.target.dataset.id);

@@ -134,11 +134,11 @@ image {
 
 /* 支付按钮 */
 .hiddenView {
-    height: 120rpx;
+    height: 110rpx;
 }
 
 .hiddenView2 {
-    height: 240rpx;
+    height: 230rpx;
 }
 
 .payContainer {
