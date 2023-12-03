@@ -26,7 +26,6 @@ Page({
     },
 
     toPay(event) {
-        console.log(event.target.dataset);
         const priceWithText = event.target.dataset.price;
         const url = '/pages/Pay/Pay?priceWithText=' + priceWithText + '&serviceName=' + this.data.serviceName + '&id=' + this.data.id;
         wx.redirectTo({'url': url});

@@ -1,1 +1,120 @@
 /* pages/Pay/Pay.wxss */
+page {
+    background-color: rgb(242, 242, 242);
+}
+
+/* Common */
+.boxWithShadow {
+    box-sizing: border-box;
+    border-radius: 20rpx;
+    box-shadow: 0 2rpx 2px 0 rgba(0, 0, 0, 0.24), 0 2rpx 2rpx 0 rgba(0, 0, 0, 0.19);
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+    background-color: #ffffff;
+    display: flex;
+}
+
+.splitLine {
+    margin: auto;
+    width: 90%;
+    background: #E0E3DA;
+    height: 3rpx;
+}
+
+/* 服务类型 */
+.serviceBox {
+    margin-top: 30rpx;
+}
+
+.serviceBox
+.leftText {
+    margin-top: 25rpx;
+    margin-bottom: 25rpx;
+    margin-left: 50rpx;
+}
+
+.serviceBox
+.rightText {
+    margin-top: 25rpx;
+    margin-bottom: 25rpx;
+    position: fixed;
+    right: 60rpx;
+}
+
+/* 具体预约内容 */
+.dataBox {
+    margin-top: 12rpx;
+    flex-direction: column;
+}
+
+.inline {
+    display: flex;
+}
+
+.dataBox
+.leftTextBig {
+    margin-top: 25rpx;
+    margin-left: 50rpx;
+    margin-bottom: 14rpx;
+    font-size: larger;
+    font-weight: bold;
+}
+
+.dataBox
+.leftText {
+    margin-top: 25rpx;
+    margin-left: 50rpx;
+    margin-bottom: 14rpx;
+    color: #5d6c89;
+}
+
+.dataBox
+.rightPart {
+    margin-top: 25rpx;
+    position: fixed;
+    right: 60rpx;
+    color: gray;
+}
+
+.dataBox
+.leftTextMiddle {
+    margin-top: 25rpx;
+    margin-left: 50rpx;
+    margin-bottom: 14rpx;
+}
+
+.inputTextArea {
+    background-color: #f3f4f6;
+    margin: auto;
+    padding: 30rpx 40rpx;
+    border-radius: 20rpx;
+    width: 550rpx;
+    margin-left: 50rpx;
+    margin-right: 50rpx;
+    margin-bottom: 20rpx;
+}
+
+.inputView {
+    margin: auto;
+    position: fixed;
+    right: 60rpx;
+	align-items: center;
+	justify-content: center;
+}
+
+.realInputPlace {
+    text-align: right;
+}
+
+.input1 {
+    margin-top: 26rpx;
+}
+
+.input2 {
+    margin-top: 20rpx;
+}
+
+/* 支付框 */
+.hiddenView {
+    height: 110rpx;
+}

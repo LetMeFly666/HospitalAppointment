@@ -69,6 +69,13 @@
           "query": "id=1",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "支付",
+          "pathName": "pages/Pay/Pay",
+          "query": "priceWithText=￥588/次&serviceName=特需门诊VIP陪诊服务&id=1",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

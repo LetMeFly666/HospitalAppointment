@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-12-03 18:38:26
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-12-03 18:40:48
+ * @LastEditTime: 2023-12-03 23:28:01
  */
 // pages/Pay/Pay.js
 Page({
@@ -12,8 +12,19 @@ Page({
      */
     data: {
         priceWithText: '价格',
+        priceValue: 0,
         serviceName: '服务名称',
         id: '服务id'
+    },
+
+    cleanPriceValue(valueWithText) {
+        var ans = 0;
+        for (var i = 0; i < valueWithText.length; i++) {
+            if (!isNaN(parseInt(valueWithText[i]))) {
+                ans = ans * 10 + parseInt(valueWithText[i]);
+            }
+        }
+        return ans;
     },
 
     /**
@@ -23,7 +34,8 @@ Page({
         this.setData({
             priceWithText: options.priceWithText,
             serviceName: options.serviceName,
-            id: options.id
+            id: options.id,
+            priceValue: this.cleanPriceValue(options.priceWithText)
         })
     },
 
