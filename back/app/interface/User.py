@@ -2,7 +2,7 @@
 Author: LetMeFly
 Date: 2023-09-20 16:16:47
 LastEditors: LetMeFly
-LastEditTime: 2023-09-24 22:23:57
+LastEditTime: 2023-12-06 23:00:20
 Description: 人员相关（用户信息、 就诊人、陪诊员）
 '''
 from django.http import HttpResponse, JsonResponse
@@ -19,8 +19,6 @@ def helloWorld(reqeust):
 
 def login(request):
     code = request.GET.get('code')
-    nickname = request.GET.get('nickname')
-    avatarUrl = request.GET.get('avatar')
     response = requests.get(
         url='https://api.weixin.qq.com/sns/jscode2session',
         params={
@@ -35,7 +33,7 @@ def login(request):
     sessionKey = data.get('session_key')
     unionid = data.get('unionid', '')
     warrant = randmod.randCN(32)
-    models.User.objects.update_or_create(defaults={'wx_session_key': sessionKey, 'wx_unionid': unionid, 'nickname': nickname, 'avatar_url': avatarUrl, 'warrant': warrant}, wx_openid=openid)
+    models.User.objects.update_or_create(defaults={'wx_session_key': sessionKey, 'wx_unionid': unionid, 'warrant': warrant}, wx_openid=openid)
     return JsonResponse({'warrant': warrant})
 
     

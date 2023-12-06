@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-07-03 21:19:26
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-09-24 22:47:45
+ * @LastEditTime: 2023-12-06 23:58:25
  */
 // pages/My/My.js
 Page({
@@ -10,59 +10,37 @@ Page({
     /**
      * 页面的初始数据
      */
-    data: {
-        nickName: '未登录',
-        avatar: 'https://www.letmefly.xyz/LetHA/static/pic/expert/000-1.jpg'
-    },
+    data: {},
 
     login() {
-        function realLogin(nickname, avatar) {
-            wx.login({
-                success(res) {
-                    if (res.code) {
-                        wx.request({
-                            url: 'https://www.letmefly.xyz/LetHA/login/',
-                            data: {
-                              code: res.code,
-                              nickname: nickname,
-                              avatar: avatar
-                            },
-                            success(res) {
-                                const warrant = res.data.warrant;
-                                wx.setStorage({key: 'warrant', data: warrant});
-                                wx.showToast({
-                                    title: '登录成功！',
-                                    icon: 'success',
-                                    duration: 1000
-                                });
-                            }
-                        })
-                    }
-                    else {
-                        console.log('登录失败！' + res.errMsg);
-                    }
-                }
-            });
+        const warrant = wx.getStorageSync('warrant');
+        if (warrant) {
+            return;  // 视为已登录状态
         }
-
-        // http://mmbiz.qpic.cn/mmbiz_gif/LPhefoq7ngYufibnYc5KkQ1p8Be0ZHIafsDyHiamVzcVfcLcdakUibXpfU93PTmye62r7iamRGWtMrbSOje5HhAgzQ/0?wx_fmt=gif
-        wx.getUserProfile({
-            desc: '获取昵称和头像',
-            success: (res) => {
-                const nickName = res.userInfo.nickName;
-                const avatar = res.userInfo.avatarUrl;
-                console.log(nickName);
-                console.log(avatar);
-                this.setData({nickName: nickName, avatar: avatar});
-                wx.setStorage({key: 'nickName', data: nickName});
-                wx.setStorage({key: 'avatar', data: avatar});
-                realLogin(nickName, avatar);
-            },
-            fail: () => {
-                wx.showToast({
-                    title: '获取用户信息失败！',
-                    icon: 'error',
-                    duration: 1000
+        wx.login({
+            success(res) {
+                if (!res.code) {
+                    wx.showToast({
+                        title: '获取用户信息失败',
+                        icon: 'error',
+                        duration: 1000
+                    });
+                    return;
+                }
+                wx.request({
+                    url: 'https://www.letmefly.xyz/LetHA/login/',
+                    data: {
+                        code: res.code
+                    },
+                    success(res) {
+                        const warrant = res.data.warrant;
+                        wx.setStorage({key: 'warrant', data: warrant});
+                        wx.showToast({
+                            title: '登录成功！',
+                            icon: 'success',
+                            duration: 1000
+                        });
+                    }
                 });
             }
         });
