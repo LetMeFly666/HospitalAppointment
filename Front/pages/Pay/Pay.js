@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-12-03 18:38:26
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-12-03 23:28:01
+ * @LastEditTime: 2023-12-06 21:56:36
  */
 // pages/Pay/Pay.js
 Page({
@@ -14,7 +14,43 @@ Page({
         priceWithText: '价格',
         priceValue: 0,
         serviceName: '服务名称',
-        id: '服务id'
+        id: '服务id',
+        alreadyRead: false,
+        remainTime: 5,
+        showNotes: false
+    },
+
+    readTheNotes() {
+        this.setData({
+            showNotes: true
+        });
+        const that = this;
+        function wait1second() {
+            console.log(that.data.remainTime);
+            if (that.data.remainTime > 1) {
+                that.setData({
+                    remainTime: that.data.remainTime - 1
+                });
+                setTimeout(() => {
+                    wait1second();
+                }, 1000);
+            }
+            else {
+                that.setData({
+                    alreadyRead: true
+                });
+            }
+        }
+        this.setData({
+            remainTime: this.data.remainTime + 1
+        });
+        wait1second();
+    },
+
+    agree() {
+        this.setData({
+            showNotes: false
+        });
     },
 
     cleanPriceValue(valueWithText) {

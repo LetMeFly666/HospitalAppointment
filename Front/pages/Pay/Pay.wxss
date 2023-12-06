@@ -91,7 +91,7 @@ page {
     width: 550rpx;
     margin-left: 50rpx;
     margin-right: 50rpx;
-    margin-bottom: 20rpx;
+    margin-bottom: 30rpx;
 }
 
 .inputView {
@@ -116,5 +116,139 @@ page {
 
 /* 支付框 */
 .hiddenView {
-    height: 110rpx;
+    height: 170rpx;
+}
+
+.payContainer {
+    position: fixed;
+    height: 170rpx;
+    width: 100%;
+    background-color: white;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    bottom: 0;
+}
+
+
+.blueButton {
+    height: 80rpx;
+    width: 70%;
+    background-color: #4957fe;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 40rpx;
+}
+
+.payText {
+    color: white;
+}
+
+.item {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20rpx;
+    margin-bottom: 20rpx;
+}
+
+.item
+.readTheNotes {
+    font-size: small;
+    margin-left: 20rpx;
+}
+
+.item
+.readTheNotes
+.blue {
+    color: #4957fe;
+}
+
+.item
+.readOrNot {
+    width: 30rpx;
+    height: 30rpx;
+}
+
+/* 同意条款 */
+.totalMask {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    background-color: black;
+    opacity: .4;
+    z-index: 100;
+}
+
+.containerInMask {
+    position: fixed;
+    background-color: white;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    left: 50%;
+    top: 50%;
+    height: 80%;
+    z-index: 101;
+}
+
+.containerInMask
+.text {
+    position: fixed;
+    overflow-y:scroll;
+    height: calc(100% - 80rpx - 40rpx);
+    padding: 20rpx;
+}
+
+.containerInMask
+.text
+.title {
+    text-align: center;
+}
+
+.containerInMask
+.text
+.normalText {
+    margin-top: 20rpx;
+}
+
+.containerInMask
+.Iknow {
+    position: fixed;
+    bottom: 0;
+    height: 80rpx;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerInMask
+.Iknow
+.button {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    border-radius: 30rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.containerInMask
+.Iknow
+.canClose {
+    background-color: #4e75ff; 
+}
+
+.containerInMask
+.Iknow
+.cannotClose {
+    background-color: #8f939f; 
 }

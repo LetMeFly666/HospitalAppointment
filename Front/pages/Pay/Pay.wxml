@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-12-03 18:38:26
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-12-03 23:31:25
+ * @LastEditTime: 2023-12-06 21:56:05
 -->
 <!--pages/Pay/Pay.wxml-->
 <!-- 服务类型 -->
@@ -54,14 +54,42 @@
 <!-- 支付框 -->
 <view class="hiddenView">
     <view class="payContainer">
-        <view class="blueButton" catchtap="toPay" data-price="{{item}}">
-            <view class="payText" catchtap="toPay" data-price="{{item}}">立即预约 {{item}}</view>
+        <view class="item" catchtap="readTheNotes">
+            <image src="{{alreadyRead ? '/images/icon/read.png' : '/images/icon/unread.png'}}" class="readOrNot"/>
+            <view class="readTheNotes">我已认真阅读预约相关<text class="blue">《服务条款同意书》</text></view>
+        </view>
+        <view class="blueButton" catchtap="toPay" data-price="{{priceValue}}">
+            <view class="payText" catchtap="toPay" data-price="{{priceValue}}">立即下单（￥{{priceValue}}）</view>
         </view>
     </view>
 </view>
 
-<view class="boxWithShadow">
-    <view>{{priceWithText}}</view>
-    <view>{{priceValue}}</view>
-    <view>{{id}}</view>
+<!-- 同意条款 -->
+<view wx:if="{{showNotes}}" class="showNotes">
+    <view class="totalMask"></view>
+    <view class="containerInMask">
+        <view class="text">
+            <view class="title">《服务条款同意书》</view>
+            <view class="normalText">1. 约号服务仅为患者提供协助，因各大医院就诊患者数量庞大，本平台不能承诺可以成功按照患者要求的时间内成功提前约号，如在要求时间内未能完成，承诺全额退款。</view>
+            <view class="normalText">2. 约号服务，本服务由工作人员在医院公开的挂号渠道，协助患者实名挂号，患者及患者家属应按就诊医院要求提供相应真实有效证件及证明文件。若遇到预约医生停诊等特殊情况，本平台将为您安排同科室其他医生转诊服务，若有其他情况请联系客服。因非患者原因导致未成功就诊，本平台保证全额退款。</view>
+            <view class="normalText">3. 专家约诊，本服务由工作人员与专家沟通后，在非门诊的工作时间，工作区域内的正常接诊，患者及患者家属应按就诊医院要求提供相应真实有效证件及证明文件有序就诊。若遇到医生遇到特殊情况无法按时完成接诊时，本平台保证全额退款。若因患者原因未完成就诊，本平台不承担任何责任，且不退款。</view>
+            <view class="normalText">4. 含"VIP 陪诊"字样中的市内接送服务仅为方便客户轻松前往医院就诊，不具备应对途中出现的身体健康方面的突发状况，但会尽一切救助义务，请根据自身及家人具体情况判断是否使用接送服务，并自行承担责任，请知悉！</view>
+            <view class="normalText">5. 陪诊服务前，家属或本人需说明患者的疾病既往史，以防发生可能性较大的突发情况，如不告知，发生任何突发情况，本平台不承担任何责任，请知悉！有精神病／传染病的就诊人员，请务必提前告知陪诊员，陪诊员有权利视情况决定是否接待。不符合接待要求的退回陪诊费，并终止服务。</view>
+            <view class="normalText">6. 陪诊服务收费分半天和全天，半天：早8:00--12:00，下午：1:30--5:00，跨时间的按全天收费。业务内容为：1.取预约号、代缴费、排队检查、取报告、取药、传达医嘱等。2．陪诊员只负责本次就医过程中陪伴，患者必须遵守医院相关规章制度，等候就医和做检查的顺序根据医院安排的顺序，不插队。3．和患者聊天舒缓情绪。4．对于当天无法出报告的检查项目，如需要陪诊员改日帮取报告发快递的，需另外收费，收费标准见公司标准。如在服务中有任何突发情况，本平台应尽心救助，但不承担任何责任，请知悉！</view>
+            <view class="normalText">7. 陪诊过程中如遇需要家属签字时，陪诊员可经过患者或直系亲属文字版（包括文字版的聊天记录）同意情况下，代签客户家属的姓名信息。本公司及陪诊员不承担任何因签字而引发的所有医疗风险和法律责任。</view>
+            <view class="normalText">8. 陪诊服务前，需提供至少一个直系家属（紧急联系人）的电话信息，我们只是陪诊服务，因患者自身原因出现任何问题，陪诊人员不负相关责任，如遇突发状况陪诊员应第一时间联系患者的直系家属（紧急联系人）并告知实情。</view>
+            <view class="normalText">9. 如在服务过程中发生强制陪诊员办理不符合服务内容的情况，本平台有权终止服务并不退还任何费用，请知悉！</view>
+            <view class="normalText">10. 特殊人群的陪诊服务需要至少1名家属陪同，服务内容仅包含服务代办、跑腿、就医协助等一系列代办专业服务，不包含陪护（如：无法自理需要专业护理、特殊严重病情需特殊照护等）。特殊人群包括：① 80岁以上老人，②临产期孕妇，③12岁以下儿童，④以及其他特殊患者。</view>
+            <view class="normalText">11. 本平台所有业务均为代办跑腿服务，服务中如您有贵重物品请自行保管，禁止将贵重物品以及与服务无关的物品交付于陪诊人员手中保管，请知悉！</view>
+
+        </view>
+        <view class="Iknow">
+            <view wx:if="{{alreadyRead}}" class="button canClose" bindtap="agree">
+                确认关闭
+            </view>
+            <view wx:else class="button cannotClose">
+                0{{remainTime}} 秒后可选择关闭
+            </view>
+        </view>
+    </view>
 </view>
