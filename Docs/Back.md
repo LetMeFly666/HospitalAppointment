@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-08-15 22:11:19
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-09-24 22:24:01
+ * @LastEditTime: 2023-12-06 22:50:57
 -->
 # 后端接口
 
@@ -45,8 +45,6 @@
 |wx_openid|VARCHAR(255)|微信openid|
 |wx_session_key|VARCHAR(512)|微信session_key|
 |wx_unionid|VARCHAR(512)|微信unionid（May空？）|
-|nickname|VARCHAR(32)|用户昵称|
-|avatar_url|VARCHAR(256)|用户头像链接（注意检查是否失效）|
 |warrant|VARCHAR(32)|自定义的warrant|
 
 ## 就诊人管理

@@ -2,7 +2,7 @@
 Author: LetMeFly
 Date: 2023-09-19 10:00:24
 LastEditors: LetMeFly
-LastEditTime: 2023-09-24 22:23:50
+LastEditTime: 2023-12-06 22:51:27
 '''
 from django.db import models
 
@@ -12,8 +12,6 @@ class User(models.Model):
     wx_openid = models.CharField(max_length=255, unique=True)
     wx_session_key = models.CharField(max_length=512)
     wx_unionid = models.CharField(max_length=512)
-    nickname = models.CharField(max_length=32)
-    avatar_url = models.CharField(max_length=256)
     warrant = models.CharField(max_length=32)
 
 
