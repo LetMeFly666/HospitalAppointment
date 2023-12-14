@@ -1,1 +1,81 @@
 /* pages/Friend/Friend.wxss */
+page {
+    background-color: rgb(242, 242, 242);
+}
+/* Common */
+.boxWithShadow {
+    border-radius: 20rpx;
+    box-shadow: 0 2rpx 2px 0 rgba(0, 0, 0, 0.24), 0 2rpx 2rpx 0 rgba(0, 0, 0, 0.19);
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+    background-color: #ffffff;
+}
+
+/* 就诊人 */
+.friend {
+    height: 100rpx;
+    margin-top: 40rpx;
+    display: flex;
+    justify-content: space-between;
+}
+
+.friend
+.text {
+    display: inline;
+    margin-left: 50rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.friend
+.delete {
+    float: right;
+    width: 100rpx;
+    height: calc(100% + 1rpx);
+    background-color: red;
+    border-radius: 0 20rpx 20rpx 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.friend
+.delete
+.deleteText {
+    margin: auto;
+    color: white;
+}
+
+/* 添加就诊人 */
+.hiddenView {
+    height: 110rpx;
+}
+
+.payContainer {
+    position: fixed;
+    height: 120rpx;
+    width: 100%;
+    background-color: white;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    bottom: 0;
+}
+
+.blueButton {
+    height: 80rpx;
+    width: 70%;
+    background-color: #4957fe;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 40rpx;
+}
+
+.blueButton
+.text {
+    color: white;
+}

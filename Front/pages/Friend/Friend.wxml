@@ -1,2 +1,23 @@
+<!--
+ * @Author: LetMeFly
+ * @Date: 2023-12-14 19:31:00
+ * @LastEditors: LetMeFly
+ * @LastEditTime: 2023-12-14 21:07:09
+-->
 <!--pages/Friend/Friend.wxml-->
-<text>pages/Friend/Friend.wxml</text>
+<!-- 就诊人 -->
+<view wx:for="{{friends}}" wx:key="id" class="boxWithShadow friend">
+    <view class="text">{{item.name}}</view>
+    <view class="delete" bindtap="delete1friend">
+        <view class="deleteText">删除</view>
+    </view>
+</view>
+
+<!-- 添加就诊人 -->
+<view class="hiddenView">
+    <view class="payContainer">
+        <view class="blueButton" bindtap="add1friend">
+            <view class="text">添加就诊人</view>
+        </view>
+    </view>
+</view>

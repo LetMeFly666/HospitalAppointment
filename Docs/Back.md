@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-08-15 22:11:19
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-12-06 22:50:57
+ * @LastEditTime: 2023-12-14 20:34:12
 -->
 # 后端接口
 
@@ -28,6 +28,24 @@
 ### 个人-登录
 
 ```GET: user/login```
+
+### 个人-查询就诊人
+
+```GET: user/getFriends```
+
+TODO:
+
+### 个人-添加就诊人
+
+```POST: user/add1friend```
+
+TODO:
+
+### 个人-删除就诊人
+
+```POST: user/delete1friend```
+
+TODO:
 
 ## 支付相关
 
