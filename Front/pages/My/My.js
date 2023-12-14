@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-07-03 21:19:26
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-12-13 11:10:09
+ * @LastEditTime: 2023-12-14 17:11:04
  */
 // pages/My/My.js
 Page({
@@ -10,7 +10,37 @@ Page({
     /**
      * 页面的初始数据
      */
-    data: {},
+    data: {
+        lastUpdateinfoTime: 0
+    },
+
+    fakeUpdateInfo() {
+        const clickTime = Date.parse(new Date());  // 模拟器中仅支持秒级的时间戳（后3位都是0）
+        var notUpdate = false;
+        if (clickTime - this.data.lastUpdateinfoTime < 2) {
+            notUpdate = true;
+        }
+        this.setData({
+            lastUpdateinfoTime: clickTime
+        });
+        if (notUpdate) {
+            wx.showToast({
+                title: '点地太快了惹',
+                icon: 'error',
+                duration: 500
+            });
+            return ;
+        }
+        if (notUpdate) {
+            console.log('咦，没return?')
+        }
+        console.log('this.data.lastUpdateinfoTime: ' + this.data.lastUpdateinfoTime + ', clickTime: ' + clickTime);
+        wx.showToast({
+            title: '信息更新成功！',
+            icon: 'success',
+            duration: 1000
+        });
+    },
 
     /**
      * 生命周期函数--监听页面加载
