@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-08-15 22:32:21
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-09-24 22:13:24
+ * @LastEditTime: 2023-12-14 16:57:33
 -->
 # HospitalAppointment
 
@@ -49,7 +49,8 @@
 
 ## TODO
 
-- [ ] 对登录是否失效的检测（有头像≠登录中）
+- [ ] 彩蛋：狂点“我的 -> 更新信息”时弹出提示（当前仅支持判断两次点击间隔）
+- [x] 对登录是否失效的检测（有头像≠登录中）：服务器上warrant有效期无限
 - [x] 登录功能的后端实现
 - [x] 搭建(django的)图片服务
 - [x] 首页banner地址替换
