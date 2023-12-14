@@ -11,7 +11,8 @@
     "pages/OneExpert/OneExpert",
     "pages/PeiZhen_Example/PeiZhen_Example",
     "pages/Pay/Pay",
-    "pages/Friend/Friend"
+    "pages/Friend/Friend",
+    "pages/FriendAdd/FriendAdd"
   ],
   "window": {
     "backgroundTextStyle": "light",
