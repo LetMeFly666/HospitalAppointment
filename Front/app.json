@@ -10,7 +10,8 @@
     "pages/ExpertsList/ExpertsList",
     "pages/OneExpert/OneExpert",
     "pages/PeiZhen_Example/PeiZhen_Example",
-    "pages/Pay/Pay"
+    "pages/Pay/Pay",
+    "pages/Friend/Friend"
   ],
   "window": {
     "backgroundTextStyle": "light",

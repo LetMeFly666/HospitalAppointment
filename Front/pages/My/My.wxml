@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-07-03 21:19:26
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-12-14 19:29:37
+ * @LastEditTime: 2023-12-14 19:35:21
 -->
 <!--pages/My/My.wxml-->
 
@@ -24,7 +24,7 @@
         <image src='/images/icon/message.png' />
         <view class='text'>我的客服</view>
     </view>
-    <view class='right'>
+    <view class='right' bindtap='friendPage'>
         <image src='/images/icon/settings.png' />
         <view class='text'>就诊人管理</view>
     </view>

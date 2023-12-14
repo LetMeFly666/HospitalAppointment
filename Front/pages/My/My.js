@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-07-03 21:19:26
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-12-14 19:29:11
+ * @LastEditTime: 2023-12-14 19:34:13
  */
 // pages/My/My.js
 Page({
@@ -38,10 +38,14 @@ Page({
         });
     },
 
-    make1phonecall: function() {
+    make1phonecall() {
         wx.makePhoneCall({
             phoneNumber: '17795918257',
         });
+    },
+
+    friendPage() {
+        wx.redirectTo({'url': '/pages/Friend/Friend'});
     },
 
     /**

@@ -76,6 +76,13 @@
           "query": "priceWithText=￥588/次&serviceName=特需门诊VIP陪诊服务&id=1",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "就诊人管理",
+          "pathName": "pages/Friend/Friend",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }
