@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-07-03 21:19:26
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-12-14 16:54:17
+ * @LastEditTime: 2023-12-14 19:29:37
 -->
 <!--pages/My/My.wxml-->
 
@@ -20,7 +20,7 @@
 
 <!-- 我的客服、就诊人管理 -->
 <view id='viewForKeFuAndJiuZhenRen' class='boxWithShadow'>
-    <view class='left'>
+    <view class='left' bindtap='make1phonecall'>
         <image src='/images/icon/message.png' />
         <view class='text'>我的客服</view>
     </view>

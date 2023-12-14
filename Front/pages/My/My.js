@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-07-03 21:19:26
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-12-14 17:12:15
+ * @LastEditTime: 2023-12-14 19:29:11
  */
 // pages/My/My.js
 Page({
@@ -35,6 +35,12 @@ Page({
             title: '信息更新成功！',
             icon: 'success',
             duration: 1000
+        });
+    },
+
+    make1phonecall: function() {
+        wx.makePhoneCall({
+            phoneNumber: '17795918257',
         });
     },
 
