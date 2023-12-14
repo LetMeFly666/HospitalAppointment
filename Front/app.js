@@ -1,6 +1,62 @@
 // app.js
 // 备案号：陕ICP备2023012297号-1X
 App({
+    onLaunch() {
+        console.log('YS启动！')
+        this.login();
+    },
+
+    login() {
+        const warrant = wx.getStorageSync('warrant');
+        if (warrant) {
+            return;  // 视为已登录状态
+        }
+        function loginFailed() {
+            wx.showToast({
+                title: '获取用户信息失败',
+                icon: 'error',
+                duration: 1000
+            });
+        }
+        wx.login({
+            success(res) {
+                if (!res.code) {
+                    loginFailed();
+                    return;
+                }
+                wx.request({
+                    url: 'https://www.letmefly.xyz/LetHA/login/',
+                    data: {
+                        code: res.code
+                    },
+                    success(res) {
+                        const warrant = res.data.warrant;
+                        wx.setStorage({key: 'warrant', data: warrant});
+                        wx.showToast({
+                            title: '登录成功！',
+                            icon: 'success',
+                            duration: 1000
+                        });
+                    }
+                });
+            },
+            failed() {
+                loginFailed();
+            }
+        });
+    },
+
+    /**
+     * 请求时header带上warrant
+     */
+    myRequest(data) {
+        if (!data['header']) {
+            data['header'] = {};
+        }
+        data['header']['warrant'] = wx.getStorageSync('warrant');
+        wx.request(data);
+    },
+
     hospitalList: [{
         id: '1',
         logo: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/西京医院-Logo.png',
