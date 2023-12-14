@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-12-14 19:31:00
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-12-14 21:09:18
+ * @LastEditTime: 2023-12-14 21:23:53
  */
 // pages/Friend/Friend.js
 Page({

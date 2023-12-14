@@ -83,6 +83,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "就诊人添加",
+          "pathName": "pages/FriendAdd/FriendAdd",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

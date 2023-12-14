@@ -2,10 +2,11 @@
  * @Author: LetMeFly
  * @Date: 2023-12-14 19:31:00
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-12-14 21:07:09
+ * @LastEditTime: 2023-12-14 21:21:28
 -->
 <!--pages/Friend/Friend.wxml-->
 <!-- 就诊人 -->
+<view class="noFriends" wx:if="{{!friends.length}}">暂无就诊人</view>
 <view wx:for="{{friends}}" wx:key="id" class="boxWithShadow friend">
     <view class="text">{{item.name}}</view>
     <view class="delete" bindtap="delete1friend">
@@ -14,10 +15,9 @@
 </view>
 
 <!-- 添加就诊人 -->
-<view class="hiddenView">
-    <view class="payContainer">
-        <view class="blueButton" bindtap="add1friend">
-            <view class="text">添加就诊人</view>
-        </view>
+<view class="hiddenView"></view>
+<view class="payContainer">
+    <view class="blueButton" bindtap="add1friend">
+        <view class="text">添加就诊人</view>
     </view>
 </view>

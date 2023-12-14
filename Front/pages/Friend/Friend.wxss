@@ -12,6 +12,14 @@ page {
 }
 
 /* 就诊人 */
+.noFriends {
+    font-size: xx-large;
+    position: fixed;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .friend {
     height: 100rpx;
     margin-top: 40rpx;
@@ -49,7 +57,7 @@ page {
 
 /* 添加就诊人 */
 .hiddenView {
-    height: 110rpx;
+    height: calc(110rpx + 20rpx);
 }
 
 .payContainer {
