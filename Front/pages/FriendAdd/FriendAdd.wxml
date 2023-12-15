@@ -1,2 +1,43 @@
+<!--
+ * @Author: LetMeFly
+ * @Date: 2023-12-14 21:16:17
+ * @LastEditors: LetMeFly
+ * @LastEditTime: 2023-12-15 17:01:04
+-->
 <!--pages/FriendAdd/FriendAdd.wxml-->
-<text>pages/FriendAdd/FriendAdd.wxml</text>
+
+<!-- 填写框 -->
+<view class="inputbox">
+    <view class="text">
+        就诊人是否已满18周岁
+        <radio-group bindchange="yesorno">
+            <radio value="y">是</radio>
+            <radio value="n">否</radio>
+        </radio-group>
+    </view>
+    <view class="line"></view>
+    <view class="text">
+        <input placeholder="请填写就诊人姓名" bindinput="inputname" />
+    </view>
+    <view class="line"></view>
+    <view class="text">
+        就诊人性别
+        <radio-group bindchange="manorwoman">
+            <radio value="m">男</radio>
+            <radio value="w">女</radio>
+        </radio-group>
+    </view>
+    <view class="line"></view>
+    <view class="text">
+        <input placeholder="请填写手机号" bindinput="inputphone" />
+    </view>
+    <view class="line"></view>
+    <view class="text">
+        <input placeholder="请填写就诊人身份证号"/>
+    </view>
+    <view class="line"></view>
+    <view class="text">
+        就诊人关系
+    </view>
+
+</view>

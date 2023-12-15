@@ -1,1 +1,30 @@
 /* pages/FriendAdd/FriendAdd.wxss */
+page {
+    background-color: rgb(242, 242, 242);
+}
+
+/* 填写框 */
+.inputbox {
+    width: 100%;
+    background-color: white;
+    padding: 0 40rpx;
+}
+
+.inputbox
+.text {
+    margin-top: 20rpx;
+    margin-bottom: 20rpx;
+}
+
+.inputbox
+.text
+radio-group {
+    display: inline-block;
+}
+
+.inputbox
+.line {
+    width: 100%;
+    height: 2rpx;
+    background-color: gray;
+}
