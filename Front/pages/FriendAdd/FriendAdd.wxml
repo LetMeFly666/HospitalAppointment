@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-12-14 21:16:17
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-12-15 17:01:04
+ * @LastEditTime: 2023-12-15 17:06:34
 -->
 <!--pages/FriendAdd/FriendAdd.wxml-->
 
@@ -10,7 +10,8 @@
 <view class="inputbox">
     <view class="text">
         就诊人是否已满18周岁
-        <radio-group bindchange="yesorno">
+        <!-- <radio-group bindchange="yesorno"> -->
+        <radio-group bindchange="{{set1newValue(if18)}}">
             <radio value="y">是</radio>
             <radio value="n">否</radio>
         </radio-group>

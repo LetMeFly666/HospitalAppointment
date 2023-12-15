@@ -14,7 +14,17 @@ Page({
 
     },
 
-    // set1newValue(valueName) {},
+    set1newValue(valueName) {
+        console.log(valueName);
+        const that = this;
+        function setVal(event) {
+            const val = event.detail.value;
+            that.setData({
+                valueName: val
+            });
+        }
+        return setVal;
+    },
 
     yesorno(event) {
         const val = event.detail.value;
