@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-07-03 18:08:50
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-08-30 21:47:02
+ * @LastEditTime: 2023-12-16 16:15:20
 -->
 <!--index.wxml-->
 
@@ -28,13 +28,13 @@
         <image src="/images/icon/search.png" />
         <input type="text" placeholder="商品搜索：请输入商品关键字" />
     </view>
-    <view class="search-right">
+    <view class="search-right" bindtap="change2PeiZhenXiaDanPage">
         搜索
     </view>
 </view>
 
 <!-- 5按钮 -->
-<view class="button4container">
+<view class="button4container" bindtap="change2PeiZhenXiaDanPage">
     <view class="button4each">
         <image class="button4eachImg" src="/images/icon/message2.png" />
         <view class="button4eachText">诊前咨询</view>
