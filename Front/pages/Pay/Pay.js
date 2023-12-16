@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-12-03 18:38:26
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-12-06 21:56:36
+ * @LastEditTime: 2023-12-16 16:35:07
  */
 // pages/Pay/Pay.js
 Page({
@@ -17,7 +17,28 @@ Page({
         id: '服务id',
         alreadyRead: false,
         remainTime: 5,
-        showNotes: false
+        showNotes: false,
+        friends: ['请选择就诊人'],
+        friendsIndex: 0,
+        date: '请选择就诊时间'
+    },
+
+    getFriends() {
+        // TODO: 无就诊人时提示前往添加就诊人
+    },
+
+    pick1friend(event) {
+        const val = event.detail.value;
+        this.setData({
+            friendsIndex: val
+        });
+    },
+
+    pick1date(event) {
+        const val = event.detail.value;
+        this.setData({
+            date: val
+        });
     },
 
     readTheNotes() {
@@ -73,6 +94,8 @@ Page({
             id: options.id,
             priceValue: this.cleanPriceValue(options.priceWithText)
         })
+
+        this.getFriends();
     },
 
     /**

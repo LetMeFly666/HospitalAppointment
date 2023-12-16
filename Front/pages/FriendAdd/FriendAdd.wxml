@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-12-14 21:16:17
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-12-16 16:05:18
+ * @LastEditTime: 2023-12-16 16:19:19
 -->
 <!--pages/FriendAdd/FriendAdd.wxml-->
 
@@ -39,7 +39,7 @@
     <view class="text">
         就诊人关系
         <picker bindchange="pick1relation" range="{{relations}}" value="{{relationIndex}}">
-            <view>{{relations[relationIndex]}} ></view>
+            <view>{{relations[relationIndex]}} <text decode="true">&gt;</text></view>
         </picker>
     </view>
 </view>

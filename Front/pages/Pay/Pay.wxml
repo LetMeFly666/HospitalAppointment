@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-12-03 18:38:26
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-12-06 21:56:05
+ * @LastEditTime: 2023-12-16 16:36:14
 -->
 <!--pages/Pay/Pay.wxml-->
 <!-- 服务类型 -->
@@ -29,18 +29,24 @@
     <view class="inline">
         <view class="leftText">科室</view>
         <view class="inputView">
-            <input class="realInputPlace input2" placeholder="请输入要选择的医院"></input>
+            <input class="realInputPlace input2" placeholder="请输入要选择的科室"></input>
         </view>
     </view>
     <view class="splitLine"></view>
     <view class="inline">
         <view class="leftText">就诊人</view>
-        <view class="rightPart">请选择就诊人<text decode="true">&gt;</text></view>
+        <picker class="rightPart" bindchange="pick1friend" range="{{friends}}" value="{{friendsIndex}}">
+            <view>{{friends[friendsIndex]}} <text decode="true">&gt;</text></view>
+        </picker>
     </view>
     <view class="splitLine"></view>
     <view class="inline">
         <view class="leftText">期望就诊时间</view>
-        <view class="rightPart">请选择就诊时间<text decode="true">&gt;</text></view>
+        <picker class="rightPart" mode="date" value="{{date}}" bindchange="pick1date">
+            <view class="picker">
+              {{date}} <text decode="true">&gt;</text>
+            </view>
+        </picker>
     </view>
     <view class="splitLine"></view>
     <view class="needs">
