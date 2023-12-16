@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-07-03 21:19:26
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-12-14 19:34:13
+ * @LastEditTime: 2023-12-16 16:56:08
  */
 // pages/My/My.js
 Page({
@@ -46,6 +46,11 @@ Page({
 
     friendPage() {
         wx.redirectTo({'url': '/pages/Friend/Friend'});
+    },
+
+    gotoOrder(event) {
+        const type = event.currentTarget.dataset.type;
+        wx.redirectTo({url: '/pages/MyOrder/MyOrder?type=' + type});
     },
 
     /**

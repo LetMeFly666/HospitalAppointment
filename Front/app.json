@@ -12,7 +12,8 @@
     "pages/PeiZhen_Example/PeiZhen_Example",
     "pages/Pay/Pay",
     "pages/Friend/Friend",
-    "pages/FriendAdd/FriendAdd"
+    "pages/FriendAdd/FriendAdd",
+    "pages/MyOrder/MyOrder"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-07-03 21:19:26
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-12-14 19:35:21
+ * @LastEditTime: 2023-12-16 16:52:22
 -->
 <!--pages/My/My.wxml-->
 
@@ -32,24 +32,24 @@
 
 <!-- 我的订单 -->
 <view id='viewForMyOrder' class='boxWithShadow'>
-    <view id='myOrderLine'>
+    <view id='myOrderLine' bindtap="gotoOrder" data-type="0">
         <view class='textLeft'>我的订单</view>
         <view class='rightArrow'>></view>
     </view>
     <view id='fourButtonsMyOrder' class='fourButtons'>
-        <view class='eachButtonOfFour'>
+        <view class='eachButtonOfFour' bindtap="gotoOrder" data-type="1">
             <image src='/images/icon/wallet.png'></image>
             <view>待付款</view>
         </view>
-        <view class='eachButtonOfFour'>
+        <view class='eachButtonOfFour' bindtap="gotoOrder" data-type="2">
             <image src='/images/icon/package-plain.png'></image>
             <view>已付款</view>
         </view>
-        <view class='eachButtonOfFour'>
+        <view class='eachButtonOfFour' bindtap="gotoOrder" data-type="3">
             <image src='/images/icon/pacakge-3d.png'></image>
-            <view>待收货</view>
+            <view>在服务</view>
         </view>
-        <view class='eachButtonOfFour'>
+        <view class='eachButtonOfFour' bindtap="gotoOrder" data-type="4">
             <image src='/images/icon/afterSales.png'></image>
             <view>已完成</view>
         </view>

@@ -1,0 +1,35 @@
+/* pages/MyOrder/MyOrder.wxss */
+/* 顶部选择订单类型 */
+.typeSelector {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.typeSelector
+.oneType
+.selected {
+    text-decoration: underline green;
+    text-decoration-thickness: 5rpx;
+}
+
+/* 订单 */
+.noOrders {
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: fixed;
+    font-size: xx-large;
+}
+
+.oneOrder {
+    height: 200rpx;
+    justify-content: left;
+    background-color: white;
+    border-radius: 20rpx;
+    box-shadow: 1rpx 1rpx 15rpx #dddddd;
+    margin: 30rpx 18rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}

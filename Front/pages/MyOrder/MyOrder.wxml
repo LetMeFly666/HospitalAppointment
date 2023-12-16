@@ -1,0 +1,25 @@
+<!--
+ * @Author: LetMeFly
+ * @Date: 2023-12-16 16:40:37
+ * @LastEditors: LetMeFly
+ * @LastEditTime: 2023-12-16 17:48:02
+-->
+<!--pages/MyOrder/MyOrder.wxml-->
+<!-- 顶部选择订单类型 -->
+<view class="typeSelector">
+    <view class="oneType" wx:for="{{typeList}}" wx:key="index" bindtap="change1type" data-type="{{index}}">
+        <view wx:if="{{index == typeIndex}}" class="selected">{{item}}</view>
+        <view wx:else>{{item}}</view>
+    </view>
+</view>
+
+<!-- 订单 -->
+<view wx:if="{{!ordersToShow.length}}" class="noOrders">暂无订单</view>
+<block wx:else>
+    <view class="oneOrder" wx:for="{{ordersToShow}}" wx:key="index">
+        <view class="text">订单日期：{{item.date}}</view>
+        <view class="text">服务类型：{{item.service}}</view>
+        <view class="text">订单金额：{{item.price}}</view>
+        <view class="text">订单状态：{{item.progress}}</view>
+    </view>
+</block>

@@ -90,6 +90,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "我的订单",
+          "pathName": "pages/MyOrder/MyOrder",
+          "query": "type=0",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }
