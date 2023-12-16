@@ -9,12 +9,17 @@ Page({
         name: '',
         sex: '',
         phone: '',
-        relations: ['父母', '子女', '兄弟姐妹', '本人', '夫妻', '其他'],
+        idcard: '',
+        relations: ['本人', '父母', '子女', '兄弟姐妹', '夫妻', '其他'],
         relation: '',
-
+        relationIndex: 0
     },
 
-    set1newValue(valueName) {
+    save1friend() {
+        console.log(' TODO: save!');
+    },
+
+    set1newValue(valueName) {  // Oh no, wx-mini not support this
         console.log(valueName);
         const that = this;
         function setVal(event) {
@@ -51,6 +56,20 @@ Page({
         const val = event.detail.value;
         this.setData({
             phone: val
+        });
+    },
+
+    inputidcard(event) {
+        const val = event.detail.value;
+        this.setData({
+            idcard: val
+        });
+    },
+
+    pick1relation(event) {
+        const val = event.detail.value;
+        this.setData({
+            relationIndex: val
         });
     },
 

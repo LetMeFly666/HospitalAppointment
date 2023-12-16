@@ -7,7 +7,7 @@ page {
 .inputbox {
     width: 100%;
     background-color: white;
-    padding: 0 40rpx;
+    padding: 20rpx 40rpx;
 }
 
 .inputbox
@@ -19,12 +19,66 @@ page {
 .inputbox
 .text
 radio-group {
-    display: inline-block;
+    float: right;
+    margin-right: 80rpx;
 }
 
 .inputbox
 .line {
-    width: 100%;
+    width: calc(100% - 2 * 40rpx);
     height: 2rpx;
     background-color: gray;
+}
+
+.inputbox
+.text
+picker {
+    float: right;
+    margin-right: 80rpx;
+}
+
+/* 温馨提示 */
+.tipsTitle {
+    margin-top: 70rpx;
+    margin-left: 50rpx;
+    margin-bottom: 20rpx;
+}
+
+.tipsContent {
+    margin: 0 50rpx;
+    font-size: small;
+    color: gray;
+}
+
+/* 保存框 */
+.hiddenView {
+    height: calc(110rpx + 20rpx);
+}
+
+.payContainer {
+    position: fixed;
+    height: 120rpx;
+    width: 100%;
+    background-color: white;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    bottom: 0;
+}
+
+.blueButton {
+    height: 80rpx;
+    width: 70%;
+    background-color: #4957fe;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 40rpx;
+}
+
+.blueButton
+.text {
+    color: white;
 }

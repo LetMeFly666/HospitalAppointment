@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-12-14 21:16:17
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-12-15 17:06:34
+ * @LastEditTime: 2023-12-16 16:05:18
 -->
 <!--pages/FriendAdd/FriendAdd.wxml-->
 
@@ -10,8 +10,7 @@
 <view class="inputbox">
     <view class="text">
         就诊人是否已满18周岁
-        <!-- <radio-group bindchange="yesorno"> -->
-        <radio-group bindchange="{{set1newValue(if18)}}">
+        <radio-group bindchange="yesorno">
             <radio value="y">是</radio>
             <radio value="n">否</radio>
         </radio-group>
@@ -34,11 +33,26 @@
     </view>
     <view class="line"></view>
     <view class="text">
-        <input placeholder="请填写就诊人身份证号"/>
+        <input placeholder="请填写就诊人身份证号" bindinput="inputidcard" />
     </view>
     <view class="line"></view>
     <view class="text">
         就诊人关系
+        <picker bindchange="pick1relation" range="{{relations}}" value="{{relationIndex}}">
+            <view>{{relations[relationIndex]}} ></view>
+        </picker>
     </view>
+</view>
 
+<!-- 温馨提示 -->
+<view class="tipsTitle">温馨提示</view>
+<view class="tipsContent">1. 就诊人姓名证件信息用于平台审核，不会外传。</view>
+<view class="tipsContent">2. 请输入正确的就诊人姓名和证监会。</view>
+
+<!-- 保存框 -->
+<view class="hiddenView"></view>
+<view class="payContainer">
+    <view class="blueButton" bindtap="save1friend">
+        <view class="text">保存就诊人信息</view>
+    </view>
 </view>
