@@ -32,6 +32,7 @@ urlpatterns = [
     url('login/', interface.User.login),
     url('user/apply2be1caregiver', interface.User.apply2be1caregiver),
     url('user/add1friend', interface.User.add1friend),
+    url('user/getFriends', interface.User.getFriends),
 ]
 
 # 很奇怪，DEBUG=False下加上下面那个才能访问到图片；DEBUG=True下加上下面的那个又访问不到图片了

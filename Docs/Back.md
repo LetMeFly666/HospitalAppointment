@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-08-15 22:11:19
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-12-18 22:39:42
+ * @LastEditTime: 2023-12-18 22:54:43
 -->
 # 后端接口
 
@@ -33,7 +33,18 @@
 
 ```GET: user/getFriends```
 
-TODO:
+data:
+
++ ```warrant```: 授权令
+
+response:
+
+```json
+{
+    msg: '查询成功！',
+    data: []
+}
+```
 
 ### 个人-添加就诊人
 

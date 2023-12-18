@@ -2,9 +2,10 @@
  * @Author: LetMeFly
  * @Date: 2023-12-14 19:31:00
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-12-14 21:23:53
+ * @LastEditTime: 2023-12-18 22:52:42
  */
 // pages/Friend/Friend.js
+const app = getApp();
 Page({
 
     /**
@@ -70,11 +71,18 @@ Page({
         wx.redirectTo({'url': '/pages/FriendAdd/FriendAdd'});
     },
 
+    getFriends() {
+        const that = this;
+        app.myRequest({
+            url: 'https://www.letmefly.xyz/LetHA/user/getFriends'
+        });
+    },
+
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad(options) {
-
+        this.getFriends();
     },
 
     /**
