@@ -81,4 +81,5 @@ def getFriends(request):
     friends = models.Friend.objects.filter(friend=userid)
     friends = model2dict.model2dict(friends)
     print(friends)
+    print(type(friends))
     return JsonResponse({'msg': '查询成功！', 'data': friends})
