@@ -1,4 +1,5 @@
 // pages/FriendAdd/FriendAdd.js
+const app = getApp();
 Page({
 
     /**
@@ -11,12 +12,79 @@ Page({
         phone: '',
         idcard: '',
         relations: ['本人', '父母', '子女', '兄弟姐妹', '夫妻', '其他'],
-        relation: '',
+        relation: '本人',
         relationIndex: 0
     },
 
     save1friend() {
-        console.log(' TODO: save!');
+        const if18 = this.data.if18;
+        if (!if18) {
+            app.show1toast_error('是否18周岁？');
+            return;
+        }
+        const name = this.data.name;
+        if (!name) {
+            app.show1toast_error('姓名是？');
+            return;
+        }
+        if (name.length < 2) {
+            app.show1toast_error('姓名最多2字');
+            return;
+        }
+        if (name.length > 16) {
+            app.show1toast_error('姓名最多16字');
+            return;
+        }
+        const sex = this.data.sex;
+        if (!sex) {
+            app.show1toast_error('性别是？');
+            return;
+        }
+        const phone = this.data.phone;
+        if (phone.length < 6) {
+            app.show1toast_error('电话最少6位');
+            return;
+        }
+        if (phone.length > 32) {
+            app.show1toast_error('电话最多32位');
+            return;
+        }
+        const idcard = this.data.idcard;
+        if (idcard.length < 10) {  // 护照最少也得10位吧
+            app.show1toast_error('身份证过短');
+            return;
+        }
+        if (idcard.length > 32) {
+            app.show1toast_error('身份证过长');
+            return;
+        }
+        const relation = this.data.relation;
+        if (this.data.relations.indexOf(relation) == -1) {
+            app.show1toast_error('怎么选地关系');
+            return;
+        }
+        app.myRequest({
+            url: 'https://www.letmefly.xyz/LetHA/user/add1friend',
+            method: 'POST',
+            data: {
+                if18: if18,
+                name: name,
+                sex: sex,
+                phone: phone,
+                idcard: idcard,
+                relation: relation
+            },
+            success(response) {
+                wx.showToast({
+                    title: '保存成功',
+                    icon: 'success',
+                    duration: 1000
+                });
+                setTimeout(() => {
+                    wx.redirectTo({url: '/pages/Friend/Friend'});
+                }, 1000);
+            },
+        });
     },
 
     set1newValue(valueName) {  // Oh no, wx-mini not support this
@@ -69,7 +137,8 @@ Page({
     pick1relation(event) {
         const val = event.detail.value;
         this.setData({
-            relationIndex: val
+            relationIndex: val,
+            relation: this.data.relations[val]
         });
     },
 

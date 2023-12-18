@@ -2,7 +2,7 @@
 Author: LetMeFly
 Date: 2023-09-20 16:16:47
 LastEditors: LetMeFly
-LastEditTime: 2023-12-18 21:14:11
+LastEditTime: 2023-12-18 22:47:29
 Description: 人员相关（用户信息、 就诊人、陪诊员）
 '''
 from django.http import HttpResponse, JsonResponse
@@ -36,7 +36,10 @@ def login(request):
     models.User.objects.update_or_create(defaults={'wx_session_key': sessionKey, 'wx_unionid': unionid, 'warrant': warrant}, wx_openid=openid)
     return JsonResponse({'warrant': warrant})
 
+
 def apply2be1caregiver(request):
+    # TODO: 2 <= len(name) <= 16
+    #       6 <= len(phone) <= 32
     warrant = request.POST.get('warrant')
     name = request.POST.get('name')
     phone = request.POST.get('phone')
@@ -44,5 +47,23 @@ def apply2be1caregiver(request):
     runner = models.Runner(userid=userid, name=name, phone=phone, status='待联系')
     runner.save()
     return JsonResponse({'msg': '操作成功'})
-    
-    
+
+
+def add1friend(request):
+    # TODO: 2 <= len(name) <= 16
+    #       6 <= len(phone) <= 32
+    #       10 <= len(idcard) <= 32
+    warrant = request.POST.get('warrant')
+    if18 = request.POST.get('if18')
+    name = request.POST.get('name')
+    sex = request.POST.get('sex')
+    phone = request.POST.get('phone')
+    idcard = request.POST.get('idcard')
+    relation = request.POST.get('relation')
+    relations: ['本人', '父母', '子女', '兄弟姐妹', '夫妻', '其他']
+    if relation not in relations:
+        return -1  # 不httpresponse了
+    userid = models.User.objects.get(warrant=warrant).userid
+    friend = models.Friend(friend=userid, if18=if18, name=name, sex=sex, phone=phone, idcard=idcard, relation=relation)
+    friend.save()
+    return JsonResponse({'msg': '操作成功'})

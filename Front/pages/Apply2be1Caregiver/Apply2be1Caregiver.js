@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-12-18 18:31:48
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-12-18 21:11:22
+ * @LastEditTime: 2023-12-18 21:26:52
  */
 // pages/Apply2be1Caregiver/Apply2be1Caregiver.js
 const app = getApp();
@@ -17,29 +17,22 @@ Page({
     },
 
     apply() {
-        function show1toast(msg) {
-            wx.showToast({
-                title: msg,
-                icon: 'error',
-                duration: 1000
-            });
-        };
         const name = this.data.name;
         const phone = this.data.phone;
         if (name.length < 2) {
-            show1toast('姓名至少两个字');
+            app.show1toast_error('姓名至少两个字');
             return;
         }
         if (name.length > 16) {
-            show1toast('姓名最多16字');
+            app.show1toast_error('姓名最多16字');
             return;
         }
         if (phone.length < 6) {
-            show1toast('电话最少6位数');
+            app.show1toast_error('电话最少6位数');
             return;
         }
         if (phone.length > 32) {
-            show1toast('电话最多32位');
+            app.show1toast_error('电话最多32位');
             return;
         }
         app.myRequest({

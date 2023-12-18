@@ -83,6 +83,14 @@ App({
         wx.request(data);
     },
 
+    show1toast_error(msg) {
+        wx.showToast({
+            title: msg,
+            icon: 'error',
+            duration: 1000
+        });
+    },
+
     hospitalList: [{
         id: '1',
         logo: 'https://www.letmefly.xyz/LetHA/static/pic/hospital/西京医院-Logo.png',

@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-08-15 22:11:19
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-12-18 19:35:47
+ * @LastEditTime: 2023-12-18 22:39:42
 -->
 # 后端接口
 
@@ -39,7 +39,15 @@ TODO:
 
 ```POST: user/add1friend```
 
-TODO:
+data:
+
++ ```warrant```: 授权令
++ ```if18```：是否18周岁y/n
++ ```name```：姓名
++ ```sex```：性别m/w
++ ```phone```：电话
++ ```idcard```：身份证号
++ ```relation```：与本人关系
 
 ### 个人-删除就诊人
 
