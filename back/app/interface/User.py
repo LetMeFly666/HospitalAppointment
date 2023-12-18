@@ -2,7 +2,7 @@
 Author: LetMeFly
 Date: 2023-09-20 16:16:47
 LastEditors: LetMeFly
-LastEditTime: 2023-12-18 23:23:43
+LastEditTime: 2023-12-18 23:37:17
 '''
 '''
 Author: LetMeFly
@@ -13,7 +13,7 @@ Description: 人员相关（用户信息、 就诊人、陪诊员）
 '''
 from django.http import HttpResponse, JsonResponse
 from app import models
-from app.baseFunction import randmod, model2dict
+from app.baseFunction import randmod
 import Secrets
 import requests
 
@@ -79,7 +79,9 @@ def getFriends(request):
     warrant = request.GET.get('warrant')
     userid = models.User.objects.get(warrant=warrant).userid
     friends = models.Friend.objects.filter(friend=userid)
-    friends = model2dict.model2dict(friends)
-    print(friends)
-    print(type(friends))
-    return JsonResponse({'msg': '查询成功！', 'data': friends})
+    data = []
+    for friend in friends.values():
+        data.append({
+            'id': friend.id
+        })
+    return JsonResponse({'msg': '查询成功！', 'data': data})
