@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-08-15 22:32:21
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-12-18 20:20:39
+ * @LastEditTime: 2023-12-18 22:58:38
 -->
 # HospitalAppointment
 
@@ -51,6 +51,7 @@
 
 - [ ] 管理员——陪诊员操作页面
 - [ ] 服务条款勾选同意后无法取消
+- [ ] GET请求时，warrant也作为data传递会在url中显示，不如在header中（小程序似乎会把header中的warrant改成HTTP_WARRANT）
 - [ ] 彩蛋：狂点“我的 -> 更新信息”时弹出提示（当前仅支持判断两次点击间隔）
 - [x] 对登录是否失效的检测（有头像≠登录中）：服务器上warrant有效期无限
 - [x] 登录功能的后端实现

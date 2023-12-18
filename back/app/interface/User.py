@@ -2,7 +2,7 @@
 Author: LetMeFly
 Date: 2023-09-20 16:16:47
 LastEditors: LetMeFly
-LastEditTime: 2023-12-18 22:55:47
+LastEditTime: 2023-12-18 22:57:06
 Description: 人员相关（用户信息、 就诊人、陪诊员）
 '''
 from django.http import HttpResponse, JsonResponse
@@ -70,7 +70,7 @@ def add1friend(request):
 
 
 def getFriends(request):
-    warrant = request.POST.get('warrant')
+    warrant = request.GET.get('warrant')
     userid = models.User.objects.get(warrant=warrant).userid
     friends = models.Friend.objects.filter(friend=userid)
     print(friends)
