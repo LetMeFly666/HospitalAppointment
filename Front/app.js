@@ -77,7 +77,9 @@ App({
                     failed();
                     return;
                 }
-                originalSuccess(response);
+                if (originalSuccess) {
+                    originalSuccess(response);
+                }
             }
         }
         wx.request(data);
