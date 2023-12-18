@@ -2,7 +2,7 @@
 Author: LetMeFly
 Date: 2023-09-20 16:16:47
 LastEditors: LetMeFly
-LastEditTime: 2023-12-18 20:33:10
+LastEditTime: 2023-12-18 21:12:28
 Description: 人员相关（用户信息、 就诊人、陪诊员）
 '''
 from django.http import HttpResponse, JsonResponse
@@ -37,10 +37,7 @@ def login(request):
     return JsonResponse({'warrant': warrant})
 
 def apply2be1caregiver(request):
-    print(request.META)
-    print(request.POST)
-    print(request.GET)
-    warrant = request.META.get('warrant')
+    warrant = request.POST.get('warrant')
     name = request.POST.get('name')
     phone = request.POST.get('phone')
     print(warrant, name, phone)

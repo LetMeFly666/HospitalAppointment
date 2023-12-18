@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-12-18 18:31:48
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-12-18 19:42:08
+ * @LastEditTime: 2023-12-18 21:11:22
  */
 // pages/Apply2be1Caregiver/Apply2be1Caregiver.js
 const app = getApp();
