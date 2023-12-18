@@ -2,7 +2,7 @@
 Author: LetMeFly
 Date: 2023-09-20 16:16:47
 LastEditors: LetMeFly
-LastEditTime: 2023-12-18 22:47:29
+LastEditTime: 2023-12-18 22:49:09
 Description: 人员相关（用户信息、 就诊人、陪诊员）
 '''
 from django.http import HttpResponse, JsonResponse
@@ -60,7 +60,7 @@ def add1friend(request):
     phone = request.POST.get('phone')
     idcard = request.POST.get('idcard')
     relation = request.POST.get('relation')
-    relations: ['本人', '父母', '子女', '兄弟姐妹', '夫妻', '其他']
+    relations = ['本人', '父母', '子女', '兄弟姐妹', '夫妻', '其他']  # 若要改，勿忘前端
     if relation not in relations:
         return -1  # 不httpresponse了
     userid = models.User.objects.get(warrant=warrant).userid

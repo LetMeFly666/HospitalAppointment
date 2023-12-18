@@ -11,7 +11,7 @@ Page({
         sex: '',
         phone: '',
         idcard: '',
-        relations: ['本人', '父母', '子女', '兄弟姐妹', '夫妻', '其他'],
+        relations: ['本人', '父母', '子女', '兄弟姐妹', '夫妻', '其他'],  // 若要改，勿忘后端
         relation: '本人',
         relationIndex: 0
     },
