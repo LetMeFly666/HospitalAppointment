@@ -2,18 +2,12 @@
 Author: LetMeFly
 Date: 2023-09-20 16:16:47
 LastEditors: LetMeFly
-LastEditTime: 2023-12-18 23:39:37
-'''
-'''
-Author: LetMeFly
-Date: 2023-09-20 16:16:47
-LastEditors: LetMeFly
-LastEditTime: 2023-12-18 23:20:17
+LastEditTime: 2023-12-18 23:46:32
 Description: 人员相关（用户信息、 就诊人、陪诊员）
 '''
 from django.http import HttpResponse, JsonResponse
 from app import models
-from app.baseFunction import randmod
+from app.baseFunction import randmod, model2dict
 import Secrets
 import requests
 
@@ -79,11 +73,5 @@ def getFriends(request):
     warrant = request.GET.get('warrant')
     userid = models.User.objects.get(warrant=warrant).userid
     friends = models.Friend.objects.filter(friend=userid)
-    data = []
-    for friend in friends.values():
-        for key, item in friend.items():
-            print(key, item)
-        data.append({
-            'id': friend['id']
-        })
-    return JsonResponse({'msg': '查询成功！', 'data': data})
+    friends = model2dict.model2dict(friends)
+    return JsonResponse({'msg': '查询成功！', 'data': friends})
