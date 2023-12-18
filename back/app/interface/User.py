@@ -2,11 +2,11 @@
 Author: LetMeFly
 Date: 2023-09-20 16:16:47
 LastEditors: LetMeFly
-LastEditTime: 2023-12-18 23:17:58
+LastEditTime: 2023-12-18 23:20:17
 Description: 人员相关（用户信息、 就诊人、陪诊员）
 '''
 from django.http import HttpResponse, JsonResponse
-from django.forms.models import model_to_dict
+from django.core import serializers
 from app import models
 from app.baseFunction import randmod
 import Secrets
@@ -74,6 +74,6 @@ def getFriends(request):
     warrant = request.GET.get('warrant')
     userid = models.User.objects.get(warrant=warrant).userid
     friends = models.Friend.objects.filter(friend=userid)
-    friends = model_to_dict(friends)
+    friends = serializers.serialize('json', friends)
     print(friends)
     return JsonResponse({'msg': '查询成功！', 'data': friends})
