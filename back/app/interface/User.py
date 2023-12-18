@@ -2,7 +2,7 @@
 Author: LetMeFly
 Date: 2023-09-20 16:16:47
 LastEditors: LetMeFly
-LastEditTime: 2023-12-06 23:00:20
+LastEditTime: 2023-12-18 20:22:10
 Description: 人员相关（用户信息、 就诊人、陪诊员）
 '''
 from django.http import HttpResponse, JsonResponse
@@ -36,6 +36,14 @@ def login(request):
     models.User.objects.update_or_create(defaults={'wx_session_key': sessionKey, 'wx_unionid': unionid, 'warrant': warrant}, wx_openid=openid)
     return JsonResponse({'warrant': warrant})
 
-    
+def apply2be1caregiver(request):
+    warrant = request.META.get('warrant')
+    name = request.POST.get('name')
+    phone = request.POST.get('phone')
+    print(warrant, name, phone)
+    userid = models.User.objects.get(warrant=warrant)
+    runner = models.Runner(userid=userid, userid=userid, name=name, phone=phone, status='待联系')
+    runner.save()
+    return JsonResponse({'msg': '操作成功'})
     
     

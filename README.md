@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-08-15 22:32:21
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-12-18 18:48:23
+ * @LastEditTime: 2023-12-18 20:20:39
 -->
 # HospitalAppointment
 
@@ -49,6 +49,7 @@
 
 ## TODO
 
+- [ ] 管理员——陪诊员操作页面
 - [ ] 服务条款勾选同意后无法取消
 - [ ] 彩蛋：狂点“我的 -> 更新信息”时弹出提示（当前仅支持判断两次点击间隔）
 - [x] 对登录是否失效的检测（有头像≠登录中）：服务器上warrant有效期无限

@@ -30,6 +30,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     url('hello', interface.User.helloWorld),
     url('login/', interface.User.login),
+    url('user/apply2be1caregiver', interface.User.apply2be1caregiver),
 ]
 
 # 很奇怪，DEBUG=False下加上下面那个才能访问到图片；DEBUG=True下加上下面的那个又访问不到图片了

@@ -6,14 +6,14 @@
     <view class="inline">
         <view class="leftText">姓名</view>
         <view class="inputView">
-            <input class="realInputPlace" placeholder="请输入姓名"></input>
+            <input class="realInputPlace" placeholder="请输入姓名" bindinput="inputTheName"></input>
         </view>
     </view>
     <view class="splitLine"></view>
     <view class="inline">
         <view class="leftText">电话</view>
         <view class="inputView">
-            <input class="realInputPlace" placeholder="请输入电话"></input>
+            <input class="realInputPlace" placeholder="请输入电话" bindinput="inputThePhone"></input>
         </view>
     </view>
 </view>

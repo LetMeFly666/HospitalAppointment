@@ -2,7 +2,7 @@
 Author: LetMeFly
 Date: 2023-09-19 10:00:24
 LastEditors: LetMeFly
-LastEditTime: 2023-12-06 22:51:27
+LastEditTime: 2023-12-18 20:22:50
 '''
 from django.db import models
 
@@ -28,6 +28,7 @@ class Friend(models.Model):
 
 class Runner(models.Model):
     id = models.AutoField(primary_key=True)
+    userid = models.IntegerField()
     name = models.CharField(max_length=16)
     phone = models.CharField(max_length=32)
     status = models.CharField(max_length=5)

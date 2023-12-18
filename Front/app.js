@@ -48,12 +48,31 @@ App({
 
     /**
      * 请求时header带上warrant
+     * 若没有定义失败回调函数，则“请求失败时、返回非200时”toast“网络开小差了”
      */
     myRequest(data) {
         if (!data['header']) {
             data['header'] = {};
         }
         data['header']['warrant'] = wx.getStorageSync('warrant');
+        function failed() {wx.showToast({
+            title: '网络开小差了',
+            icon: 'error',
+            duration: 500
+        });
+        };
+        if (!data['fail']) {
+            data['fail'] = failed;
+            const originalSuccess = data['success'];
+            data['success'] = function(response) {
+                if (response.statusCode != 200) {
+                    console.log(response.statusCode);
+                    failed();
+                    return;
+                }
+                originalSuccess(response);
+            }
+        }
         wx.request(data);
     },
 

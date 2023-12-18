@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-08-15 22:11:19
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-12-14 20:34:12
+ * @LastEditTime: 2023-12-18 19:35:47
 -->
 # 后端接口
 
@@ -46,6 +46,16 @@ TODO:
 ```POST: user/delete1friend```
 
 TODO:
+
+### 个人-申请成为陪诊员
+
+```POST: user/apply2be1caregiver```
+
+data:
+
++ ```warrant```: 授权令
++ ```name```: 姓名
++ ```phone```: 电话
 
 ## 支付相关
 
