@@ -2,7 +2,7 @@
 Author: LetMeFly
 Date: 2023-09-20 16:16:47
 LastEditors: LetMeFly
-LastEditTime: 2023-12-18 23:37:17
+LastEditTime: 2023-12-18 23:38:19
 '''
 '''
 Author: LetMeFly
@@ -81,7 +81,8 @@ def getFriends(request):
     friends = models.Friend.objects.filter(friend=userid)
     data = []
     for friend in friends.values():
+        print(friend)
         data.append({
-            'id': friend.id
+            'id': friend['id']
         })
     return JsonResponse({'msg': '查询成功！', 'data': data})
