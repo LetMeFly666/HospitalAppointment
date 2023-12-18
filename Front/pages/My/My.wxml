@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-07-03 21:19:26
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-12-16 16:52:22
+ * @LastEditTime: 2023-12-18 18:32:10
 -->
 <!--pages/My/My.wxml-->
 
@@ -57,6 +57,6 @@
 </view>
 
 <!-- 申请成为陪诊员 -->
-<view id='viewForPromotor' class='boxWithShadow'>
+<view id='viewForPromotor' class='boxWithShadow' bindtap="apply2be1caregiver">
     <view class='textLeft'>申请成为陪诊员</view>
 </view>

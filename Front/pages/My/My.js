@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-07-03 21:19:26
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-12-16 16:56:08
+ * @LastEditTime: 2023-12-18 18:52:54
  */
 // pages/My/My.js
 Page({
@@ -12,6 +12,10 @@ Page({
      */
     data: {
         lastUpdateinfoTime: 0
+    },
+
+    apply2be1caregiver() {
+        wx.redirectTo({url: '/pages/Apply2be1Caregiver/Apply2be1Caregiver'});
     },
 
     fakeUpdateInfo() {

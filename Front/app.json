@@ -13,7 +13,8 @@
     "pages/Pay/Pay",
     "pages/Friend/Friend",
     "pages/FriendAdd/FriendAdd",
-    "pages/MyOrder/MyOrder"
+    "pages/MyOrder/MyOrder",
+    "pages/Apply2be1Caregiver/Apply2be1Caregiver"
   ],
   "window": {
     "backgroundTextStyle": "light",

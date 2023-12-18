@@ -97,6 +97,13 @@
           "query": "type=0",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "申请成为陪诊员",
+          "pathName": "pages/Apply2be1Caregiver/Apply2be1Caregiver",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

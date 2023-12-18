@@ -1,0 +1,25 @@
+<!--pages/Apply2be1Caregiver/Apply2be1Caregiver.wxml-->
+<!-- title -->
+<view class="title">申请成为陪诊员</view>
+<!-- 信息填写处 -->
+<view class="boxWithShadow dataBox">
+    <view class="inline">
+        <view class="leftText">姓名</view>
+        <view class="inputView">
+            <input class="realInputPlace" placeholder="请输入姓名"></input>
+        </view>
+    </view>
+    <view class="splitLine"></view>
+    <view class="inline">
+        <view class="leftText">电话</view>
+        <view class="inputView">
+            <input class="realInputPlace" placeholder="请输入电话"></input>
+        </view>
+    </view>
+</view>
+<!-- 提交按钮 -->
+<view class="payContainer">
+    <view class="blueButton" bindtap="apply">
+        <view class="payText">发起申请</view>
+    </view>
+</view>

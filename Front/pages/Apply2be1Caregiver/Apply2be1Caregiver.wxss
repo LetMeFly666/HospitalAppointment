@@ -1,0 +1,84 @@
+/* pages/Apply2be1Caregiver/Apply2be1Caregiver.wxss */
+page {
+    background-color: rgb(242, 242, 242);
+}
+
+/* Common */
+.boxWithShadow {
+    border-radius: 20rpx;
+    box-shadow: 0 2rpx 2px 0 rgba(0, 0, 0, 0.24), 0 2rpx 2rpx 0 rgba(0, 0, 0, 0.19);
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+    background-color: #ffffff;
+}
+
+/* title */
+.title {
+    width: 100%;
+    text-align: center;
+    margin-top: 30rpx;
+    margin-bottom: 30rpx;
+    font-size: larger;
+}
+
+/* 信息填写处 */
+.splitLine {
+    margin: auto;
+    width: 90%;
+    background: #E0E3DA;
+    height: 3rpx;
+}
+
+.dataBox {
+    margin-top: 12rpx;
+    flex-direction: column;
+}
+
+.inline {
+    display: flex;
+}
+
+.dataBox
+.leftText {
+    margin-top: 25rpx;
+    margin-left: 50rpx;
+    margin-bottom: 14rpx;
+}
+
+.inputView {
+    margin: auto;
+    position: fixed;
+    right: 60rpx;
+	align-items: center;
+	justify-content: center;
+}
+
+.realInputPlace {
+    text-align: right;
+    margin-top: 26rpx;
+}
+
+/* 提交按钮 */
+.payContainer {
+    margin-top: 40rpx;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    bottom: 0;
+}
+
+.blueButton {
+    height: 80rpx;
+    width: 70%;
+    background-color: #4957fe;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 40rpx;
+}
+
+.payText {
+    color: white;
+}
