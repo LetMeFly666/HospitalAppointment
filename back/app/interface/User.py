@@ -2,11 +2,10 @@
 Author: LetMeFly
 Date: 2023-09-20 16:16:47
 LastEditors: LetMeFly
-LastEditTime: 2023-12-18 23:02:52
+LastEditTime: 2023-12-18 23:04:48
 Description: 人员相关（用户信息、 就诊人、陪诊员）
 '''
 from django.http import HttpResponse, JsonResponse
-from django.forms.models import model_to_dict
 from app import models
 from app.baseFunction import randmod
 import Secrets
@@ -72,11 +71,8 @@ def add1friend(request):
 
 def getFriends(request):
     warrant = request.GET.get('warrant')
-    print(warrant)
-    print(request.GET)
-    print(request.POST)
     userid = models.User.objects.get(warrant=warrant).userid
     friends = models.Friend.objects.filter(friend=userid)
-    friends = model_to_dict(friends)
-    print(friends)
+    for friend in friends:
+        print(friend)
     return JsonResponse({'msg': '查询成功！', 'data': friends})
