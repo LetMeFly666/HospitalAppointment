@@ -2,7 +2,7 @@
 Author: LetMeFly
 Date: 2023-08-17 16:37:36
 LastEditors: LetMeFly
-LastEditTime: 2023-09-21 22:14:07
+LastEditTime: 2023-12-19 10:22:32
 '''
 """HospitalAppointment URL Configuration
 
@@ -33,6 +33,7 @@ urlpatterns = [
     url('user/apply2be1caregiver', interface.User.apply2be1caregiver),
     url('user/add1friend', interface.User.add1friend),
     url('user/getFriends', interface.User.getFriends),
+    url('user/delete1friend', interface.User.delete1friend),
 ]
 
 # 很奇怪，DEBUG=False下加上下面那个才能访问到图片；DEBUG=True下加上下面的那个又访问不到图片了

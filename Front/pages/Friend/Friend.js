@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-12-14 19:31:00
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-12-19 10:01:47
+ * @LastEditTime: 2023-12-19 10:29:18
  */
 // pages/Friend/Friend.js
 const app = getApp();
@@ -51,7 +51,9 @@ Page({
         },]
     },
 
-    delete1friend() {
+    delete1friend(event) {
+        const id = event.currentTarget.dataset.id;
+        const that = this;
         wx.showModal({
             title: '警告',
             content: '确认要删除吗',
@@ -59,7 +61,16 @@ Page({
             confirmText: '是的没错',
             success: function (res) {
                 if (res.confirm) {
-                    console.log('TODO: 真删');  // TODO:
+                    app.myRequest({
+                        url: 'https://www.letmefly.xyz/LetHA/user/delete1friend',
+                        method: 'POST',
+                        data: {
+                            'id': id
+                        },
+                        success(response) {
+                            that.getFriends();
+                        }
+                    });
                 } else {
                     console.log('不删了');
                 }

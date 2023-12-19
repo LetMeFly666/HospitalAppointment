@@ -64,7 +64,10 @@ data:
 
 ```POST: user/delete1friend```
 
-TODO:
+data:
+
++ ```warrant```: 授权令
++ ```id```: 要删除的friend的id
 
 ### 个人-申请成为陪诊员
 

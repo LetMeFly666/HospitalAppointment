@@ -9,7 +9,7 @@
 <view class="noFriends" wx:if="{{!friends.length}}">暂无就诊人</view>
 <view wx:for="{{friends}}" wx:key="id" class="boxWithShadow friend">
     <view class="text">{{item.name}}</view>
-    <view class="delete" bindtap="delete1friend">
+    <view class="delete" catchtap="delete1friend" data-id="{{item.id}}">
         <view class="deleteText">删除</view>
     </view>
 </view>

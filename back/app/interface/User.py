@@ -2,7 +2,7 @@
 Author: LetMeFly
 Date: 2023-09-20 16:16:47
 LastEditors: LetMeFly
-LastEditTime: 2023-12-18 23:47:42
+LastEditTime: 2023-12-19 10:25:39
 Description: 人员相关（用户信息、 就诊人、陪诊员）
 '''
 from django.http import HttpResponse, JsonResponse
@@ -75,3 +75,12 @@ def getFriends(request):
     friends = models.Friend.objects.filter(friend=userid).values()
     friends = model2dict.model2dict(friends)
     return JsonResponse({'msg': '查询成功！', 'data': friends})
+
+
+def delete1friend(request):
+    warrant = request.POST.get('warrant')
+    friendId = request.POST.get('id')
+    userid = models.User.objects.get(warrant=warrant).userid
+    friend = models.Friend.objects.get(id=friendId, friend=userid)
+    friend.delete()
+    return JsonResponse({'msg': '删除成功！'})
