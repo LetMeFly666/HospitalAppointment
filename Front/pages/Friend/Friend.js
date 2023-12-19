@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-12-14 19:31:00
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-12-18 22:52:42
+ * @LastEditTime: 2023-12-19 10:01:47
  */
 // pages/Friend/Friend.js
 const app = getApp();
@@ -74,7 +74,13 @@ Page({
     getFriends() {
         const that = this;
         app.myRequest({
-            url: 'https://www.letmefly.xyz/LetHA/user/getFriends'
+            url: 'https://www.letmefly.xyz/LetHA/user/getFriends',
+            success(response) {
+                const data = response.data['data'];
+                that.setData({
+                    friends: data
+                });
+            }
         });
     },
 
