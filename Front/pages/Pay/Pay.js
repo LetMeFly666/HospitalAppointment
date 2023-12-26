@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-12-03 18:38:26
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-12-19 10:40:27
+ * @LastEditTime: 2023-12-26 11:13:09
  */
 // pages/Pay/Pay.js
 const app = getApp();
@@ -23,8 +23,13 @@ Page({
             name: '请选择就诊人',
             id: '-1'
         }],
+        friends_onlyNames: ['请选择就诊人'],
         friendsIndex: 0,
         date: '请选择就诊时间'
+    },
+
+    toPay() {
+        // TODO: 
     },
 
     getFriends() {
@@ -43,13 +48,22 @@ Page({
                             if (res.confirm) {
                                 wx.redirectTo({url: '/pages/FriendAdd/FriendAdd'});
                             } else {
-                                console.log('不删了');
+                                wx.showToast({
+                                    title: '可能导致无法支付',
+                                    icon: 'error',
+                                    duration: 1000
+                                });
                             }
                         }
                     })
                 }
+                const friends_onlyNames = [];
+                for (var i = 0; i < data.length; i++) {
+                    friends_onlyNames.push(data[i]['name']);
+                }
                 that.setData({
-                    friends: data
+                    friends: data,
+                    friends_onlyNames: friends_onlyNames
                 });
             }
         });
