@@ -2,9 +2,10 @@
  * @Author: LetMeFly
  * @Date: 2023-12-03 18:38:26
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-12-16 16:35:07
+ * @LastEditTime: 2023-12-19 10:40:27
  */
 // pages/Pay/Pay.js
+const app = getApp();
 Page({
 
     /**
@@ -18,13 +19,40 @@ Page({
         alreadyRead: false,
         remainTime: 5,
         showNotes: false,
-        friends: ['请选择就诊人'],
+        friends: [{
+            name: '请选择就诊人',
+            id: '-1'
+        }],
         friendsIndex: 0,
         date: '请选择就诊时间'
     },
 
     getFriends() {
-        // TODO: 无就诊人时提示前往添加就诊人
+        const that = this;
+        app.myRequest({
+            url: 'https://www.letmefly.xyz/LetHA/user/getFriends',
+            success(response) {
+                const data = response.data['data'];
+                if (!data.length) {
+                    wx.showModal({
+                        title: '暂无就诊人',
+                        content: '是否前往添加就诊人',
+                        cancelText: '我不',
+                        confirmText: '好吧确实',
+                        success: function (res) {
+                            if (res.confirm) {
+                                wx.redirectTo({url: '/pages/FriendAdd/FriendAdd'});
+                            } else {
+                                console.log('不删了');
+                            }
+                        }
+                    })
+                }
+                that.setData({
+                    friends: data
+                });
+            }
+        });
     },
 
     pick1friend(event) {
