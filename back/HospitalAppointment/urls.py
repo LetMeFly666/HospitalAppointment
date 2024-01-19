@@ -2,7 +2,7 @@
 Author: LetMeFly
 Date: 2023-08-17 16:37:36
 LastEditors: LetMeFly
-LastEditTime: 2023-12-19 10:22:32
+LastEditTime: 2024-01-19 20:22:27
 '''
 """HospitalAppointment URL Configuration
 
@@ -28,12 +28,13 @@ from app import interface
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url('hello', interface.User.helloWorld),
-    url('login/', interface.User.login),
-    url('user/apply2be1caregiver', interface.User.apply2be1caregiver),
-    url('user/add1friend', interface.User.add1friend),
-    url('user/getFriends', interface.User.getFriends),
-    url('user/delete1friend', interface.User.delete1friend),
+    path('hello/', interface.User.helloWorld),
+    path('login/', interface.User.login),
+    path('user/apply2be1caregiver', interface.User.apply2be1caregiver),
+    path('user/add1friend', interface.User.add1friend),
+    path('user/getFriends', interface.User.getFriends),
+    path('user/delete1friend', interface.User.delete1friend),
+    path('hello/html/', interface.HTML.html('helloWorld.html'))
 ]
 
 # 很奇怪，DEBUG=False下加上下面那个才能访问到图片；DEBUG=True下加上下面的那个又访问不到图片了
