@@ -1,0 +1,97 @@
+<!--
+ * @Author: LetMeFly
+ * @Date: 2024-01-19 21:00:35
+ * @LastEditors: LetMeFly
+ * @LastEditTime: 2024-01-19 21:44:35
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>陪诊员列表</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        form {
+            margin-top: 10px;
+        }
+
+        input[type="text"] {
+            padding: 5px;
+            margin-right: 10px;
+        }
+
+        button {
+            padding: 5px 10px;
+            background: #5cb85c;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #4cae4c;
+        }
+    </style>
+</head>
+<body>
+    <h2>陪诊员列表</h2>
+    {% if runners %}
+        <ul>
+            {% for runner in runners %}
+                <li>
+                    <strong>{{ runner.name }}</strong> - {{ runner.phone }} - 备注: <span id="status-{{ runner.id }}">{{ runner.status }}</span>
+                    <input type="text" id="input-{{ runner.id }}" value="{{ runner.status }}">
+                    <button onclick="updateStatus({{ runner.id }})">更改备注</button>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>暂无人申请成为陪诊员</p>
+    {% endif %}
+
+    <script>
+        function updateStatus(runnerId) {
+        var status = document.getElementById('input-' + runnerId).value;
+        var url = '/runners/edit/' + runnerId + '/';  // 构建 URL
+
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({status: status})
+        })
+        .then(response => response.json())
+        .then(data => {
+            // console.log(data); // 处理服务器的响应
+            alert(data['msg']);
+            if (!data['code']) {
+                location.reload();
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    }
+    </script>
+</body>
+</html>

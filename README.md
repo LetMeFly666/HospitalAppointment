@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-08-15 22:32:21
  * @LastEditors: LetMeFly
- * @LastEditTime: 2024-01-10 21:46:30
+ * @LastEditTime: 2024-01-19 21:45:57
 -->
 # HospitalAppointment
 
@@ -37,6 +37,7 @@
    DATABASE_PASSWORD = '123'
    APP_ID = 'wx5c50bcb971eb5819'
    APP_SECRET = 'shfi3uyf292938748910uaffkjhebhxh'
+   ADMIN_PASSWORD = '123'  # 后台管理页面的密码
    ```
 7. 在```Back```目录下执行以下命令：
    1. ```python manage.py makemigrations```
@@ -49,9 +50,9 @@
 
 ## TODO
 
-- [ ] 管理员——陪诊员操作页面
 - [ ] 服务条款勾选同意后无法取消
 - [ ] GET请求时，warrant也作为data传递会在url中显示，不如在header中（小程序似乎会把header中的warrant改成HTTP_WARRANT）
+- [x] 管理员——陪诊员操作页面
 - [x] 彩蛋：狂点“我的 -> 更新信息”时弹出提示
 - [x] 对登录是否失效的检测（有头像≠登录中）：服务器上warrant有效期无限
 - [x] 登录功能的后端实现

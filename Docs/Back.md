@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-08-15 22:11:19
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-12-18 22:54:43
+ * @LastEditTime: 2024-01-19 21:50:43
 -->
 # 后端接口
 
@@ -78,6 +78,28 @@ data:
 + ```warrant```: 授权令
 + ```name```: 姓名
 + ```phone```: 电话
+
+## 管理员相关
+
+### 管理-陪诊员列表查看
+
+用户在小程序中“申请成为陪诊员”后，其申请信息将会显示在这个html页面上。
+
+```GET: runners/```
+
+data:
+
++ ```COOKIE.LetHA```: 管理员密码
+
+### 管理-修改陪诊员状态
+
+```POST: runners/edit/<int:runnerId>/```
+
+data:
+
++ ```COOKIE.LetHA```: 管理员密码
++ ```runnerID```(在url中): 要修改的陪诊员的ID
++ ```status```: 要设置的陪诊员新状态
 
 ## 支付相关
 
