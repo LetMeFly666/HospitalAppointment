@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2024-01-19 21:00:35
  * @LastEditors: LetMeFly
- * @LastEditTime: 2024-01-19 21:44:35
+ * @LastEditTime: 2024-01-19 21:55:25
 -->
 <!DOCTYPE html>
 <html>
@@ -73,7 +73,7 @@
     <script>
         function updateStatus(runnerId) {
         var status = document.getElementById('input-' + runnerId).value;
-        var url = '/runners/edit/' + runnerId + '/';  // 构建 URL
+        var url = './edit/' + runnerId + '/';  // 构建 URL
 
         fetch(url, {
             method: 'POST',
