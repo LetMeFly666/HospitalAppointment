@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-12-14 19:31:00
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-12-19 10:29:18
+ * @LastEditTime: 2024-01-22 20:27:42
  */
 // pages/Friend/Friend.js
 const app = getApp();
@@ -62,7 +62,7 @@ Page({
             success: function (res) {
                 if (res.confirm) {
                     app.myRequest({
-                        url: 'https://www.letmefly.xyz/LetHA/user/delete1friend',
+                        url: 'https://www.letmefly.xyz/LetHA/user/delete1friend/',
                         method: 'POST',
                         data: {
                             'id': id
@@ -85,7 +85,7 @@ Page({
     getFriends() {
         const that = this;
         app.myRequest({
-            url: 'https://www.letmefly.xyz/LetHA/user/getFriends',
+            url: 'https://www.letmefly.xyz/LetHA/user/getFriends/',
             success(response) {
                 const data = response.data['data'];
                 that.setData({

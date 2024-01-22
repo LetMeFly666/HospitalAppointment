@@ -2,7 +2,7 @@
 Author: LetMeFly
 Date: 2023-08-17 16:37:36
 LastEditors: LetMeFly
-LastEditTime: 2024-01-19 20:58:45
+LastEditTime: 2024-01-22 20:28:16
 '''
 """HospitalAppointment URL Configuration
 
@@ -30,10 +30,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('hello/', interface.User.helloWorld),
     path('login/', interface.User.login),
-    path('user/apply2be1caregiver', interface.User.apply2be1caregiver),
-    path('user/add1friend', interface.User.add1friend),
-    path('user/getFriends', interface.User.getFriends),
-    path('user/delete1friend', interface.User.delete1friend),
+    path('user/apply2be1caregiver/', interface.User.apply2be1caregiver),
+    path('user/add1friend/', interface.User.add1friend),
+    path('user/getFriends/', interface.User.getFriends),
+    path('user/delete1friend/', interface.User.delete1friend),
     path('hello/html/', baseFunction.HTML.html('helloWorld.html')),
     # 管理员界面 - 陪诊员
     path('runners/', interface.Admin.runnerList, name='runner_list'),

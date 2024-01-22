@@ -36,7 +36,7 @@ Page({
             return;
         }
         app.myRequest({
-            url: 'https://www.letmefly.xyz/LetHA/user/apply2be1caregiver',
+            url: 'https://www.letmefly.xyz/LetHA/user/apply2be1caregiver/',
             method: 'POST',
             data: {
                 name: name,

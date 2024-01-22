@@ -64,7 +64,7 @@ Page({
             return;
         }
         app.myRequest({
-            url: 'https://www.letmefly.xyz/LetHA/user/add1friend',
+            url: 'https://www.letmefly.xyz/LetHA/user/add1friend/',
             method: 'POST',
             data: {
                 if18: if18,
