@@ -3,11 +3,12 @@
 
 [{'id': 1, 'name': 'ha'}, {'id': 2, 'name': 'la'}]
 """
-def model2dict(model) -> dict:
+def model2dict(model, ignoreList=[]) -> dict:
     ans = []
     for m in model:
         thisDict = {}
         for key, val in m.items():
-            thisDict[key] = val
+            if key not in ignoreList:
+                thisDict[key] = val
         ans.append(thisDict)
     return ans
