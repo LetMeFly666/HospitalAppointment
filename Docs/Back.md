@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-08-15 22:11:19
  * @LastEditors: LetMeFly
- * @LastEditTime: 2024-01-22 20:58:52
+ * @LastEditTime: 2024-01-22 21:35:30
 -->
 # 后端接口
 
@@ -93,21 +93,15 @@ response:
 {
     code: 0,
     data: [{
-        date: '2023-12-16',
+        id: 1,
+        hospital: '西安医院',
         service: '特需门诊VIP陪诊服务',
-        price: '￥588',
-        progress: '待付款'
-    }, {
+        friendid: 2,
         date: '2023-12-16',
-        service: '特需门诊VIP陪诊服务',
+        paidTime: '2024-01-22 21:25:59'
         price: '￥588',
-        progress: '已付款'
-    }, {
-        date: '2023-12-16',
-        service: '特需门诊VIP陪诊服务',
-        price: '￥588',
-        progress: '已完成'
-    }]
+        progress: '待付款',  // 或 已付款 或 已完成
+    }, {...}]
 }
 ```
 
