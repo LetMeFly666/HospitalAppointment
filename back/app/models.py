@@ -2,7 +2,7 @@
 Author: LetMeFly
 Date: 2023-09-19 10:00:24
 LastEditors: LetMeFly
-LastEditTime: 2024-01-22 20:24:22
+LastEditTime: 2024-01-22 20:59:22
 '''
 from django.db import models
 
@@ -51,6 +51,7 @@ class Log(models.Model):
 class Money(models.Model):
     id = models.AutoField(primary_key=True)
     logid = models.IntegerField()
+    friendName = models.CharField(max_length=16)
     moneyTimes100 = models.IntegerField()
     time = models.DateTimeField()
 

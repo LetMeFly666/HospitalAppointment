@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-08-15 22:11:19
  * @LastEditors: LetMeFly
- * @LastEditTime: 2024-01-22 16:58:21
+ * @LastEditTime: 2024-01-22 20:58:52
 -->
 # 后端接口
 
@@ -204,6 +204,7 @@ data:
 |:--:|:--:|:--:|
 |id|INT|django的id|
 |logid|INT|哪次记录收取的（对应的Log数据库的id）|
+|friendName|VARCHAR(16)|就诊人（发起用户的friend）名字|
 |moneyTimes100|INT|这次收取了多少钱（和Log表中paidmoneyTimes100相同）|
 |time|TIME|交易完成时间（和Log表中的paidtime相同）|
 
