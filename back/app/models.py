@@ -2,7 +2,7 @@
 Author: LetMeFly
 Date: 2023-09-19 10:00:24
 LastEditors: LetMeFly
-LastEditTime: 2024-01-22 16:58:51
+LastEditTime: 2024-01-22 20:15:26
 '''
 from django.db import models
 
@@ -41,11 +41,11 @@ class Log(models.Model):
     friendid = models.IntegerField()
     requestTime = models.DateTimeField()
     ifpaid = models.CharField(max_length=1)
-    paidtime = models.IntegerField(blank=True)
+    paidtime = models.IntegerField(null=True, blank=True)
     paidmoneyTimes100 = models.TimeField(default=0)
     iffinish = models.CharField(max_length=1)
-    whofinished = models.CharField(max_length=1, blank=True)
-    more = models.CharField(max_length=10240, blank=True)
+    whofinished = models.CharField(max_length=1, null=True, blank=True)
+    more = models.CharField(max_length=10240, null=True, blank=True)
 
 
 class Money(models.Model):
