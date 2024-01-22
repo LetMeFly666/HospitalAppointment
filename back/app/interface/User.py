@@ -2,7 +2,7 @@
 Author: LetMeFly
 Date: 2023-09-20 16:16:47
 LastEditors: LetMeFly
-LastEditTime: 2024-01-19 20:59:00
+LastEditTime: 2024-01-22 21:27:38
 Description: 人员相关（用户信息、 就诊人、陪诊员）
 '''
 from django.http import HttpResponse, JsonResponse
@@ -84,3 +84,74 @@ def delete1friend(request):
     friend = models.Friend.objects.get(id=friendId, friend=userid)
     friend.delete()
     return JsonResponse({'msg': '删除成功！'})
+
+
+"""
+返回所有订单的记录：
+
+Response: {
+    code: 0,
+    data: [{
+        id: 1,
+        hospital: '西安医院',
+        service: '特需门诊VIP陪诊服务',
+        friendid: 2,
+        date: '2023-12-16',
+        paidTime: '2024-01-22 21:25:59'
+        price: '￥588',
+        progress: '待付款',  // 或 已付款 或 已完成
+    }]
+}
+"""
+def getOrderStatus(request):
+    warrant = request.GET.get('warrant')
+    userid = models.User.objects.get(warrant=warrant).userid
+    orders = models.Log.objects.filter(userid=userid).values()
+    orders = model2dict.model2dict(orders, ignoreList=['userid', 'whofinished', 'more'])
+    # 处理医院名
+    hospitalInfo = models.Hospital.objects.all().values()
+    hospitalInfo = model2dict.model2dict(hospitalInfo)
+    hospitalInfoDict = {}
+    for thisHospital in hospitalInfo:
+        hospitalInfoDict[thisHospital['id']] = thisHospital['name']
+    for order in orders:
+        hospitalId = order['hospitalid']
+        del order['hospitalid']
+        order['hospital'] = hospitalInfoDict[hospitalId]
+    # 处理服务名
+    serviceInfo = models.Service.objects.all().values()
+    serviceInfo = model2dict.model2dict(serviceInfo)
+    serviceInfoDict = {}
+    for thisService in serviceInfo:
+        serviceInfoDict[thisService['id']] = thisService['name']
+    for order in orders:
+        serviceId = order['serviceid']
+        del order['serviceid']
+        order['service'] = serviceInfoDict[serviceId]
+    # 处理日期
+    for order in orders:
+        date = order['requestTime']
+        del order['requestTime']
+        order['date'] = date.strftime('%Y-%m-%d')
+        paidTime = order['paidtime']
+        del order['paidtime']
+        order['paidTime'] = paidTime.strftime('%Y-%m-%d %H:%M:%S') if paidTime else ''
+    # 处理价格
+    for order in orders:
+        price = order['paidmoneyTimes100']
+        del order['paidmoneyTimes100']
+        order['price'] = f'￥{price / 100}'
+    # 处理状态
+    for order in orders:
+        ifPaid = order['ifpaid']
+        del order['ifpaid']
+        ifFinished = order['iffinish']
+        del order['iffinish']
+        if ifPaid == 'n':
+            status = '待付款'
+        elif ifFinished == 'n':
+            status = '已付款'
+        else:
+            status = '已完成'
+        order['progress'] = status
+    return JsonResponse({'code': '0', 'data': orders})

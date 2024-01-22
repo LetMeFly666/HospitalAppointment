@@ -223,6 +223,6 @@ data:
 
 |字段|类型|描述|
 |:--:|:--:|:--:|
-|id|INT|django的id|
+|id|INT|django的id（全天的id=半天的id+100）|
 |name|VARCHAR(64)|服务名|
-|type|VARCHAR(32)|一种648/半天120全天200|
+|type|VARCHAR(32)|648一次/半天120/全天200|
