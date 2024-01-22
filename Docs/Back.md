@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-08-15 22:11:19
  * @LastEditors: LetMeFly
- * @LastEditTime: 2024-01-22 16:40:19
+ * @LastEditTime: 2024-01-22 16:58:21
 -->
 # 后端接口
 
@@ -224,4 +224,4 @@ data:
 |:--:|:--:|:--:|
 |id|INT|django的id|
 |name|VARCHAR(64)|服务名|
-|type|VARCHAR(8)|半天/一天|
+|type|VARCHAR(32)|一种648/半天120全天200|

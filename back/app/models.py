@@ -2,7 +2,7 @@
 Author: LetMeFly
 Date: 2023-09-19 10:00:24
 LastEditors: LetMeFly
-LastEditTime: 2024-01-22 16:42:21
+LastEditTime: 2024-01-22 16:58:51
 '''
 from django.db import models
 
@@ -63,4 +63,4 @@ class Hospital(models.Model):
 class Service(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=64)
-    type = models.CharField(max_length=8)
+    type = models.CharField(max_length=32)
