@@ -2,7 +2,7 @@
 Author: LetMeFly
 Date: 2023-09-19 10:00:24
 LastEditors: LetMeFly
-LastEditTime: 2024-01-19 21:17:08
+LastEditTime: 2024-01-22 16:42:21
 '''
 from django.db import models
 
@@ -53,3 +53,14 @@ class Money(models.Model):
     logid = models.IntegerField()
     moneyTimes100 = models.IntegerField()
     time = models.DateTimeField()
+
+
+class Hospital(models.Model):
+    id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=64)
+
+
+class Service(models.Model):
+    id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=64)
+    type = models.CharField(max_length=8)

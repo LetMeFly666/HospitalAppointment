@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-08-15 22:11:19
  * @LastEditors: LetMeFly
- * @LastEditTime: 2024-01-19 21:50:43
+ * @LastEditTime: 2024-01-22 16:40:19
 -->
 # 后端接口
 
@@ -78,6 +78,38 @@ data:
 + ```warrant```: 授权令
 + ```name```: 姓名
 + ```phone```: 电话
+
+### 个人-获取订单状态
+
+```GET: user/getOrderStatus```
+
+data:
+
++ ```warrant```: 授权令
+
+response:
+
+```json
+{
+    code: 0,
+    data: [{
+        date: '2023-12-16',
+        service: '特需门诊VIP陪诊服务',
+        price: '￥588',
+        progress: '待付款'
+    }, {
+        date: '2023-12-16',
+        service: '特需门诊VIP陪诊服务',
+        price: '￥588',
+        progress: '已付款'
+    }, {
+        date: '2023-12-16',
+        service: '特需门诊VIP陪诊服务',
+        price: '￥588',
+        progress: '已完成'
+    }]
+}
+```
 
 ## 管理员相关
 
@@ -174,3 +206,22 @@ data:
 |logid|INT|哪次记录收取的（对应的Log数据库的id）|
 |moneyTimes100|INT|这次收取了多少钱（和Log表中paidmoneyTimes100相同）|
 |time|TIME|交易完成时间（和Log表中的paidtime相同）|
+
+## 医院列表
+
+数据库```Hospital```（不考虑提供增删改查医院列表的代码，请手动到数据库中去编辑）：
+
+|字段|类型|描述|
+|:--:|:--:|:--:|
+|id|INT|django的id|
+|name|VARCHAR(64)|医院名|
+
+## 服务列表
+
+陪诊服务```Service```（需手动去数据库编辑）：
+
+|字段|类型|描述|
+|:--:|:--:|:--:|
+|id|INT|django的id|
+|name|VARCHAR(64)|服务名|
+|type|VARCHAR(8)|半天/一天|
