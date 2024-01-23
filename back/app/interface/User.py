@@ -2,7 +2,7 @@
 Author: LetMeFly
 Date: 2023-09-20 16:16:47
 LastEditors: LetMeFly
-LastEditTime: 2024-01-23 15:15:40
+LastEditTime: 2024-01-23 15:42:35
 Description: 人员相关（用户信息、 就诊人、陪诊员）
 '''
 from django.http import HttpResponse, JsonResponse
@@ -95,6 +95,7 @@ Response: {
         id: 1,
         hospital: '西安医院',
         service: '特需门诊VIP陪诊服务',
+        serviceId: 1,
         friendid: 2,
         date: '2023-12-16',
         paidTime: '2024-01-22 21:25:59'
@@ -126,7 +127,8 @@ def getOrderStatus(request):
         serviceInfoDict[thisService['id']] = (thisService['name'], thisService['type'])
     for order in orders:
         serviceId = order['serviceid']
-        # order['serviceid']是在处理价格那里delete掉的
+        del order['serviceid']
+        order['serviceId'] = serviceId
         order['service'] = serviceInfoDict[serviceId][0]
     # 处理日期
     for order in orders:
@@ -142,8 +144,7 @@ def getOrderStatus(request):
         del order['paidmoneyTimes100']
         order['price'] = f'￥{price / 100}'
         if not price:  # 未支付状态下金额显示为0
-            order['price'] = serviceInfoDict[order['serviceid']][1].split('/')[0]
-        del order['serviceid']  # 有关service的信息
+            order['price'] = serviceInfoDict[order['serviceId']][1].split('/')[0]
     # 处理状态
     for order in orders:
         ifPaid = order['ifpaid']

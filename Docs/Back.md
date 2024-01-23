@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-08-15 22:11:19
  * @LastEditors: LetMeFly
- * @LastEditTime: 2024-01-22 21:35:30
+ * @LastEditTime: 2024-01-23 15:42:59
 -->
 # 后端接口
 
@@ -96,6 +96,7 @@ response:
         id: 1,
         hospital: '西安医院',
         service: '特需门诊VIP陪诊服务',
+        serviceId: 1,
         friendid: 2,
         date: '2023-12-16',
         paidTime: '2024-01-22 21:25:59'
