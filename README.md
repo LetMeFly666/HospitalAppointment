@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-08-15 22:32:21
  * @LastEditors: LetMeFly
- * @LastEditTime: 2024-01-23 14:49:58
+ * @LastEditTime: 2024-01-23 14:53:14
 -->
 # HospitalAppointment
 
@@ -54,10 +54,10 @@
 - [ ] 管理员——功能选择界面（[点我](#todo-3)）
 - [ ] 管理员——订单状态界面（[点我](#todo-4)）
 - [ ] 管理员——支付情况界面（[点我](#todo-5)）
-- [ ] 退款功能（[点我](#todo-6)）
 - [ ] 服务条款勾选同意后无法取消
 - [ ] GET请求时，warrant也作为data传递会在url中显示，不如在header中（小程序似乎会把header中的warrant改成HTTP_WARRANT）
-- [x] 后端获取订单状态接口（[pr#17](#https://github.com/LetMeFly666/HospitalAppointment/pull/17)）
+- [ ] 退款功能（[issue#20](https://github.com/LetMeFly666/HospitalAppointment/issues/20)）
+- [x] 后端获取订单状态接口（[pr#17](https://github.com/LetMeFly666/HospitalAppointment/pull/17)）
 - [x] 管理员——陪诊员操作页面
 - [x] 彩蛋：狂点“我的 -> 更新信息”时弹出提示
 - [x] 对登录是否失效的检测（有头像≠登录中）：服务器上warrant有效期无限
@@ -110,7 +110,7 @@
 - [ ] 显示所有的订单（暂不支持分页）
   - 优先级：状态（已付款 > 待付款 > 已完成） > 时间（时间晚的优先）
 - [ ] 支持更新备注
-- [ ] 支付发起退款
+- [x] 支付发起退款
 
 后端：
 
@@ -123,9 +123,3 @@
 <a id='todo-5'></a>详见[issue#16](https://github.com/LetMeFly666/HospitalAppointment/issues/16)。
 
 - [ ] 显示已支付情况
-
-### 退款功能
-
-<a id='todo-6'></a>详见[issue#20](https://github.com/LetMeFly666/HospitalAppointment/issues/20)。
-
-- [ ] 退款功能实现
