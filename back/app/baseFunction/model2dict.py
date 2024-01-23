@@ -3,7 +3,7 @@
 
 [{'id': 1, 'name': 'ha'}, {'id': 2, 'name': 'la'}]
 """
-def model2dict(model, ignoreList=[]) -> dict:
+def model2dictlist(model, ignoreList=[]) -> dict:
     ans = []
     for m in model:
         thisDict = {}
