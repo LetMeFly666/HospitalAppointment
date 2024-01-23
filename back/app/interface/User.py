@@ -2,7 +2,7 @@
 Author: LetMeFly
 Date: 2023-09-20 16:16:47
 LastEditors: LetMeFly
-LastEditTime: 2024-01-23 15:42:35
+LastEditTime: 2024-01-23 16:04:43
 Description: 人员相关（用户信息、 就诊人、陪诊员）
 '''
 from django.http import HttpResponse, JsonResponse
@@ -101,6 +101,7 @@ Response: {
         paidTime: '2024-01-22 21:25:59'
         price: '￥588',
         progress: '待付款',  // 或 已付款 或 已完成
+        more: '女士优先',  // 用户备注
     }, {...}]
 }
 """
@@ -108,7 +109,7 @@ def getOrderStatus(request):
     warrant = request.GET.get('warrant')
     userid = models.User.objects.get(warrant=warrant).userid
     orders = models.Log.objects.filter(userid=userid).values()
-    orders = model2dict.model2dictlist(orders, ignoreList=['userid', 'whofinished', 'more'])
+    orders = model2dict.model2dictlist(orders, ignoreList=['userid', 'whofinished', 'notes'])
     # 处理医院名
     hospitalInfo = models.Hospital.objects.all().values()
     hospitalInfo = model2dict.model2dictlist(hospitalInfo)

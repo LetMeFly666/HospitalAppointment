@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-08-15 22:11:19
  * @LastEditors: LetMeFly
- * @LastEditTime: 2024-01-23 15:42:59
+ * @LastEditTime: 2024-01-23 16:05:08
 -->
 # 后端接口
 
@@ -102,6 +102,7 @@ response:
         paidTime: '2024-01-22 21:25:59'
         price: '￥588',
         progress: '待付款',  // 或 已付款 或 已完成
+        more: '女士优先',  // 用户备注
     }, {...}]
 }
 ```
@@ -189,7 +190,8 @@ data:
 |paidmoneyTimes100|INT|支付金额（单位是分！！！）使用整数避免了浮点数误差|
 |iffinish|VARCHAR(1)|是否已经陪诊完成(y/n)|
 |whofinished|INT|谁完成的陪诊（陪诊员ID）|
-|more|VARCHAR(65535)|备注|
+|more|VARCHAR(10240)|用户备注|
+|notes|VARCHAR(10240)|管理员备注|
 
 ## 金额管理
 

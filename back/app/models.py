@@ -2,7 +2,7 @@
 Author: LetMeFly
 Date: 2023-09-19 10:00:24
 LastEditors: LetMeFly
-LastEditTime: 2024-01-22 20:59:22
+LastEditTime: 2024-01-23 16:03:50
 '''
 from django.db import models
 
@@ -46,6 +46,7 @@ class Log(models.Model):
     iffinish = models.CharField(max_length=1)
     whofinished = models.CharField(max_length=16, null=True, blank=True)
     more = models.CharField(max_length=10240, null=True, blank=True)
+    notes = models.CharField(max_length=10240, null=True, blank=True)
 
 
 class Money(models.Model):
