@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-08-15 22:32:21
  * @LastEditors: LetMeFly
- * @LastEditTime: 2024-01-22 21:30:41
+ * @LastEditTime: 2024-01-22 22:01:31
 -->
 # HospitalAppointment
 
@@ -19,7 +19,7 @@
 ## 使用方法
 
 1. 在绑定了域名并开启了https的服务端上安装好python、mysql
-2. python中安装django等其他可能会用到的第三方库
+2. python中安装django等其他可能会用到的第三方库（django、wechatpayv3）
 3. mysql中新建一个空的数据库```HospitalAppointment```，并创建一个拥有读写此数据库权限的用户
 4. 使用```nginx```等配置好端口转发，保证对域名的访问能够直接转发到django后端
 5. 在[微信公众平台](https://mp.weixin.qq.com)注册并配置小程序：

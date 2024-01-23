@@ -73,7 +73,7 @@ def getFriends(request):
     warrant = request.GET.get('warrant')
     userid = models.User.objects.get(warrant=warrant).userid
     friends = models.Friend.objects.filter(friend=userid).values()
-    friends = model2dict.model2dict(friends)
+    friends = model2dict.model2dictlist(friends)
     return JsonResponse({'msg': '查询成功！', 'data': friends})
 
 
@@ -107,10 +107,10 @@ def getOrderStatus(request):
     warrant = request.GET.get('warrant')
     userid = models.User.objects.get(warrant=warrant).userid
     orders = models.Log.objects.filter(userid=userid).values()
-    orders = model2dict.model2dict(orders, ignoreList=['userid', 'whofinished', 'more'])
+    orders = model2dict.model2dictlist(orders, ignoreList=['userid', 'whofinished', 'more'])
     # 处理医院名
     hospitalInfo = models.Hospital.objects.all().values()
-    hospitalInfo = model2dict.model2dict(hospitalInfo)
+    hospitalInfo = model2dict.model2dictlist(hospitalInfo)
     hospitalInfoDict = {}
     for thisHospital in hospitalInfo:
         hospitalInfoDict[thisHospital['id']] = thisHospital['name']
@@ -120,7 +120,7 @@ def getOrderStatus(request):
         order['hospital'] = hospitalInfoDict[hospitalId]
     # 处理服务名
     serviceInfo = models.Service.objects.all().values()
-    serviceInfo = model2dict.model2dict(serviceInfo)
+    serviceInfo = model2dict.model2dictlist(serviceInfo)
     serviceInfoDict = {}
     for thisService in serviceInfo:
         serviceInfoDict[thisService['id']] = thisService['name']
