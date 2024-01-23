@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-08-15 22:11:19
  * @LastEditors: LetMeFly
- * @LastEditTime: 2024-01-23 16:05:08
+ * @LastEditTime: 2024-01-23 16:13:14
 -->
 # 后端接口
 
@@ -181,6 +181,8 @@ data:
 |:--:|:--:|:--:|
 |id|INT|django的id|
 |hospitalid|INT|医院id（1-14）|
+|department|VARCHAR(64)|科室|
+|wantTime|DATE|希望就诊的日期|
 |serviceid|INT|服务id（1）|
 |userid|INT|发起用户的id|
 |friendid|INT|就诊人id|

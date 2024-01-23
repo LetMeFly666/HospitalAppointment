@@ -2,7 +2,7 @@
 Author: LetMeFly
 Date: 2023-09-19 10:00:24
 LastEditors: LetMeFly
-LastEditTime: 2024-01-23 16:03:50
+LastEditTime: 2024-01-23 16:13:44
 '''
 from django.db import models
 
@@ -36,6 +36,8 @@ class Runner(models.Model):
 class Log(models.Model):
     id =  models.AutoField(primary_key=True)
     hospitalid = models.IntegerField()
+    department = models.CharField(max_length=64, null=True, blank=True)
+    wantTime = models.DateField()
     serviceid = models.IntegerField()
     userid = models.IntegerField()
     friendid = models.IntegerField()
