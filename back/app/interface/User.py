@@ -2,7 +2,7 @@
 Author: LetMeFly
 Date: 2023-09-20 16:16:47
 LastEditors: LetMeFly
-LastEditTime: 2024-01-24 10:49:49
+LastEditTime: 2024-01-24 11:41:30
 Description: 人员相关（用户信息、 就诊人、陪诊员）
 '''
 from django.http import HttpResponse, JsonResponse
@@ -180,6 +180,8 @@ def delete1order(request):
     warrant = request.POST.get('warrant')
     id = request.POST.get('id')
     userid = models.User.objects.get(warrant=warrant).userid
+    print(f'userid: {userid}')
+    print(f'id: {id}')
     models.Log.objects.get(userid=userid, id=id).delete()
     return JsonResponse({'code': '0', 'msg': '删除成功'})
     
