@@ -2,7 +2,7 @@
 Author: LetMeFly
 Date: 2023-09-20 16:16:47
 LastEditors: LetMeFly
-LastEditTime: 2024-01-24 23:17:26
+LastEditTime: 2024-01-24 23:31:54
 Description: 人员相关（用户信息、 就诊人、陪诊员）
 '''
 from django.http import HttpResponse, JsonResponse
@@ -34,7 +34,11 @@ def login(request):
     sessionKey = data.get('session_key')
     unionid = data.get('unionid', '')
     warrant = randmod.randCN(32)
-    models.User.objects.update_or_create(defaults={'wx_session_key': sessionKey, 'wx_unionid': unionid, 'warrant': warrant}, wx_openid=openid)
+    userObject = models.User.objects.filter(wx_openid=openid)  # 所有客户端令牌相同
+    if not userObject:
+        models.User.objects.update_or_create(defaults={'wx_session_key': sessionKey, 'wx_unionid': unionid, 'warrant': warrant}, wx_openid=openid)
+    else:
+        warrant = userObject.values()[0].get('warrant')
     return JsonResponse({'warrant': warrant})
 
 
