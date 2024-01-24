@@ -2,7 +2,7 @@
 Author: LetMeFly
 Date: 2023-09-19 10:00:24
 LastEditors: LetMeFly
-LastEditTime: 2024-01-24 16:42:34
+LastEditTime: 2024-01-24 23:14:33
 '''
 from django.db import models
 
@@ -24,6 +24,7 @@ class Friend(models.Model):
     phone = models.CharField(max_length=32)
     idcard = models.CharField(max_length=32)
     relation = models.CharField(max_length=32)
+    using = models.CharField(max_length=1, default='y')
 
 
 class Runner(models.Model):

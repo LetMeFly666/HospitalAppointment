@@ -2,7 +2,7 @@
 Author: LetMeFly
 Date: 2023-09-20 16:16:47
 LastEditors: LetMeFly
-LastEditTime: 2024-01-24 22:51:04
+LastEditTime: 2024-01-24 23:17:26
 Description: 人员相关（用户信息、 就诊人、陪诊员）
 '''
 from django.http import HttpResponse, JsonResponse
@@ -73,7 +73,7 @@ def add1friend(request):
 def getFriends(request):
     warrant = request.GET.get('warrant')
     userid = models.User.objects.get(warrant=warrant).userid
-    friends = models.Friend.objects.filter(friend=userid).values()
+    friends = models.Friend.objects.filter(friend=userid, using='y').values()
     friends = model2dict.model2dictlist(friends)
     return JsonResponse({'msg': '查询成功！', 'data': friends})
 
@@ -82,8 +82,7 @@ def delete1friend(request):
     warrant = request.POST.get('warrant')
     friendId = request.POST.get('id')
     userid = models.User.objects.get(warrant=warrant).userid
-    friend = models.Friend.objects.get(id=friendId, friend=userid)
-    friend.delete()
+    models.Friend.objects.filter(id=friendId, friend=userid).update(using='n')
     return JsonResponse({'msg': '删除成功！'})
 
 
