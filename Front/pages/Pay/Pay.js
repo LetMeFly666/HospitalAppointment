@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-12-03 18:38:26
  * @LastEditors: LetMeFly
- * @LastEditTime: 2024-01-22 20:27:39
+ * @LastEditTime: 2024-01-24 22:41:56
  */
 // pages/Pay/Pay.js
 const app = getApp();
@@ -25,14 +25,69 @@ Page({
         }],
         friends_onlyNames: ['请选择就诊人'],
         friendsIndex: 0,
-        date: '请选择就诊时间'
+        hospitals: app.hospitalList,
+        hospitals_onlyNames: ['请选择就诊医院'],
+        hospitalsIndex: 0,
+        date: '请选择就诊时间',
+        orders: [],
+        ifShowPayButton: true,
+        department: '',  // 科室
+        more: '',  // 服务需求
+        progress: '待付款'
+    },
+
+    call1wechatPay(data) {
+        wx.requestPayment({
+            timeStamp: data.timeStamp,
+            nonceStr: data.nonceStr,
+            package: data.package,
+            signType: data.signType,
+            paySign: data.paySign,
+            success(res) {
+                wx.showToast({
+                    title: '支付成功！',
+                    icon: 'success',
+                    duration: 1000
+                });
+                setTimeout(() => {
+                    wx.redirectTo({url: '/pages/MyOrder/MyOrder?type=3&showConnect=true'});
+                }, 1000);
+            },
+            fail(res) {
+                console.log(res);
+                app.show1toast_error('支付失败');
+            }
+        })
+    },
+
+    create1order() {
+        const hospitalId = parseInt(this.data.hospitalsIndex) + 1;
+        const department = this.data.department;
+        const wantTime = this.data.date;
+        const serviceId = this.data.id;
+        const friendid = this.data.friends[this.data.friendsIndex].id;
+        const more = this.data.more;
+        const data = {hospitalId, department, wantTime, serviceId, friendid, more};
+        const that = this;
+        app.myRequest({
+            url: 'https://www.letmefly.xyz/LetHA/user/create1order/',
+            method: 'POST',
+            data: data,
+            success(response) {
+                that.call1wechatPay(response.data.payment)
+            }
+        });
     },
 
     toPay() {
-        // TODO: 
+        if (!this.data.alreadyRead) {
+            app.show1toast_error('请先阅读条款');
+            return;
+        }
+        this.create1order();
     },
 
-    getFriends() {
+    getFriends(options, then) {
         const that = this;
         app.myRequest({
             url: 'https://www.letmefly.xyz/LetHA/user/getFriends/',
@@ -65,6 +120,7 @@ Page({
                     friends: data,
                     friends_onlyNames: friends_onlyNames
                 });
+                then(options);
             }
         });
     },
@@ -73,6 +129,41 @@ Page({
         const val = event.detail.value;
         this.setData({
             friendsIndex: val
+        });
+    },
+
+    pick1hospital(event) {
+        const val = event.detail.value;
+        this.setData({
+            hospitalsIndex: val
+        });
+    },
+
+    inputNeeds(event) {
+        const val = event.detail.value;
+        this.setData({
+            more: val
+        });
+    },
+
+    inputDepartment(event) {
+        const val = event.detail.value;
+        this.setData({
+            department: val
+        });
+    },
+
+    /**
+     * 处理医院名称列表
+     */
+    setHospitalNames() {
+        const hospitalList = this.data.hospitals;
+        const hospitals_onlyNames = [];
+        for (var i = 0; i < hospitalList.length; i++) {
+            hospitals_onlyNames.push(hospitalList[i].name);
+        }
+        this.setData({
+            hospitals_onlyNames: hospitals_onlyNames
         });
     },
 
@@ -116,6 +207,9 @@ Page({
         });
     },
 
+    /**
+     * 将所有数字拼接，不考虑小数点
+     */
     cleanPriceValue(valueWithText) {
         var ans = 0;
         for (var i = 0; i < valueWithText.length; i++) {
@@ -127,17 +221,151 @@ Page({
     },
 
     /**
+     * trim split parseInt
+     */
+    cleanPriceValue2(valueWithText) {
+        return parseInt(valueWithText.trim().split('￥')[1]);
+    },
+
+    /**
+     * 获取所有订单
+     */
+    getOrders(options, getFriends, then) {
+        const that = this;
+        app.myRequest({
+            url: 'https://www.letmefly.xyz/LetHA/user/getOrderStatus/',
+            success(response) {
+                const data = response.data['data'];
+                that.setData({
+                    orders: data
+                });
+                getFriends(options, then);
+            }
+        });
+    },
+
+    setDataWhenSeeingOrder_getHospitalsIndex(hospitalName) {
+        for (var i = 0; i < this.data.hospitals.length; i++) {
+            if (hospitalName == this.data.hospitals[i].name) {
+                return i;
+            }
+        }
+        console.log('ERROR! HOSPITAL NAME NOT FOUND!');
+        return 0;  // ERROR
+    },
+
+    setDataWhenSeeingOrder_getFriendsIndex(friendid) {
+        for (var i = 0; i < this.data.friends.length; i++) {
+            if (friendid == this.data.friends[i].id) {
+                return i;
+            }
+        }
+        console.log('ERROR! FRIEND NAME NOT FOUND!');
+        return 0;  // ERROR
+    },
+
+    /**
+     * 若为查看订单，则显示订单信息
+     */
+    setDataWhenSeeingOrder(orderId) {
+        const that = this;
+        function getOrderDetailById(orderId) {
+            for (var i = 0; i < that.data.orders.length; i++) {
+                if (that.data.orders[i].id == orderId) {
+                    return that.data.orders[i];
+                }
+            }
+            app.show1toast_error('无此订单！');
+        }
+        const thisOrder = getOrderDetailById(orderId);
+        if (thisOrder.progress != '待付款') {
+            that.setData({
+                ifShowPayButton: false
+            });
+        }
+        that.setData({
+            priceWithText: thisOrder.price,
+            serviceName: thisOrder.service,
+            id: thisOrder.serviceId,
+            priceValue: this.cleanPriceValue2(thisOrder.price),
+            department: thisOrder.department,
+            date: thisOrder.wantTime,
+            more: thisOrder.more ? thisOrder.more : '没有填写',
+            progress: thisOrder.progress,
+            friendsIndex: this.setDataWhenSeeingOrder_getFriendsIndex(thisOrder.friendid),
+            hospitalsIndex: this.setDataWhenSeeingOrder_getHospitalsIndex(thisOrder.hospital)
+        })
+    },
+
+    /**
+     * 提醒支付已创建但未支付的订单
+     * 当用户操作被判定为“创建新订单”时才会执行此函数
+     */
+    alertToPayLast() {
+        const that = this;
+        for (var i = 0; i < this.data.orders.length; i++) {
+            if (this.data.orders[i].progress == '待付款') {
+                console.log('待付款订单');
+                wx.showModal({
+                    title: '有待付款订单',
+                    content: '是否前往付款',
+                    cancelText: '删除该单',
+                    confirmText: '去支付',
+                    success: function (res) {
+                        if (res.confirm) {
+                            wx.redirectTo({url: `/pages/Pay/Pay?showDetailId=${that.data.orders[i].id}`});
+                        }
+                        else {  // 删除订单
+                            app.myRequest({
+                                url: 'https://www.letmefly.xyz/LetHA/user/delete1order/',
+                                method: 'POST',
+                                data: {
+                                    id: that.data.orders[i].id
+                                },
+                                success(response) {
+                                    wx.showToast({
+                                        title: response.data.msg,
+                                        icon: 'success',
+                                        duration: 1000
+                                    });
+                                }
+                            })
+                        }
+                    }
+                });
+                return;
+            }
+        }
+    },
+
+    /**
+     * 获取所有订单后
+     */
+    afterGettingOrder(options) {
+        if (options.showDetailId) {
+            this.setDataWhenSeeingOrder(options.showDetailId);
+        }
+        else {  // 创建新订单
+            this.alertToPayLast();
+        }
+    },
+
+    /**
      * 生命周期函数--监听页面加载
      */
     onLoad(options) {
+        this.setHospitalNames();
+        this.getOrders(options, this.getFriends, this.afterGettingOrder);
+        if (options.showDetailId) {  // 查看历史订单
+            return;
+        }
+        // 下面为无“showDetailId”参数的时候（从下单页过来的）
         this.setData({
             priceWithText: options.priceWithText,
             serviceName: options.serviceName,
             id: options.id,
             priceValue: this.cleanPriceValue(options.priceWithText)
         })
-
-        this.getFriends();
     },
 
     /**

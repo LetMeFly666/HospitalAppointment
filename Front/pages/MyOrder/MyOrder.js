@@ -1,4 +1,5 @@
 // pages/MyOrder/MyOrder.js
+const app = getApp();
 Page({
 
     /**
@@ -9,22 +10,32 @@ Page({
         typeList: ['全部', '待付款', '已付款', '在服务', '已完成'],
         typeIndex: 0,
         orders: [{
+            id: 1,
             date: '2023-12-16',
             service: '特需门诊VIP陪诊服务',
             price: '￥588',
             progress: '待付款'
         }, {
+            id: 2,
             date: '2023-12-16',
             service: '特需门诊VIP陪诊服务',
             price: '￥588',
             progress: '已付款'
         }, {
+            id: 3,
             date: '2023-12-16',
             service: '特需门诊VIP陪诊服务',
             price: '￥588',
             progress: '已完成'
         }],
         ordersToShow: []
+    },
+
+    // 跳转到订单详情页面（支付页面/pages/Pay/Pay）
+    gotoOrderDetail(event) {
+        const id = event.currentTarget.dataset.id;
+        const url = `/pages/Pay/Pay?showDetailId=${id}`;
+        wx.redirectTo({url: url});
     },
 
     // 筛选符合规则的订单并返回
@@ -75,8 +86,21 @@ Page({
         this.selectOrders();
     },
 
-    getOrders() {
-        // TODO:
+    /**
+     * 获取所有订单
+     */
+    getOrders(then) {
+        const that = this;
+        app.myRequest({
+            url: 'https://www.letmefly.xyz/LetHA/user/getOrderStatus/',
+            success(response) {
+                const data = response.data['data'];
+                that.setData({
+                    orders: data
+                });
+                then();
+            }
+        });
     },
 
     /**
@@ -88,8 +112,14 @@ Page({
             typeIndex: type
         });
 
-        this.getOrders();
-        this.selectOrders();
+        this.getOrders(this.selectOrders);
+        if (options.showConnect) {  // 付完款来的
+            wx.showToast({
+                title: '请联系客服或等待客服联系，也可点击查看订单',
+                icon: 'none',
+                duration: 10000
+            })
+        }
     },
 
     /**

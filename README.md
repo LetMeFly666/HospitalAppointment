@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-08-15 22:32:21
  * @LastEditors: LetMeFly
- * @LastEditTime: 2024-01-24 15:37:06
+ * @LastEditTime: 2024-01-24 22:53:53
 -->
 # HospitalAppointment
 
@@ -55,13 +55,13 @@
 
 ## TODO
 
-- [ ] 订单创建的实现（[点我](#todo-2)）
 - [ ] 管理员——功能选择界面（[点我](#todo-3)）
 - [ ] 管理员——订单状态界面（[点我](#todo-4)）
 - [ ] 管理员——支付情况界面（[点我](#todo-5)）
 - [ ] 服务条款勾选同意后无法取消
 - [ ] GET请求时，warrant也作为data传递会在url中显示，不如在header中（小程序似乎会把header中的warrant改成HTTP_WARRANT）
 - [ ] 退款功能（[issue#20](https://github.com/LetMeFly666/HospitalAppointment/issues/20)）
+- [x] 订单创建的实现（[点我](#todo-2)）
 - [x] 后端获取订单状态接口（[pr#17](https://github.com/LetMeFly666/HospitalAppointment/pull/17)）
 - [x] 管理员——陪诊员操作页面
 - [x] 彩蛋：狂点“我的 -> 更新信息”时弹出提示
@@ -71,34 +71,6 @@
 - [x] 首页banner地址替换
 - [x] 首页5图标替换
 - [x] 首页14医院信息替换
-
-### 订单创建的实现
-
-<a id='todo-2'></a>详见[issue#7](https://github.com/LetMeFly666/HospitalAppointment/issues/7)。
-
-对于[下订单界面```pages/Pay/Pay```](https://github.com/LetMeFly666/HospitalAppointment/tree/1fc5cc2f70521262d73ec6ffe98de57219d541cf/Front/pages/Pay/Pay.wxml)：
-
-- [ ] 进入界面时向后端请求订单详情，并检查页面参数
-   - [ ] 若带有“查看之前订单”的参数则载入之前的订单
-   - [ ] 否则（视为创建新订单），若存在未支付的订单，弹出按钮选择“继续之前的订单”还是“删除之前的订单”
-      - [ ] 若是“继续之前的订单”则从后端返回结果中载入之前的订单信息
-      - [ ] 否则（“删除之前的订单”）向后端发起删除请求，并继续当前默认操作
-- [ ] 点击“立即下单按钮”时创建订单（并提交到服务器），并弹出支付框
-   - [ ] 若支付失败停留在当前页面
-   - [ ] 若支付成功更新服务器订单状态，提示“请等待客服联系或主动联系客服”
-
-对于[我的订单界面```pages/MyOrder/MyOrder```](https://github.com/LetMeFly666/HospitalAppointment/tree/1fc5cc2f70521262d73ec6ffe98de57219d541cf/Front/pages/MyOrder/MyOrder.wxml)：
-
-- [ ] 点击订单会跳转到“下订单界面”，此时显示“订单状态”而不是“支付按钮”
-
-对于[后端django服务](https://github.com/LetMeFly666/HospitalAppointment/tree/1fc5cc2f70521262d73ec6ffe98de57219d541cf/back)：
-
-- [ ] 新增订单接口的实现
-   - [ ] 当前用户存在已创建未支付的订单时，不是创建新订单而是更新未支付订单的内容为当前请求
-   - [ ] 否则创建新订单
-- [ ] 删除订单接口的实现
-   - [ ] 仅支持删除“未支付”的订单
-- [ ] 支付功能的实现
 
 ### 管理员——功能选择界面
 

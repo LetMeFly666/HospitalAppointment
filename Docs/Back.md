@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-08-15 22:11:19
  * @LastEditors: LetMeFly
- * @LastEditTime: 2024-01-23 16:13:14
+ * @LastEditTime: 2024-01-24 16:52:55
 -->
 # 后端接口
 
@@ -27,11 +27,11 @@
 
 ### 个人-登录
 
-```GET: user/login```
+```GET: user/login/```
 
 ### 个人-查询就诊人
 
-```GET: user/getFriends```
+```GET: user/getFriends/```
 
 data:
 
@@ -48,7 +48,7 @@ response:
 
 ### 个人-添加就诊人
 
-```POST: user/add1friend```
+```POST: user/add1friend/```
 
 data:
 
@@ -62,7 +62,7 @@ data:
 
 ### 个人-删除就诊人
 
-```POST: user/delete1friend```
+```POST: user/delete1friend/```
 
 data:
 
@@ -71,7 +71,7 @@ data:
 
 ### 个人-申请成为陪诊员
 
-```POST: user/apply2be1caregiver```
+```POST: user/apply2be1caregiver/```
 
 data:
 
@@ -81,7 +81,7 @@ data:
 
 ### 个人-获取订单状态
 
-```GET: user/getOrderStatus```
+```GET: user/getOrderStatus/```
 
 data:
 
@@ -95,15 +95,94 @@ response:
     data: [{
         id: 1,
         hospital: '西安医院',
+        department: '第二科室',
+        wantTime: '2024-01-23',
         service: '特需门诊VIP陪诊服务',
         serviceId: 1,
         friendid: 2,
-        date: '2023-12-16',
+        date: '2023-12-16',  // 订单创建时间
         paidTime: '2024-01-22 21:25:59'
         price: '￥588',
         progress: '待付款',  // 或 已付款 或 已完成
         more: '女士优先',  // 用户备注
     }, {...}]
+}
+```
+
+### 个人-创建订单
+
+```POST: user/create1order/```
+
+data:
+
++ ```warrant```: 授权令
++ ```hospitalId```: 0
++ ```department```: 第二科室
++ ```wantTime```: 2024-01-23
++ ```serviceId```: 1
++ ```friendid```: 2
++ ```more```: 女士优先
+
+response:
+
+成功：
+
+```json
+{
+    code: 0,
+    id: 2,
+    msg: '订单已创建',
+    payment: {
+        timeStamp: '1706082258',
+        nonceStr: '9dbe7ddf4a234cc1ac40234c00a0f1bc',
+        package: 'prepay_id=wx241544197960911e19ecaee0183a9a0000',
+        signType: 'RSA',  // 当前为固定值
+        paySign: 'DwLNcRgKY2SppbdpYv90lg2y19O77LK30qFXjltEVwmCL1HMJRMVqPZsWyvmjWrEL51n0MxiU4toALA4SuiIOmYXo7enFkqO6QHDWk9f1YSMWFa9rItfmdUuJPPxiBbGsL3/uz2kv7U50HeY6r1ohrvm2qNRhtqbf2CfJhq1puJh/Nhl7iyLsfdTIVsmhVsWxOqc3bKq5idG8QmltX6PqIePLRT4fcU6rdsZCHkvAKSEyngqjwwXG3gnhmS5euwN59NP8aboh6Yd540s08FhMcW5+lH8xQpmOY+n55tHJx0im/3QOMuCsuyFzS3K8QXBoaLu5OtvendaVq/vMP3HSw=='
+    }
+}
+```
+
+失败：
+
+```json
+{
+    code: -1,  // 可能是其他非零情况
+    result: {
+        'reason': {
+            'code': 'PARAM_ERROR',
+            'detail': {'location': 'body', 'value': 4},
+            'message': '无法将 JSON 输入源“/body/payer/openid”映射到目标字段“用户标识”中，此字段需要一个 string 类型的 Json 值'
+        }
+    }
+}
+```
+
+### 个人-删除订单
+
+```POST: user/delete1order/```
+
+data:
+
++ ```warrant```: 授权令
++ ```id```: 要删除的订单的id
+
+response:
+
+成功：
+
+```json
+{
+    code: 0,
+    msg: '删除成功'
+}
+```
+
+失败(code=500)：
+
+```json
+{
+    'code': -1,
+    'msg': '仅支持删除未支付的订单'
 }
 ```
 
@@ -131,7 +210,11 @@ data:
 
 ## 支付相关
 
-微信支付
+###  微信支付回调接口
+
+```POST: wechatpay/notify/```
+
+这个接口是商家服务器与微信服务器之间的交互，不涉及到用户。
 
 # 数据库描述
 
@@ -206,6 +289,8 @@ data:
 |friendName|VARCHAR(16)|就诊人（发起用户的friend）名字|
 |moneyTimes100|INT|这次收取了多少钱（和Log表中paidmoneyTimes100相同）|
 |time|TIME|交易完成时间（和Log表中的paidtime相同）|
+|treadNum|VARCHAR(32)|微信交易号|
+|transactionId|VARCHAR(64)|微信支付id|
 
 ## 医院列表
 
