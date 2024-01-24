@@ -244,6 +244,7 @@ data:
 |phone|VARCHAR(32)|手机号|
 |idcard|VARCHAR(32)|身份证号|
 |relation|VARCHAR(32)|就诊人关系（父母/子女/兄弟姐妹/本人/夫妻/其他）|
+|using|VARCHAR(1)|是否正在使用（没被删）（y/n）|
 
 ## 陪诊员管理
 
