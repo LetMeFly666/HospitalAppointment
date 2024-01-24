@@ -2,7 +2,7 @@
 Author: LetMeFly
 Date: 2023-09-20 16:16:47
 LastEditors: LetMeFly
-LastEditTime: 2024-01-23 16:04:43
+LastEditTime: 2024-01-24 10:49:49
 Description: 人员相关（用户信息、 就诊人、陪诊员）
 '''
 from django.http import HttpResponse, JsonResponse
@@ -94,10 +94,12 @@ Response: {
     data: [{
         id: 1,
         hospital: '西安医院',
+        department: '第二科室',
+        wantTime: '2024-01-23',
         service: '特需门诊VIP陪诊服务',
         serviceId: 1,
         friendid: 2,
-        date: '2023-12-16',
+        date: '2023-12-16',  // 订单创建时间
         paidTime: '2024-01-22 21:25:59'
         price: '￥588',
         progress: '待付款',  // 或 已付款 或 已完成
@@ -160,3 +162,24 @@ def getOrderStatus(request):
             status = '已完成'
         order['progress'] = status
     return JsonResponse({'code': '0', 'data': orders})
+
+"""
+创建一个订单
+
+Parameters:
+    
+"""
+def create1order(reqeust):
+    pass
+
+
+"""
+删除一个订单
+"""
+def delete1order(request):
+    warrant = request.POST.get('warrant')
+    id = request.POST.get('id')
+    userid = models.User.objects.get(warrant=warrant).userid
+    models.Log.objects.get(userid=userid, id=id).delete()
+    return JsonResponse({'code': '0', 'msg': '删除成功'})
+    
