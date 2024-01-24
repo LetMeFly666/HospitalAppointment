@@ -2,7 +2,7 @@
 Author: LetMeFly
 Date: 2023-09-20 16:16:47
 LastEditors: LetMeFly
-LastEditTime: 2024-01-24 21:46:44
+LastEditTime: 2024-01-24 22:07:23
 Description: 人员相关（用户信息、 就诊人、陪诊员）
 '''
 from django.http import HttpResponse, JsonResponse
@@ -277,7 +277,6 @@ def wxpayCallback(request):
         'Wechatpay-Serial': request.META.get('HTTP_WECHATPAY_SERIAL')
     }
     result = money.wxpayCallback(headers, request.body)
-    print(result)
     if result and result.get('event_type') == 'TRANSACTION.SUCCESS':
         resp = result.get('resource')
         treadNum = resp.get('out_trade_no')
@@ -286,12 +285,31 @@ def wxpayCallback(request):
         openid = resp.get('payer').get('openid')
         moneyTimes100 = resp.get('amount').get('total')
         # TODO: 根据返回参数进行必要的业务处理，处理完后返回200或204
+        """
+        {'id': 'd78861b6-3779-5e71-a3c5-4540009d93c2', 'create_time': '2024-01-24T21:49:13+08:00', 'resource_type': 'encrypt-resource', 'event_type': 'TRANSACTION.SUCCESS', 'summary': '支付成功', 'resource': {'mchid': '1665087438', 'appid': 'wx5c50bcb971eb5819', 'out_trade_no': 'IDFQULjm', 'transaction_id': '4200002092202401242018244642', 'trade_type': 'JSAPI', 'trade_state': 'SUCCESS', 'trade_state_desc': '支付成功', 'bank_type': 'OTHERS', 'attach': '', 'success_time': '2024-01-24T21:49:13+08:00', 'payer': {'openid': 'oQiN16wsj2ZrQPuu4iUxvSkLrmoI'}, 'amount': {'total': 1, 'payer_total': 1, 'currency': 'CNY', 'payer_currency': 'CNY'}}}
+        resp: {'mchid': '1665087438', 'appid': 'wx5c50bcb971eb5819', 'out_trade_no': 'IDFQULjm', 'transaction_id': '4200002092202401242018244642', 'trade_type': 'JSAPI', 'trade_state': 'SUCCESS', 'trade_state_desc': '支付成功', 'bank_type': 'OTHERS', 'attach': '', 'success_time': '2024-01-24T21:49:13+08:00', 'payer': {'openid': 'oQiN16wsj2ZrQPuu4iUxvSkLrmoI'}, 'amount': {'total': 1, 'payer_total': 1, 'currency': 'CNY', 'payer_currency': 'CNY'}}
+        out_trade_no: IDFQULjm
+        transaction_id: 4200002092202401242018244642
+        success_time: 2024-01-24T21:49:13+08:00
+        payer: oQiN16wsj2ZrQPuu4iUxvSkLrmoI
+        amount: 1
+        """
         print(f'resp: {resp}')
         print(f'out_trade_no: {treadNum}')
         print(f'transaction_id: {transactionId}')
         print(f'success_time: {time}')
         print(f'payer: {openid}')
         print(f'amount: {moneyTimes100}')
+        userid = models.User.objects.get(wx_openid=openid)
+        logObject = models.Log.objects.get(userid=userid, ifpaid='n')
+        logId = logObject.id
+        friendId = logObject.friendid
+        friendName = models.Friend.objects.get(id=friendId).name
+        models.Money.objects.create(logid=logId, friendName=friendName, moneyTimes100=moneyTimes100, time=time, treadNum=treadNum, transactionId=transactionId)
+        logObject.ifpaid = 'y'
+        logObject.paidtime = time
+        logObject.paidmoneyTimes100 = moneyTimes100
+        logObject.save()
         return JsonResponse({'code': 0, 'message': '成功'})
     else:
         return JsonResponse({'code': -1, 'message': '失败'})
