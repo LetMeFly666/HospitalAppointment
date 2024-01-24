@@ -2,7 +2,7 @@
 Author: LetMeFly
 Date: 2023-09-20 16:16:47
 LastEditors: LetMeFly
-LastEditTime: 2024-01-24 22:07:23
+LastEditTime: 2024-01-24 22:13:12
 Description: 人员相关（用户信息、 就诊人、陪诊员）
 '''
 from django.http import HttpResponse, JsonResponse
@@ -300,7 +300,7 @@ def wxpayCallback(request):
         print(f'success_time: {time}')
         print(f'payer: {openid}')
         print(f'amount: {moneyTimes100}')
-        userid = models.User.objects.get(wx_openid=openid)
+        userid = models.User.objects.get(wx_openid=openid).userid
         logObject = models.Log.objects.get(userid=userid, ifpaid='n')
         logId = logObject.id
         friendId = logObject.friendid
