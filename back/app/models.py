@@ -2,7 +2,7 @@
 Author: LetMeFly
 Date: 2023-09-19 10:00:24
 LastEditors: LetMeFly
-LastEditTime: 2024-01-23 16:13:44
+LastEditTime: 2024-01-24 16:42:34
 '''
 from django.db import models
 
@@ -57,6 +57,8 @@ class Money(models.Model):
     friendName = models.CharField(max_length=16)
     moneyTimes100 = models.IntegerField()
     time = models.DateTimeField()
+    treadNum = models.CharField(max_length=32)  # 微信交易号
+    transactionId = models.CharField(max_length=64)  # 微信支付id
 
 
 class Hospital(models.Model):

@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-08-15 22:32:21
  * @LastEditors: LetMeFly
- * @LastEditTime: 2024-01-23 14:53:14
+ * @LastEditTime: 2024-01-24 15:37:06
 -->
 # HospitalAppointment
 
@@ -28,7 +28,7 @@
    3. 申请微信支付接口并等待通过
    4. 修改前后端的```appID```、```appSecret```以及微信支付相关密钥等
    4. 上传前端```Front```目录下的小程序，提交审核等待通过
-6. 在```Back/HospitalAppointment```目录下新建```Secrets.py```，并写入以下内容：
+6. 在```Back```目录下新建```Secrets.py```，并写入以下内容：
    ```python
    SECRET_KEY = 'django-insecure-428738sf45w4f5a4a4254534=-./'
    DATABASE_ADDRESS = '127.0.0.1'
@@ -38,8 +38,13 @@
    APP_ID = 'wx5c50bcb971eb5819'
    APP_SECRET = 'shfi3uyf292938748910uaffkjhebhxh'
    ADMIN_PASSWORD = '123'  # 后台管理页面的密码
+   MCHID = '1123652125'  # 商户号（微信支付相关更多可参考https://github.com/minibear2021/wechatpayv3）
+   CERT_SERIAL_NO = 'SKFJFUEI484732ISFFEHUI3028RHUZHSUFEHISEF'  # 商户证书序列号
+   APIV3_KEY = '0987654321ASDFGHJKLOasdfghjklp12'  # API v3密钥 https://pay.weixin.qq.com/wiki/doc/apiv3/wechatpay/wechatpay3_2.shtml
+   NOTIFY_URL = 'https://www.letmefly.xyz/wechatpay/notify/'  # 微信支付成功后的回调地址（你的服务地址 加上```wechatpay/notify/```）
    ```
-7. 在```Back```目录下执行以下命令：
+7. 在```Back/cert```目录下新建```apiclient_key.pem```，该文件为在微信商户平台申请的密钥
+8. 在```Back```目录下执行以下命令：
    1. ```python manage.py makemigrations```
    2. ```python manage.py migrate```
    3. ```python manage.py runserver```

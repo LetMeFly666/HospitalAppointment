@@ -2,7 +2,7 @@
 Author: LetMeFly
 Date: 2023-08-17 16:37:36
 LastEditors: LetMeFly
-LastEditTime: 2024-01-23 22:32:01
+LastEditTime: 2024-01-24 16:35:14
 '''
 """HospitalAppointment URL Configuration
 
@@ -29,6 +29,7 @@ from app import interface, baseFunction
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('hello/', interface.User.helloWorld),
+    path('hello/html/', baseFunction.HTML.html('helloWorld.html')),
     path('login/', interface.User.login),
     path('user/apply2be1caregiver/', interface.User.apply2be1caregiver),
     path('user/add1friend/', interface.User.add1friend),
@@ -37,7 +38,7 @@ urlpatterns = [
     path('user/getOrderStatus/', interface.User.getOrderStatus),
     path('user/create1order/', interface.User.create1order),
     path('user/delete1order/', interface.User.delete1order),
-    path('hello/html/', baseFunction.HTML.html('helloWorld.html')),
+    path('wechatpay/notify/', interface.User.wxpayCallback),
     # 管理员界面 - 陪诊员
     path('runners/', interface.Admin.runnerList, name='runner_list'),
     path('runners/edit/<int:runnerId>/', interface.Admin.editRunnerStatus, name='edit_runner'),
