@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-07-03 21:16:46
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-12-03 18:44:12
+ * @LastEditTime: 2024-01-24 11:54:14
 -->
 <!--pages/PeiZhenXiaDan_YouXiangPeiZhen/PeiZhenXiaDan_YouXiangPeiZhen.wxml-->
 
@@ -70,7 +70,7 @@
     <view class="hiddenView2">
         <view wx:for="{{price}}" wx:key="index" class="payContainer payContainer{{index + 1}}of2">
             <view class="blueButton" catchtap="toPay" data-price="{{item}}">
-                <view class="payText" catchtap="toPay" data-price="{{item}}">立即预约 {{item}}</view>
+                <view class="payText" catchtap="toPay" data-price="{{item}}" data-index="{{index}}">立即预约 {{item}}</view>
             </view>
         </view>
     </view>

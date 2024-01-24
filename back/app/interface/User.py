@@ -2,7 +2,7 @@
 Author: LetMeFly
 Date: 2023-09-20 16:16:47
 LastEditors: LetMeFly
-LastEditTime: 2024-01-24 22:13:12
+LastEditTime: 2024-01-24 22:51:04
 Description: 人员相关（用户信息、 就诊人、陪诊员）
 '''
 from django.http import HttpResponse, JsonResponse
@@ -260,13 +260,6 @@ def delete1order(request):
 
 
 """
-修改支付状态
-"""
-def updatePaymentStatus(openid):
-    pass
-
-
-"""
 微信支付回调函数
 """
 def wxpayCallback(request):
@@ -284,16 +277,6 @@ def wxpayCallback(request):
         time = resp.get('success_time')
         openid = resp.get('payer').get('openid')
         moneyTimes100 = resp.get('amount').get('total')
-        # TODO: 根据返回参数进行必要的业务处理，处理完后返回200或204
-        """
-        {'id': 'd78861b6-3779-5e71-a3c5-4540009d93c2', 'create_time': '2024-01-24T21:49:13+08:00', 'resource_type': 'encrypt-resource', 'event_type': 'TRANSACTION.SUCCESS', 'summary': '支付成功', 'resource': {'mchid': '1665087438', 'appid': 'wx5c50bcb971eb5819', 'out_trade_no': 'IDFQULjm', 'transaction_id': '4200002092202401242018244642', 'trade_type': 'JSAPI', 'trade_state': 'SUCCESS', 'trade_state_desc': '支付成功', 'bank_type': 'OTHERS', 'attach': '', 'success_time': '2024-01-24T21:49:13+08:00', 'payer': {'openid': 'oQiN16wsj2ZrQPuu4iUxvSkLrmoI'}, 'amount': {'total': 1, 'payer_total': 1, 'currency': 'CNY', 'payer_currency': 'CNY'}}}
-        resp: {'mchid': '1665087438', 'appid': 'wx5c50bcb971eb5819', 'out_trade_no': 'IDFQULjm', 'transaction_id': '4200002092202401242018244642', 'trade_type': 'JSAPI', 'trade_state': 'SUCCESS', 'trade_state_desc': '支付成功', 'bank_type': 'OTHERS', 'attach': '', 'success_time': '2024-01-24T21:49:13+08:00', 'payer': {'openid': 'oQiN16wsj2ZrQPuu4iUxvSkLrmoI'}, 'amount': {'total': 1, 'payer_total': 1, 'currency': 'CNY', 'payer_currency': 'CNY'}}
-        out_trade_no: IDFQULjm
-        transaction_id: 4200002092202401242018244642
-        success_time: 2024-01-24T21:49:13+08:00
-        payer: oQiN16wsj2ZrQPuu4iUxvSkLrmoI
-        amount: 1
-        """
         print(f'resp: {resp}')
         print(f'out_trade_no: {treadNum}')
         print(f'transaction_id: {transactionId}')

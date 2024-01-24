@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-07-03 21:15:24
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-11-25 23:31:36
+ * @LastEditTime: 2024-01-24 22:51:45
  */
 // pages/PeiZhenXiaDan/PeiZhenXiaDan.js
 Page({
@@ -34,7 +34,7 @@ Page({
         }, {
             id: 6,
             title: '全心服务其他服务',
-            price: '￥0/次'
+            price: '￥1/次'
         }, {
             id: 7,
             title: '全心服务门诊约号',

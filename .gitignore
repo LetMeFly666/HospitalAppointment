@@ -1,3 +1,5 @@
 __pycache__
 Secrets.py
 tryWXPAY
+apiclient_key.pem
+back/cert/cert

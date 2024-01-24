@@ -27,7 +27,11 @@ Page({
 
     toPay(event) {
         const priceWithText = event.target.dataset.price;
-        const url = '/pages/Pay/Pay?priceWithText=' + priceWithText + '&serviceName=' + this.data.serviceName + '&id=' + this.data.id;
+        var id = parseInt(this.data.id);
+        if (event.target.dataset.index) {
+            id += 100;
+        }
+        const url = '/pages/Pay/Pay?priceWithText=' + priceWithText + '&serviceName=' + this.data.serviceName + '&id=' + id;
         wx.redirectTo({'url': url});
     },
 

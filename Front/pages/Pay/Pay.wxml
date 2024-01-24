@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-12-03 18:38:26
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-12-26 11:13:28
+ * @LastEditTime: 2024-01-23 17:08:19
 -->
 <!--pages/Pay/Pay.wxml-->
 <!-- 服务类型 -->
@@ -22,27 +22,29 @@
     <view class="hospital inline">
         <view class="leftTextBig">医院</view>
         <view class="inputView">
-            <input class="realInputPlace input1" placeholder="请输入要选择的医院"></input>
+            <picker class="rightPart input1" bindchange="pick1hospital" range="{{hospitals_onlyNames}}" value="{{hospitalsIndex}}" disabled="{{!ifShowPayButton}}">
+                <view>{{hospitals[hospitalsIndex]['name']}} <text decode="true">&gt;</text></view>
+            </picker>
         </view>
     </view>
     <view class="splitLine"></view>
     <view class="inline">
         <view class="leftText">科室</view>
         <view class="inputView">
-            <input class="realInputPlace input2" placeholder="请输入要选择的科室"></input>
+            <input class="realInputPlace input2" value="{{department}}" bindinput="inputDepartment" disabled="{{!ifShowPayButton}}" placeholder="请输入要选择的科室"></input>
         </view>
     </view>
     <view class="splitLine"></view>
     <view class="inline">
         <view class="leftText">就诊人</view>
-        <picker class="rightPart" bindchange="pick1friend" range="{{friends_onlyNames}}" value="{{friendsIndex}}">
+        <picker class="rightPart" bindchange="pick1friend" range="{{friends_onlyNames}}" value="{{friendsIndex}}" disabled="{{!ifShowPayButton}}">
             <view>{{friends[friendsIndex]['name']}} <text decode="true">&gt;</text></view>
         </picker>
     </view>
     <view class="splitLine"></view>
     <view class="inline">
         <view class="leftText">期望就诊时间</view>
-        <picker class="rightPart" mode="date" value="{{date}}" bindchange="pick1date">
+        <picker class="rightPart" mode="date" value="{{date}}" bindchange="pick1date" disabled="{{!ifShowPayButton}}">
             <view class="picker">
               {{date}} <text decode="true">&gt;</text>
             </view>
@@ -51,7 +53,7 @@
     <view class="splitLine"></view>
     <view class="needs">
         <view class="leftTextMiddle">服务需求</view>
-        <textarea class="inputTextArea" name="needs" placeholder="请输入其他服务需求"></textarea>
+        <textarea class="inputTextArea" name="needs" value="{{more}}" bindinput="inputNeeds" placeholder="请输入其他服务需求" disabled="{{!ifShowPayButton}}"></textarea>
     </view>
 </view>
 
@@ -60,12 +62,15 @@
 <!-- 支付框 -->
 <view class="hiddenView">
     <view class="payContainer">
-        <view class="item" catchtap="readTheNotes">
+        <view class="item" catchtap="readTheNotes" wx:if="{{ifShowPayButton}}">
             <image src="{{alreadyRead ? '/images/icon/read.png' : '/images/icon/unread.png'}}" class="readOrNot"/>
             <view class="readTheNotes">我已认真阅读预约相关<text class="blue">《服务条款同意书》</text></view>
         </view>
-        <view class="blueButton" catchtap="toPay" data-price="{{priceValue}}">
+        <view class="blueButton" catchtap="toPay" data-price="{{priceValue}}" wx:if="{{ifShowPayButton}}">
             <view class="payText" catchtap="toPay" data-price="{{priceValue}}">立即下单（￥{{priceValue}}）</view>
+        </view>
+        <view class="blueButton buttonWithMargin" wx:else>
+            <view class="payText">{{progress}}</view>
         </view>
     </view>
 </view>

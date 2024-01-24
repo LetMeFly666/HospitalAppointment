@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-12-16 16:40:37
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-12-16 17:48:02
+ * @LastEditTime: 2024-01-23 14:56:35
 -->
 <!--pages/MyOrder/MyOrder.wxml-->
 <!-- 顶部选择订单类型 -->
@@ -16,7 +16,7 @@
 <!-- 订单 -->
 <view wx:if="{{!ordersToShow.length}}" class="noOrders">暂无订单</view>
 <block wx:else>
-    <view class="oneOrder" wx:for="{{ordersToShow}}" wx:key="index">
+    <view class="oneOrder" wx:for="{{ordersToShow}}" wx:key="index" bindtap="gotoOrderDetail" data-id="{{item.id}}">
         <view class="text">订单日期：{{item.date}}</view>
         <view class="text">服务类型：{{item.service}}</view>
         <view class="text">订单金额：{{item.price}}</view>

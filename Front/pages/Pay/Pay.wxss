@@ -142,6 +142,10 @@ page {
     border-radius: 40rpx;
 }
 
+.buttonWithMargin {
+    margin-top: 50rpx;
+}
+
 .payText {
     color: white;
 }
