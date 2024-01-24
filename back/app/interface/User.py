@@ -2,7 +2,7 @@
 Author: LetMeFly
 Date: 2023-09-20 16:16:47
 LastEditors: LetMeFly
-LastEditTime: 2024-01-24 21:29:53
+LastEditTime: 2024-01-24 21:46:44
 Description: 人员相关（用户信息、 就诊人、陪诊员）
 '''
 from django.http import HttpResponse, JsonResponse
@@ -225,7 +225,8 @@ def create1order(request):
     name = serviceObject.name
     type_ = serviceObject.type
     name += type_
-    amount = int(type_.split('/')[0].split('￥')[1]) * 100
+    # amount = int(type_.split('/')[0].split('￥')[1]) * 100  # TODO: 取消注释并删除下行
+    amount = 1
     payment = money.generate1pay(userOpenid, amount, name)
     if payment['code']:
         print(payment)
