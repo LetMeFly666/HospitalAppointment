@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-08-15 22:11:19
  * @LastEditors: LetMeFly
- * @LastEditTime: 2024-01-24 16:52:55
+ * @LastEditTime: 2024-01-25 10:58:48
 -->
 # 后端接口
 
@@ -192,7 +192,7 @@ response:
 
 用户在小程序中“申请成为陪诊员”后，其申请信息将会显示在这个html页面上。
 
-```GET: runners/```
+```GET: admin/runners/```
 
 data:
 
@@ -200,13 +200,43 @@ data:
 
 ### 管理-修改陪诊员状态
 
-```POST: runners/edit/<int:runnerId>/```
+```POST: admin/runners/edit/<int:runnerId>/```
 
 data:
 
 + ```COOKIE.LetHA```: 管理员密码
 + ```runnerID```(在url中): 要修改的陪诊员的ID
 + ```status```: 要设置的陪诊员新状态
+
+### 管理-订单列表查看
+
+显示所有的订单信息，优先级：状态（已付款 > 待付款 > 已完成） > 时间（付款时间早 > 订单创建时间早）
+
+```GET: admin/orders/```
+
+data:
+
++ ```COOKIE.LetHA```: 管理员密码
+
+### 管理-修改订单状态
+
+```POST: admin/orders/edit/finishState/```
+
+data:
+
++ ```COOKIE.LetHA```: 管理员密码
++ ```logID```: 要修改的订单ID
++ ```status```: 要设置的订单新状态（已完成和已支付）
+
+### 管理-修改订单备注
+
+```POST: admin/orders/edit/notes/```
+
+data:
+
++ ```COOKIE.LetHA```: 管理员密码
++ ```logID```: 要修改的订单ID
++ ```notes```: 要设置的订单备注
 
 ## 支付相关
 

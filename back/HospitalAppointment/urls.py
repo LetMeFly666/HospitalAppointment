@@ -2,7 +2,7 @@
 Author: LetMeFly
 Date: 2023-08-17 16:37:36
 LastEditors: LetMeFly
-LastEditTime: 2024-01-25 09:25:49
+LastEditTime: 2024-01-25 10:46:21
 '''
 """HospitalAppointment URL Configuration
 
@@ -19,7 +19,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
+# from django.contrib import admin
 from django.urls import path
 from django.views import static
 from django.conf.urls import url
@@ -27,7 +27,7 @@ from django.conf import settings
 from app import interface, baseFunction
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    # path('admin/', admin.site.urls),
     path('hello/', interface.User.helloWorld),
     path('hello/html/', baseFunction.HTML.html('helloWorld.html')),
     path('login/', interface.User.login),
@@ -39,9 +39,11 @@ urlpatterns = [
     path('user/create1order/', interface.User.create1order),
     path('user/delete1order/', interface.User.delete1order),
     path('wechatpay/notify/', interface.User.wxpayCallback),
-    # 管理员界面 - 陪诊员
-    path('admin/runners/', interface.Admin.runnerList, name='runner_list'),
+    path('admin/runners/', interface.Admin.runnerList, name='runner_list'),  # 管理员界面 - 陪诊员
     path('admin/runners/edit/<int:runnerId>/', interface.Admin.editRunnerStatus, name='edit_runner'),
+    path('admin/orders/', interface.Admin.orderList),  # 管理员界面 - 订单
+    path('admin/orders/edit/finishState/', interface.Admin.editFinishState),
+    path('admin/orders/edit/notes/', interface.Admin.editNotes),
 ]
 
 # 很奇怪，DEBUG=False下加上下面那个才能访问到图片；DEBUG=True下加上下面的那个又访问不到图片了

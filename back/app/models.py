@@ -2,7 +2,7 @@
 Author: LetMeFly
 Date: 2023-09-19 10:00:24
 LastEditors: LetMeFly
-LastEditTime: 2024-01-24 23:14:33
+LastEditTime: 2024-01-25 10:20:10
 '''
 from django.db import models
 
@@ -47,7 +47,7 @@ class Log(models.Model):
     paidtime = models.DateTimeField(null=True, blank=True)
     paidmoneyTimes100 = models.IntegerField(default=0)
     iffinish = models.CharField(max_length=1)
-    whofinished = models.CharField(max_length=16, null=True, blank=True)
+    whofinished = models.CharField(max_length=16, null=True, blank=True)  # 这个先不写了吧
     more = models.CharField(max_length=10240, null=True, blank=True)
     notes = models.CharField(max_length=10240, null=True, blank=True)
 
