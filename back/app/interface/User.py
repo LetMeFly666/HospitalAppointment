@@ -2,7 +2,7 @@
 Author: LetMeFly
 Date: 2023-09-20 16:16:47
 LastEditors: LetMeFly
-LastEditTime: 2024-01-24 23:31:54
+LastEditTime: 2024-01-25 09:28:27
 Description: 人员相关（用户信息、 就诊人、陪诊员）
 '''
 from django.http import HttpResponse, JsonResponse
@@ -49,7 +49,7 @@ def apply2be1caregiver(request):
     name = request.POST.get('name')
     phone = request.POST.get('phone')
     userid = models.User.objects.get(warrant=warrant).userid
-    runner = models.Runner(userid=userid, name=name, phone=phone, status='待联系')
+    runner = models.Runner(id=userid, name=name, phone=phone, status='待联系')
     runner.save()
     return JsonResponse({'msg': '操作成功'})
 

@@ -2,7 +2,7 @@
 Author: LetMeFly
 Date: 2023-08-17 16:37:36
 LastEditors: LetMeFly
-LastEditTime: 2024-01-24 16:35:14
+LastEditTime: 2024-01-25 09:25:49
 '''
 """HospitalAppointment URL Configuration
 
@@ -40,8 +40,8 @@ urlpatterns = [
     path('user/delete1order/', interface.User.delete1order),
     path('wechatpay/notify/', interface.User.wxpayCallback),
     # 管理员界面 - 陪诊员
-    path('runners/', interface.Admin.runnerList, name='runner_list'),
-    path('runners/edit/<int:runnerId>/', interface.Admin.editRunnerStatus, name='edit_runner'),
+    path('admin/runners/', interface.Admin.runnerList, name='runner_list'),
+    path('admin/runners/edit/<int:runnerId>/', interface.Admin.editRunnerStatus, name='edit_runner'),
 ]
 
 # 很奇怪，DEBUG=False下加上下面那个才能访问到图片；DEBUG=True下加上下面的那个又访问不到图片了
