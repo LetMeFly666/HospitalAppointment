@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>订单列表</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 90%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center; /* 设置内容居中显示 */
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        textarea {
+            width: 100%; /* 设置宽度为 100% 以适应父元素的宽度 */
+            box-sizing: border-box; /* 确保 padding 和 border 不会增加宽度 */
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            resize: vertical; /* 用户可以垂直调整文本域的大小 */
+        }
+        select {
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h2>订单列表</h2>
+    <table>
+        <tr>
+            <th>医院</th>
+            <th>科室</th>
+            <th>希望就诊日期</th>
+            <th>服务</th>
+            <th>就诊人姓名</th>
+            <th>是否成年</th>
+            <th>性别</th>
+            <th>就诊人电话</th>
+            <th>就诊人身份证</th>
+            <th>支付金额</th>
+            <th>用户备注</th>
+            <th>当前状态</th>
+            <th>管理员备注</th>
+        </tr>
+        {% for log in logs %}
+            <tr id="_{{ log.id }}">
+                <td>{{ log.hospitalName }}</td>
+                <td>{{ log.department }}</td>
+                <td>{{ log.wantTime }}</td>
+                <td>{{ log.serviceName }}</td>
+                <td>{{ log.friend_name }}</td>
+                <td>{{ log.friend_if18 }}</td>
+                <td>{{ log.friend_sex }}</td>
+                <td>{{ log.friend_phone }}</td>
+                <td>{{ log.friend_idcard }}</td>
+                <td>{{ log.paidmoney }}</td>
+                <td>{{ log.more }}</td>
+                <td>
+                    {% if log.ifpaid == 'y' %}
+                        <select onchange="updateStatus({{ log.id }}, this.value)">
+                            <option value="已付款" {% if log.iffinish == 'n' %}selected{% endif %}>已付款</option>
+                            <option value="已完成" {% if log.iffinish == 'y' %}selected{% endif %}>已完成</option>
+                        </select>
+                    {% else %}
+                        {{ log.status }}
+                    {% endif %}
+                </td>
+                <td>
+                    <textarea id="notes-{{ log.id }}" rows="3" style="width: 100%;">{{ log.notes }}</textarea>
+                    <button onclick="updateNotes({{ log.id }})">更新备注</button>
+                </td>
+            </tr>
+        {% empty %}
+            <tr>
+                <td colspan="6">没有找到记录</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <script>
+        function updateStatus(logId, newStatus) {
+            fetch('./edit/finishState/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ id: logId, status: newStatus })
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                alert(data['msg']);
+                if (!data['code']) {
+                    location.reload();
+                }
+            });
+        }
+
+        function updateNotes(logId) {
+            var notes = document.getElementById('notes-' + logId).value;
+            fetch('./edit/notes/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ id: logId, notes: notes })
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                alert(data['msg']);
+                if (!data['code']) {
+                    location.reload();
+                }
+            });
+        }
+    </script>
+</body>
+</html>
