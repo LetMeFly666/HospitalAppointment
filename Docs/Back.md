@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-08-15 22:11:19
  * @LastEditors: LetMeFly
- * @LastEditTime: 2024-01-25 11:16:22
+ * @LastEditTime: 2024-01-25 11:29:35
 -->
 # 后端接口
 
@@ -187,6 +187,16 @@ response:
 ```
 
 ## 管理员相关
+
+### 管理-管理员界面
+
+三个按钮，点击“陪诊员管理”跳转到“./runners”，击“订单管理”跳转到“./orders”，点击“支付记录”跳转到“./money”。
+
+```GET: admin/```
+
+data:
+
++ ```COOKIE.LetHA```: 管理员密码
 
 ### 管理-陪诊员列表查看
 
