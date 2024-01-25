@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-08-15 22:32:21
  * @LastEditors: LetMeFly
- * @LastEditTime: 2024-01-25 11:30:07
+ * @LastEditTime: 2024-01-25 23:40:25
 -->
 # HospitalAppointment
 
@@ -51,7 +51,9 @@
 
 ## 接口文档
 
-接口文档详见[Docs/Back.md](Docs/Back.md)
++ 接口文档详见[Docs/Back.md](Docs/Back.md)
++ 数据库文档见[Docs/Database.md](Docs/Database.md)
++ 代码行数见[Docs/CountLines.md](Docs/CountLines.md)
 
 ## TODO
 
