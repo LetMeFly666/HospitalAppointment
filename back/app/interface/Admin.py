@@ -2,7 +2,7 @@
 Author: LetMeFly
 Date: 2024-01-19 20:56:08
 LastEditors: LetMeFly
-LastEditTime: 2024-01-25 11:09:39
+LastEditTime: 2024-01-25 11:27:50
 '''
 from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404
@@ -11,6 +11,11 @@ from django.db.models import Case, When, Value, IntegerField
 from app import models
 from app import baseFunction
 import json
+
+
+@baseFunction.decorators.checkAdminAuth
+def adminPage(reqeust):
+    return baseFunction.HTML.html('admin.html')(reqeust)
 
 
 @baseFunction.decorators.checkAdminAuth

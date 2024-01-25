@@ -39,6 +39,7 @@ urlpatterns = [
     path('user/create1order/', interface.User.create1order),
     path('user/delete1order/', interface.User.delete1order),
     path('wechatpay/notify/', interface.User.wxpayCallback),
+    path('admin/', interface.Admin.adminPage),  # 管理员界面
     path('admin/runners/', interface.Admin.runnerList, name='runner_list'),  # 管理员界面 - 陪诊员
     path('admin/runners/edit/<int:runnerId>/', interface.Admin.editRunnerStatus, name='edit_runner'),
     path('admin/orders/', interface.Admin.orderList),  # 管理员界面 - 订单
