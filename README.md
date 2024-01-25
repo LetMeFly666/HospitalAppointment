@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-08-15 22:32:21
  * @LastEditors: LetMeFly
- * @LastEditTime: 2024-01-25 10:59:42
+ * @LastEditTime: 2024-01-25 11:21:32
 -->
 # HospitalAppointment
 
@@ -56,11 +56,11 @@
 ## TODO
 
 - [ ] 管理员——功能选择界面（[点我](#todo-3)）
-- [ ] 管理员——支付情况界面（[点我](#todo-5)）
 - [ ] 服务条款勾选同意后无法取消
 - [ ] GET请求时，warrant也作为data传递会在url中显示，不如在header中（django似乎会把header中的warrant改成HTTP_WARRANT）
 - [ ] 退款功能（[issue#20](https://github.com/LetMeFly666/HospitalAppointment/issues/20)）
-- [x] 管理员——订单状态界面（[issue#28](https://github.com/LetMeFly666/HospitalAppointment/issues/28)）
+- [x] 管理员——支付情况界面（[issue#16](https://github.com/LetMeFly666/HospitalAppointment/issues/16)）
+- [x] 管理员——订单状态界面（[issue#7](https://github.com/LetMeFly666/HospitalAppointment/issues/7)）
 - [x] 订单创建的实现（[点我](#todo-2)）
 - [x] 后端获取订单状态接口（[pr#17](https://github.com/LetMeFly666/HospitalAppointment/pull/17)）
 - [x] 管理员——陪诊员操作页面
@@ -77,9 +77,3 @@
 <a id='todo-3'></a>详见[issue#9](https://github.com/LetMeFly666/HospitalAppointment/issues/9)。
 
 - [ ] 一个简单的界面，选择是查看订单状态还是查看陪诊员申请情况。
-
-### 管理员——支付情况界面
-
-<a id='todo-5'></a>详见[issue#16](https://github.com/LetMeFly666/HospitalAppointment/issues/16)。
-
-- [ ] 显示已支付情况
