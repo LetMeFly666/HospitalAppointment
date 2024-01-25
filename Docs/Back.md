@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-08-15 22:11:19
  * @LastEditors: LetMeFly
- * @LastEditTime: 2024-01-25 10:58:48
+ * @LastEditTime: 2024-01-25 11:16:22
 -->
 # 后端接口
 
@@ -237,6 +237,16 @@ data:
 + ```COOKIE.LetHA```: 管理员密码
 + ```logID```: 要修改的订单ID
 + ```notes```: 要设置的订单备注
+
+### 管理-支付记录查看
+
+显示所有的支付记录，越近的支付记录越优先
+
+```GET: admin/money/```
+
+data:
+
++ ```COOKIE.LetHA```: 管理员密码
 
 ## 支付相关
 

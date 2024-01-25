@@ -2,7 +2,7 @@
 Author: LetMeFly
 Date: 2024-01-19 20:56:08
 LastEditors: LetMeFly
-LastEditTime: 2024-01-25 10:39:05
+LastEditTime: 2024-01-25 11:09:39
 '''
 from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404
@@ -96,3 +96,9 @@ def editNotes(request):
     log.notes = new_notes
     log.save()
     return JsonResponse({'code': 0, 'msg': '备注更新成功'})
+
+
+@baseFunction.decorators.checkAdminAuth
+def moneyList(request):
+    moneys = models.Money.objects.all().order_by('-time')
+    return render(request, 'money.html', {'moneys': moneys})

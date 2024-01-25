@@ -1,0 +1,67 @@
+<!--
+    * @Author: LetMeFly
+    * @Date: 2024-01-25 11:08:43
+    * @LastEditors: LetMeFly
+    * @LastEditTime: 2024-01-25 11:17:59
+-->
+{% load filters %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>支付情况</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 90%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h2>支付情况</h2>
+    <table>
+        <tr>
+            <th>就诊人名字</th>
+            <th>金额（元）</th>
+            <th>交易完成时间</th>
+            <th>微信交易号</th>
+            <th>微信支付ID</th>
+        </tr>
+        {% for money in moneys %}
+            <tr>
+                <td>{{ money.friendName }}</td>
+                <td>{{ money.moneyTimes100|floatdiv:100|floatformat:2 }}</td>
+                <td>{{ money.time|date:"Y-m-d H:i:s" }}</td>
+                <td>{{ money.treadNum }}</td>
+                <td>{{ money.transactionId }}</td>
+            </tr>
+        {% empty %}
+            <tr>
+                <td colspan="5">没有支付记录</td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
