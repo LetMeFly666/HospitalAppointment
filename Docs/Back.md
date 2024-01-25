@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-08-15 22:11:19
  * @LastEditors: LetMeFly
- * @LastEditTime: 2024-01-25 11:29:35
+ * @LastEditTime: 2024-01-25 23:10:23
 -->
 # 后端接口
 
@@ -70,6 +70,8 @@ data:
 + ```id```: 要删除的friend的id
 
 ### 个人-申请成为陪诊员
+
+一个用户只能当一个陪诊员，多个陪诊员请分别使用自己的微信申请。一个用户多次申请则新的申请会覆盖旧的申请。
 
 ```POST: user/apply2be1caregiver/```
 
