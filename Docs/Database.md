@@ -17,6 +17,7 @@
 |wx_session_key|VARCHAR(512)|微信session_key|
 |wx_unionid|VARCHAR(512)|微信unionid（May空？）|
 |warrant|VARCHAR(32)|自定义的warrant|
+|more|VARCHAR(128)|对用户的备注（可选）|
 
 ## 就诊人管理
 

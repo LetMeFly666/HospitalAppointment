@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-08-15 22:32:21
  * @LastEditors: LetMeFly
- * @LastEditTime: 2024-01-26 17:33:18
+ * @LastEditTime: 2024-01-26 19:01:53
 -->
 # HospitalAppointment
 
@@ -61,6 +61,7 @@
 - [ ] 服务条款勾选同意后无法取消
 - [ ] GET请求时，warrant也作为data传递会在url中显示，不如在header中（django似乎会把header中的warrant改成HTTP_WARRANT）
 - [ ] 退款功能（[issue#20](https://github.com/LetMeFly666/HospitalAppointment/issues/20)）
+- [x] 用户数据库的备注功能——id和openid和warrant都太抽象了（[issue#32](https://github.com/LetMeFly666/HospitalAppointment/issues/32)）
 - [x] 管理员——功能选择界面（[issue#9](https://github.com/LetMeFly666/HospitalAppointment/issues/9)）
 - [x] 管理员——支付情况界面（[issue#16](https://github.com/LetMeFly666/HospitalAppointment/issues/16)）
 - [x] 管理员——订单状态界面（[issue#7](https://github.com/LetMeFly666/HospitalAppointment/issues/7)）
