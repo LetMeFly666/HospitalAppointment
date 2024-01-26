@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-09-01 22:46:41
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-09-01 23:08:59
+ * @LastEditTime: 2024-01-26 19:16:52
  */
 // pages/OneExpert/OneExpert.js
 const app = getApp();
@@ -38,6 +38,10 @@ Page({
         this.setData({
             id: options.id,
             expertInfo: expertInfo
+        });
+
+        wx.setNavigationBarTitle({
+            title: expertInfo.name
         });
     },
 
