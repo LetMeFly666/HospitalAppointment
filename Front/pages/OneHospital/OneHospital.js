@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-08-30 21:31:06
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-08-31 11:26:30
+ * @LastEditTime: 2024-01-26 19:18:00
  */
 // pages/OneHospital/OneHospital.js
 const app = getApp();
@@ -40,6 +40,9 @@ Page({
         this.setData({
             id: options.id,
             hospitalInfo: hospitalInfo
+        });
+        wx.setNavigationBarTitle({
+            title: hospitalInfo.name
         });
     },
 
