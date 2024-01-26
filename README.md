@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-08-15 22:32:21
  * @LastEditors: LetMeFly
- * @LastEditTime: 2024-01-25 23:40:25
+ * @LastEditTime: 2024-01-26 17:33:18
 -->
 # HospitalAppointment
 
@@ -57,6 +57,7 @@
 
 ## TODO
 
+- [ ] 很多页面的title都是Weixin（[issue#31](https://github.com/LetMeFly666/HospitalAppointment/issues/31)）——感谢内测用户[@Wang Bo](https://github.com/Pesuking)
 - [ ] 服务条款勾选同意后无法取消
 - [ ] GET请求时，warrant也作为data传递会在url中显示，不如在header中（django似乎会把header中的warrant改成HTTP_WARRANT）
 - [ ] 退款功能（[issue#20](https://github.com/LetMeFly666/HospitalAppointment/issues/20)）
