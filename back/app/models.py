@@ -2,7 +2,7 @@
 Author: LetMeFly
 Date: 2023-09-19 10:00:24
 LastEditors: LetMeFly
-LastEditTime: 2024-01-25 10:20:10
+LastEditTime: 2024-01-26 19:02:13
 '''
 from django.db import models
 
@@ -13,6 +13,7 @@ class User(models.Model):
     wx_session_key = models.CharField(max_length=512)
     wx_unionid = models.CharField(max_length=512)
     warrant = models.CharField(max_length=32)
+    more = models.CharField(max_length=128, null=True, blank=True)
 
 
 class Friend(models.Model):
