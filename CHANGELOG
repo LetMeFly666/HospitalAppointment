@@ -1,8 +1,0 @@
-1. 是否添加就诊人的两个选项修改为：取消，确定
-2. 首页咨询电话弹出电话框
-3. 新增其他医院选项
-    Log数据库新增hospitalCustom
-    Log数据库hospitalid不再为1-14而变成0-14，为0时必须有hospitalCustom
-    getOrderStatus处理医院名
-    create1order数据库相关操作修改
-    Pay.js 医院选择处理

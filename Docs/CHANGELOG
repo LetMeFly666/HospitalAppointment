@@ -1,0 +1,5 @@
+若订单选择了自定义医院，则在查看订单时应显示自定义医院
+
+1. 后端getOrderStatus不再删除order['hospitalid']，前端使用order['hospitalid']来判断是否为自定义医院
+2. fix: 后端getOrderStatus中删除order['hospitalCustom']时应在循环中删除，而不是循环结束后
+3. 前端判定thisOrder.hospitalid为0时，设置hospitalCustom为hospital（name）

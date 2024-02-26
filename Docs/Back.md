@@ -97,6 +97,7 @@ response:
     data: [{
         id: 1,
         hospital: '西安医院',
+        hospitalid: 1,
         department: '第二科室',
         wantTime: '2024-01-23',
         service: '特需门诊VIP陪诊服务',

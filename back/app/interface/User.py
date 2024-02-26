@@ -2,7 +2,7 @@
 Author: LetMeFly
 Date: 2023-09-20 16:16:47
 LastEditors: LetMeFly
-LastEditTime: 2024-02-26 16:24:20
+LastEditTime: 2024-02-26 16:47:15
 Description: 人员相关（用户信息、 就诊人、陪诊员）
 '''
 from django.http import HttpResponse, JsonResponse
@@ -98,6 +98,7 @@ Response: {
     data: [{
         id: 1,
         hospital: '西安医院',
+        hospitalid: 1
         department: '第二科室',
         wantTime: '2024-01-23',
         service: '特需门诊VIP陪诊服务',
@@ -124,9 +125,8 @@ def getOrderStatus(request):
         hospitalInfoDict[thisHospital['id']] = thisHospital['name']
     for order in orders:
         hospitalId = order['hospitalid']
-        del order['hospitalid']
         order['hospital'] = hospitalInfoDict[hospitalId] if hospitalId else order['hospitalCustom']
-    del order['hospitalCustom']
+        del order['hospitalCustom']
     # 处理服务名
     serviceInfo = models.Service.objects.all().values()
     serviceInfo = model2dict.model2dictlist(serviceInfo)

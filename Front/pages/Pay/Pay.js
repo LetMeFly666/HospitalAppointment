@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-12-03 18:38:26
  * @LastEditors: LetMeFly
- * @LastEditTime: 2024-02-26 16:08:50
+ * @LastEditTime: 2024-02-26 16:43:35
  */
 // pages/Pay/Pay.js
 const app = getApp();
@@ -253,15 +253,14 @@ Page({
         });
     },
 
-    setDataWhenSeeingOrder_getHospitalsIndex(hospitalName) {
-        for (var i = 0; i < this.data.hospitals.length; i++) {
-            if (hospitalName == this.data.hospitals[i].name) {
-                return i;
-            }
-        }
-        console.log('ERROR! HOSPITAL NAME NOT FOUND!');
-        return 0;  // ERROR
-    },
+    // setDataWhenSeeingOrder_getHospitalsIndex(hospitalName) {
+    //     for (var i = 0; i < this.data.hospitals.length; i++) {
+    //         if (hospitalName == this.data.hospitals[i].name) {
+    //             return i;
+    //         }
+    //     }
+    //     return 0;  // 若无，则视为自定义医院  // 但是这样自定义医院与原始医院重名的话id会对不上
+    // },
 
     setDataWhenSeeingOrder_getFriendsIndex(friendid) {
         for (var i = 0; i < this.data.friends.length; i++) {
@@ -302,8 +301,13 @@ Page({
             more: thisOrder.more ? thisOrder.more : '没有填写',
             progress: thisOrder.progress,
             friendsIndex: this.setDataWhenSeeingOrder_getFriendsIndex(thisOrder.friendid),
-            hospitalsIndex: this.setDataWhenSeeingOrder_getHospitalsIndex(thisOrder.hospital)
+            hospitalsIndex: thisOrder.hospitalid
         })
+        if (thisOrder.hospitalid == 0) {
+            that.setData({
+                hospitalCustom: thisOrder.hospital
+            })
+        }
     },
 
     /**
