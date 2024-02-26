@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-12-03 18:38:26
  * @LastEditors: LetMeFly
- * @LastEditTime: 2024-01-24 22:41:56
+ * @LastEditTime: 2024-02-26 16:08:50
  */
 // pages/Pay/Pay.js
 const app = getApp();
@@ -25,9 +25,10 @@ Page({
         }],
         friends_onlyNames: ['请选择就诊人'],
         friendsIndex: 0,
-        hospitals: app.hospitalList,
+        hospitals: [{id: '0', name: '其他医院（请备注）'}].concat(app.hospitalList),
         hospitals_onlyNames: ['请选择就诊医院'],
-        hospitalsIndex: 0,
+        hospitalsIndex: 1,
+        hospitalCustom: '',
         date: '请选择就诊时间',
         orders: [],
         ifShowPayButton: true,
@@ -61,13 +62,14 @@ Page({
     },
 
     create1order() {
-        const hospitalId = parseInt(this.data.hospitalsIndex) + 1;
+        const hospitalId = parseInt(this.data.hospitalsIndex);
         const department = this.data.department;
         const wantTime = this.data.date;
         const serviceId = this.data.id;
         const friendid = this.data.friends[this.data.friendsIndex].id;
         const more = this.data.more;
-        const data = {hospitalId, department, wantTime, serviceId, friendid, more};
+        const hospitalCustom = this.data.hospitalsIndex == 0 ? this.data.hospitalCustom : '';
+        const data = {hospitalId, department, wantTime, serviceId, friendid, more, hospitalCustom};
         const that = this;
         app.myRequest({
             url: 'https://www.letmefly.xyz/LetHA/user/create1order/',
@@ -97,8 +99,8 @@ Page({
                     wx.showModal({
                         title: '暂无就诊人',
                         content: '是否前往添加就诊人',
-                        cancelText: '我不',
-                        confirmText: '好吧确实',
+                        cancelText: '取消',
+                        confirmText: '确定',
                         success: function (res) {
                             if (res.confirm) {
                                 wx.redirectTo({url: '/pages/FriendAdd/FriendAdd'});
@@ -143,6 +145,13 @@ Page({
         const val = event.detail.value;
         this.setData({
             more: val
+        });
+    },
+
+    inputDepartmentCustom(event) {
+        const val = event.detail.value;
+        this.setData({
+            hospitalCustom: val
         });
     },
 

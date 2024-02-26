@@ -2,7 +2,7 @@
 Author: LetMeFly
 Date: 2023-09-20 16:16:47
 LastEditors: LetMeFly
-LastEditTime: 2024-01-25 23:02:31
+LastEditTime: 2024-02-26 16:24:20
 Description: 人员相关（用户信息、 就诊人、陪诊员）
 '''
 from django.http import HttpResponse, JsonResponse
@@ -125,7 +125,8 @@ def getOrderStatus(request):
     for order in orders:
         hospitalId = order['hospitalid']
         del order['hospitalid']
-        order['hospital'] = hospitalInfoDict[hospitalId]
+        order['hospital'] = hospitalInfoDict[hospitalId] if hospitalId else order['hospitalCustom']
+    del order['hospitalCustom']
     # 处理服务名
     serviceInfo = models.Service.objects.all().values()
     serviceInfo = model2dict.model2dictlist(serviceInfo)
@@ -178,6 +179,7 @@ Parameters:
         serviceId: 1,
         friendid: 2,
         more: 女士优先,
+        hospitalCustom: 当hospitalId为0时视为其他(自定义)医院
     }
 
 Response:
@@ -216,12 +218,13 @@ def create1order(request):
     serviceId = request.POST.get('serviceId')
     friendid = request.POST.get('friendid')
     more = request.POST.get('more')
+    hospitalCustom = request.POST.get('hospitalCustom')
     unpaidObject = models.Log.objects.filter(userid=userid, ifpaid='n')
     if unpaidObject:
         unpaidId = unpaidObject.values()[0]['id']
-        unpaidObject.update(hospitalid=hospitalId, department=department, wantTime=wantTime, serviceid=serviceId, friendid=friendid, more=more)
+        unpaidObject.update(hospitalid=hospitalId, department=department, wantTime=wantTime, serviceid=serviceId, friendid=friendid, more=more, hospitalCustom=hospitalCustom)
     else:
-        thisObject = models.Log.objects.create(hospitalid=hospitalId, department=department, wantTime=wantTime, serviceid=serviceId, userid=userid, friendid=friendid, requestTime=datetime.datetime.now(), ifpaid='n', iffinish='n', more=more)
+        thisObject = models.Log.objects.create(hospitalid=hospitalId, department=department, wantTime=wantTime, serviceid=serviceId, userid=userid, friendid=friendid, requestTime=datetime.datetime.now(), ifpaid='n', iffinish='n', more=more, hospitalCustom=hospitalCustom)
         thisObject.save()
         unpaidId = thisObject.id
     serviceObject = models.Service.objects.get(id=serviceId)
