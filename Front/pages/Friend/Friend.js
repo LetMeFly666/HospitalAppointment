@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-12-14 19:31:00
  * @LastEditors: LetMeFly
- * @LastEditTime: 2024-01-22 20:27:42
+ * @LastEditTime: 2024-02-26 11:02:57
  */
 // pages/Friend/Friend.js
 const app = getApp();
@@ -57,8 +57,8 @@ Page({
         wx.showModal({
             title: '警告',
             content: '确认要删除吗',
-            cancelText: '我不',
-            confirmText: '是的没错',
+            cancelText: '取消',
+            confirmText: '确定',
             success: function (res) {
                 if (res.confirm) {
                     app.myRequest({

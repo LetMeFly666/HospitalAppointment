@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-12-03 18:38:26
  * @LastEditors: LetMeFly
- * @LastEditTime: 2024-01-23 17:08:19
+ * @LastEditTime: 2024-02-26 15:50:03
 -->
 <!--pages/Pay/Pay.wxml-->
 <!-- 服务类型 -->
@@ -27,6 +27,15 @@
             </picker>
         </view>
     </view>
+    <block wx:if="{{hospitalsIndex == 0}}">
+        <view class="splitLine"></view>
+        <view class="inline">
+            <view class="leftText">其他医院</view>
+            <view class="inputView">
+                <input class="realInputPlace input2" value="{{hospitalCustom}}" bindinput="inputDepartmentCustom" disabled="{{!ifShowPayButton}}" placeholder="请输入要选择的医院"></input>
+            </view>
+        </view>
+    </block>
     <view class="splitLine"></view>
     <view class="inline">
         <view class="leftText">科室</view>

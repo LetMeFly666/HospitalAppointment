@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-07-03 18:08:50
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-12-16 16:15:20
+ * @LastEditTime: 2024-02-26 11:06:10
 -->
 <!--index.wxml-->
 
@@ -34,24 +34,24 @@
 </view>
 
 <!-- 5按钮 -->
-<view class="button4container" bindtap="change2PeiZhenXiaDanPage">
-    <view class="button4each">
+<view class="button4container">
+    <view class="button4each" bindtap='make1phonecall'>
         <image class="button4eachImg" src="/images/icon/message2.png" />
         <view class="button4eachText">诊前咨询</view>
     </view>
-    <view class="button4each">
+    <view class="button4each" bindtap="change2PeiZhenXiaDanPage">
         <image class="button4eachImg" src="/images/icon/timer.png" />
         <view class="button4eachText">诊前约号</view>
     </view>
-    <view class="button4each">
+    <view class="button4each" bindtap="change2PeiZhenXiaDanPage">
         <image class="button4eachImg" src="/images/icon/stethoscope.png" />
         <view class="button4eachText">代办问诊</view>
     </view>
-    <view class="button4each">
+    <view class="button4each" bindtap="change2PeiZhenXiaDanPage">
         <image class="button4eachImg" src="/images/icon/doc.png" />
         <view class="button4eachText">送取结果</view>
     </view>
-    <view class="button4each">
+    <view class="button4each" bindtap="change2PeiZhenXiaDanPage">
         <image class="button4eachImg" src="/images/icon/pill.png" />
         <view class="button4eachText">代办买药</view>
     </view>

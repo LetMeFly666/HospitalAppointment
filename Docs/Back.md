@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-08-15 22:11:19
  * @LastEditors: LetMeFly
- * @LastEditTime: 2024-01-25 23:40:52
+ * @LastEditTime: 2024-02-26 16:09:59
 -->
 # 后端接口
 
@@ -124,6 +124,7 @@ data:
 + ```serviceId```: 1
 + ```friendid```: 2
 + ```more```: 女士优先
++ ```hospitalCustom```: 当```hospitalId```为0时视为其他(自定义)医院
 
 response:
 

@@ -38,6 +38,7 @@ class Runner(models.Model):
 class Log(models.Model):
     id =  models.AutoField(primary_key=True)
     hospitalid = models.IntegerField()
+    hospitalCustom = models.CharField(max_length=64, null=True, blank=True)
     department = models.CharField(max_length=64, null=True, blank=True)
     wantTime = models.DateField()
     serviceid = models.IntegerField()

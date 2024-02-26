@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2024-01-25 23:41:03
  * @LastEditors: LetMeFly
- * @LastEditTime: 2024-01-25 23:41:08
+ * @LastEditTime: 2024-02-26 11:19:04
 -->
 # 数据库描述
 
@@ -53,7 +53,8 @@
 |字段|类型|描述|
 |:--:|:--:|:--:|
 |id|INT|django的id|
-|hospitalid|INT|医院id（1-14）|
+|hospitalid|INT|医院id（0-14）|
+|hospitalCustom|VARCHAR(64)|自定义医院名（id为0时生效）|
 |department|VARCHAR(64)|科室|
 |wantTime|DATE|希望就诊的日期|
 |serviceid|INT|服务id（1）|
