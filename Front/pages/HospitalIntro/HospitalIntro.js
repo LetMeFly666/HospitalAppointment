@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-08-31 11:57:11
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-09-01 12:03:46
+ * @LastEditTime: 2024-07-25 12:27:32
  */
 // pages/HospitalIntro/HospitalIntro.js
 const app = getApp();
@@ -89,10 +89,24 @@ Page({
 
     },
 
+    shareData() {
+        const that = this;
+        return {
+            title: `${that.data.hospitalInfo.name} - 医院介绍`,
+        }
+    },
+
     /**
      * 用户点击右上角分享
      */
     onShareAppMessage() {
+        return this.shareData();
+    },
 
-    }
+    /**
+     * 分享到朋友圈
+     */
+    onShareTimeline() {
+        return this.shareData();
+    },
 })

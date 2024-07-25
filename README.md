@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-08-15 22:32:21
  * @LastEditors: LetMeFly
- * @LastEditTime: 2024-07-24 16:17:18
+ * @LastEditTime: 2024-07-25 13:28:24
 -->
 # HospitalAppointment
 
@@ -64,6 +64,7 @@
 - [ ] 导航页-我的-【就诊人管理/我的订单】页面后退时小程序直接返回到后台，没有返回到主页
 - [ ] 导航页-我的-申请获取用户真正昵称和头像：[文档点我](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/userProfile.html)
 - [ ] 下单页面的医院选项中，最后一列新增“其他医院”选项
+- [x] 开启分享功能
 - [x] 很多页面的title都是Weixin（[issue#31](https://github.com/LetMeFly666/HospitalAppointment/issues/31)）——感谢内测用户[@Wang Bo](https://github.com/Pesuking)
 - [x] 用户数据库的备注功能——id和openid和warrant都太抽象了（[issue#32](https://github.com/LetMeFly666/HospitalAppointment/issues/32)）
 - [x] 管理员——功能选择界面（[issue#9](https://github.com/LetMeFly666/HospitalAppointment/issues/9)）

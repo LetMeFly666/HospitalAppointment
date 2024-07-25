@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-07-03 18:08:50
  * @LastEditors: LetMeFly
- * @LastEditTime: 2024-02-26 11:05:43
+ * @LastEditTime: 2024-07-25 12:29:10
  */
 // index.js
 const app = getApp();
@@ -26,5 +26,26 @@ Page({
         this.setData({
             hospitalList: app.hospitalList
         });
-    }
+    },
+
+    shareData() {
+        const that = this;
+        return {
+            title: '西安全心陪诊',
+        }
+    },
+
+    /**
+     * 用户点击右上角分享
+     */
+    onShareAppMessage() {
+        return this.shareData();
+    },
+
+    /**
+     * 分享到朋友圈
+     */
+    onShareTimeline() {
+        return this.shareData();
+    },
 })

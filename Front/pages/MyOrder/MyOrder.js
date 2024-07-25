@@ -164,10 +164,24 @@ Page({
 
     },
 
+    shareData() {
+        const that = this;
+        return {
+            title: '我的订单',
+        }
+    },
+
     /**
      * 用户点击右上角分享
      */
     onShareAppMessage() {
+        return this.shareData();
+    },
 
-    }
+    /**
+     * 分享到朋友圈
+     */
+    onShareTimeline() {
+        return this.shareData();
+    },
 })

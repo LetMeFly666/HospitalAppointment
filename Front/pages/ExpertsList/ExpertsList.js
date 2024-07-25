@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-09-01 22:46:41
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-09-02 10:22:27
+ * @LastEditTime: 2024-07-24 17:39:32
  */
 // pages/ExpertsList/ExpertsList.js
 const app = getApp();
@@ -91,9 +91,26 @@ Page({
     },
 
     /**
+     * 分享到微信好友或微信朋友圈所需要的信息
+     */
+    shareData() {
+        const that = this;
+        return {
+            title: `${that.data.hospitalInfo.name} - 专家`,
+        }
+    },
+
+    /**
      * 用户点击右上角分享
      */
     onShareAppMessage() {
+        return this.shareData();
+    },
 
-    }
+    /**
+     * 分享到朋友圈
+     */
+    onShareTimeline() {
+        return this.shareData();
+    },
 })

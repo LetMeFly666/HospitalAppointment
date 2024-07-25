@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-07-03 21:19:26
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-12-18 18:52:54
+ * @LastEditTime: 2024-07-25 12:29:34
  */
 // pages/My/My.js
 Page({
@@ -106,10 +106,24 @@ Page({
 
     },
 
+    shareData() {
+        const that = this;
+        return {
+            title: '个人中心 - 西安全心陪诊',
+        }
+    },
+
     /**
      * 用户点击右上角分享
      */
     onShareAppMessage() {
+        return this.shareData();
+    },
 
-    }
+    /**
+     * 分享到朋友圈
+     */
+    onShareTimeline() {
+        return this.shareData();
+    },
 })

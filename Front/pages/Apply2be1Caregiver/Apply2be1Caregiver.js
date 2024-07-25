@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-12-18 18:31:48
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-12-18 21:26:52
+ * @LastEditTime: 2024-07-24 17:40:09
  */
 // pages/Apply2be1Caregiver/Apply2be1Caregiver.js
 const app = getApp();
@@ -116,9 +116,33 @@ Page({
     },
 
     /**
+     * 分享到微信好友或微信朋友圈所需要的信息
+     */
+    shareData() {
+        return {
+            title: '快来申请成为陪诊员吧！',
+            // path: '/page/user?id=123',  
+            // imageUrl: 'https://example.com/path/to/image.jpg',  
+            // success: function(res) {  
+            //     // 分享成功  
+            // },  
+            // fail: function(res) {  
+            //     // 分享失败  
+            // }  
+        }
+    },
+
+    /**
      * 用户点击右上角分享
      */
     onShareAppMessage() {
+        return this.shareData();
+    },
 
-    }
+    /**
+     * 分享到朋友圈
+     */
+    onShareTimeline() {
+        return this.shareData();
+    },
 })
