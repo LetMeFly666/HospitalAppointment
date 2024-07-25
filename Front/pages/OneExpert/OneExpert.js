@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-09-01 22:46:41
  * @LastEditors: LetMeFly
- * @LastEditTime: 2024-01-26 19:16:52
+ * @LastEditTime: 2024-07-25 12:33:31
  */
 // pages/OneExpert/OneExpert.js
 const app = getApp();
@@ -87,10 +87,24 @@ Page({
 
     },
 
+    shareData() {
+        const that = this;
+        return {
+            title: `专家介绍 - ${that.data.expertInfo.name}`,
+        }
+    },
+
     /**
      * 用户点击右上角分享
      */
     onShareAppMessage() {
+        return this.shareData();
+    },
 
-    }
+    /**
+     * 分享到朋友圈
+     */
+    onShareTimeline() {
+        return this.shareData();
+    },
 })

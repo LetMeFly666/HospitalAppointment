@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-12-14 19:31:00
  * @LastEditors: LetMeFly
- * @LastEditTime: 2024-02-26 11:02:57
+ * @LastEditTime: 2024-07-25 12:23:45
  */
 // pages/Friend/Friend.js
 const app = getApp();
@@ -144,10 +144,24 @@ Page({
 
     },
 
+    shareData() {
+        const that = this;
+        return {
+            title: '管理我的就诊人',
+        }
+    },
+
     /**
      * 用户点击右上角分享
      */
     onShareAppMessage() {
+        return this.shareData();
+    },
 
-    }
+    /**
+     * 分享到朋友圈
+     */
+    onShareTimeline() {
+        return this.shareData();
+    },
 })

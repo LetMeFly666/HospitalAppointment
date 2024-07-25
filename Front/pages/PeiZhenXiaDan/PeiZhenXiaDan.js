@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-07-03 21:15:24
  * @LastEditors: LetMeFly
- * @LastEditTime: 2024-01-24 22:51:45
+ * @LastEditTime: 2024-07-25 13:26:43
  */
 // pages/PeiZhenXiaDan/PeiZhenXiaDan.js
 Page({
@@ -107,10 +107,24 @@ Page({
 
     },
 
+    shareData() {
+        const that = this;
+        return {
+            title: '陪诊下单 - 套餐选择',
+        }
+    },
+
     /**
      * 用户点击右上角分享
      */
     onShareAppMessage() {
+        return this.shareData();
+    },
 
-    }
+    /**
+     * 分享到朋友圈
+     */
+    onShareTimeline() {
+        return this.shareData();
+    },
 })

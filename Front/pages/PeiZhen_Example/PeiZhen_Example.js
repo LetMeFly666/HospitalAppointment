@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-09-02 12:20:49
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-09-08 15:51:49
+ * @LastEditTime: 2024-07-25 13:25:26
  */
 // pages/PeiZhenExample/PeiZhenExample.js
 const app = getApp();
@@ -76,10 +76,24 @@ Page({
 
     },
 
+    shareData() {
+        const that = this;
+        return {
+            title: `陪诊案例 - ${that.data.hospitalInfo.name}`,
+        }
+    },
+
     /**
      * 用户点击右上角分享
      */
     onShareAppMessage() {
+        return this.shareData();
+    },
 
-    }
+    /**
+     * 分享到朋友圈
+     */
+    onShareTimeline() {
+        return this.shareData();
+    },
 })

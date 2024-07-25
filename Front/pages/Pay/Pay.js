@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-12-03 18:38:26
  * @LastEditors: LetMeFly
- * @LastEditTime: 2024-02-26 16:43:35
+ * @LastEditTime: 2024-07-25 13:22:36
  */
 // pages/Pay/Pay.js
 const app = getApp();
@@ -423,10 +423,24 @@ Page({
 
     },
 
+    shareData() {
+        const that = this;
+        return {
+            title: '我的订单',
+        }
+    },
+
     /**
      * 用户点击右上角分享
      */
     onShareAppMessage() {
+        return this.shareData();
+    },
 
-    }
+    /**
+     * 分享到朋友圈
+     */
+    onShareTimeline() {
+        return this.shareData();
+    },
 })
