@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-07-03 21:19:26
  * @LastEditors: LetMeFly
- * @LastEditTime: 2024-07-25 12:29:34
+ * @LastEditTime: 2024-07-25 17:31:46
  */
 // pages/My/My.js
 Page({
@@ -15,7 +15,7 @@ Page({
     },
 
     apply2be1caregiver() {
-        wx.redirectTo({url: '/pages/Apply2be1Caregiver/Apply2be1Caregiver'});
+        wx.navigateTo({url: '/pages/Apply2be1Caregiver/Apply2be1Caregiver'});
     },
 
     fakeUpdateInfo() {
@@ -49,12 +49,12 @@ Page({
     },
 
     friendPage() {
-        wx.redirectTo({'url': '/pages/Friend/Friend'});
+        wx.navigateTo({'url': '/pages/Friend/Friend'});
     },
 
     gotoOrder(event) {
         const type = event.currentTarget.dataset.type;
-        wx.redirectTo({url: '/pages/MyOrder/MyOrder?type=' + type});
+        wx.navigateTo({url: '/pages/MyOrder/MyOrder?type=' + type});
     },
 
     /**

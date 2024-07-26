@@ -35,7 +35,7 @@ Page({
     gotoOrderDetail(event) {
         const id = event.currentTarget.dataset.id;
         const url = `/pages/Pay/Pay?showDetailId=${id}`;
-        wx.redirectTo({url: url});
+        wx.navigateTo({url: url});
     },
 
     // 筛选符合规则的订单并返回

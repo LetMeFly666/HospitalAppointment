@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-12-03 18:38:26
  * @LastEditors: LetMeFly
- * @LastEditTime: 2024-07-25 13:22:36
+ * @LastEditTime: 2024-07-25 17:34:12
  */
 // pages/Pay/Pay.js
 const app = getApp();
@@ -51,7 +51,7 @@ Page({
                     duration: 1000
                 });
                 setTimeout(() => {
-                    wx.redirectTo({url: '/pages/MyOrder/MyOrder?type=3&showConnect=true'});
+                    wx.navigateTo({url: '/pages/MyOrder/MyOrder?type=3&showConnect=true'});
                 }, 1000);
             },
             fail(res) {
@@ -103,7 +103,7 @@ Page({
                         confirmText: '确定',
                         success: function (res) {
                             if (res.confirm) {
-                                wx.redirectTo({url: '/pages/FriendAdd/FriendAdd'});
+                                wx.navigateTo({url: '/pages/FriendAdd/FriendAdd'});
                             } else {
                                 wx.showToast({
                                     title: '可能导致无法支付',
@@ -326,7 +326,7 @@ Page({
                     confirmText: '去支付',
                     success: function (res) {
                         if (res.confirm) {
-                            wx.redirectTo({url: `/pages/Pay/Pay?showDetailId=${that.data.orders[i].id}`});
+                            wx.navigateTo({url: `/pages/Pay/Pay?showDetailId=${that.data.orders[i].id}`});
                         }
                         else {  // 删除订单
                             app.myRequest({

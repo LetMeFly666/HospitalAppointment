@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-08-15 22:32:21
  * @LastEditors: LetMeFly
- * @LastEditTime: 2024-07-25 13:28:24
+ * @LastEditTime: 2024-07-26 15:55:48
 -->
 # HospitalAppointment
 
@@ -61,9 +61,9 @@
 - [ ] GET请求时，warrant也作为data传递会在url中显示，不如在header中（django似乎会把header中的warrant改成HTTP_WARRANT）
 - [ ] 退款功能（[issue#20](https://github.com/LetMeFly666/HospitalAppointment/issues/20)）
 - [ ] 寻求一种更快的图片加载方式（当前部署在我的小服务器上带宽太小了），例如CDN等。
-- [ ] 导航页-我的-【就诊人管理/我的订单】页面后退时小程序直接返回到后台，没有返回到主页
 - [ ] 导航页-我的-申请获取用户真正昵称和头像：[文档点我](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/userProfile.html)
-- [ ] 下单页面的医院选项中，最后一列新增“其他医院”选项
+- [x] 导航页-我的-【就诊人管理/我的订单】页面后退时小程序直接返回到后台，没有返回到主页
+- [x] 下单页面的医院选项中，最后一列新增“其他医院”选项（忽然发现这玩意儿已经写过了，只是一直放在体验版中，没放到正式版中）
 - [x] 开启分享功能
 - [x] 很多页面的title都是Weixin（[issue#31](https://github.com/LetMeFly666/HospitalAppointment/issues/31)）——感谢内测用户[@Wang Bo](https://github.com/Pesuking)
 - [x] 用户数据库的备注功能——id和openid和warrant都太抽象了（[issue#32](https://github.com/LetMeFly666/HospitalAppointment/issues/32)）

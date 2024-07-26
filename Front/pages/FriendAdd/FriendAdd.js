@@ -81,7 +81,8 @@ Page({
                     duration: 1000
                 });
                 setTimeout(() => {
-                    wx.redirectTo({url: '/pages/Friend/Friend'});
+                    // wx.navigateTo({url: '/pages/Friend/Friend'});
+                    wx.navigateBack();
                 }, 1000);
             },
         });

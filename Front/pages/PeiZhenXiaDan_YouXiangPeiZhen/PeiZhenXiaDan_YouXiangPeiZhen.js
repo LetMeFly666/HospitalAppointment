@@ -32,7 +32,7 @@ Page({
             id += 100;
         }
         const url = '/pages/Pay/Pay?priceWithText=' + priceWithText + '&serviceName=' + this.data.serviceName + '&id=' + id;
-        wx.redirectTo({'url': url});
+        wx.navigateTo({'url': url});
     },
 
     // clickBar(event) {
