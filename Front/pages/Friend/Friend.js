@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-12-14 19:31:00
  * @LastEditors: LetMeFly
- * @LastEditTime: 2024-07-25 12:23:45
+ * @LastEditTime: 2024-07-26 15:53:45
  */
 // pages/Friend/Friend.js
 const app = getApp();
@@ -12,6 +12,7 @@ Page({
      * 页面的初始数据
      */
     data: {
+        ifShowMask: true,  // 默认先显示遮罩层
         friends: [{
             name: '王小美',
             id: '1212'
@@ -79,7 +80,7 @@ Page({
     },
 
     add1friend() {
-        wx.redirectTo({'url': '/pages/FriendAdd/FriendAdd'});
+        wx.navigateTo({'url': '/pages/FriendAdd/FriendAdd'});
     },
 
     getFriends() {
@@ -89,7 +90,8 @@ Page({
             success(response) {
                 const data = response.data['data'];
                 that.setData({
-                    friends: data
+                    friends: data,
+                    ifShowMask: false
                 });
             }
         });
@@ -99,7 +101,7 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad(options) {
-        this.getFriends();
+        
     },
 
     /**
@@ -113,7 +115,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow() {
-
+        this.getFriends();
     },
 
     /**

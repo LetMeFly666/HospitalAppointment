@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-12-14 19:31:00
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-12-14 21:21:28
+ * @LastEditTime: 2024-07-26 15:17:13
 -->
 <!--pages/Friend/Friend.wxml-->
 <!-- 就诊人 -->
@@ -20,4 +20,9 @@
     <view class="blueButton" bindtap="add1friend">
         <view class="text">添加就诊人</view>
     </view>
+</view>
+
+<!-- 正在加载の遮罩 -->
+<view class="mask" wx:if="{{ifShowMask}}">
+    <view class="text">正在加载...</view>
 </view>
