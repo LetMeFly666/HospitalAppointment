@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2024-07-30 09:36:18
  * @LastEditors: LetMeFly
- * @LastEditTime: 2024-07-30 10:37:40
+ * @LastEditTime: 2024-07-31 16:33:49
 -->
 <!--pages/MyAvatarNickname.wxml-->
 
@@ -12,11 +12,14 @@
     <button class="avatar-button" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
         <image class="avatar-image" src="{{avatarURL}}"></image>
     </button>
-    <view class="nickname-container">
-        <view class="nickname-label">昵称：</view>
-        <input type="nickname" class="nickname-input" placeholder="{{username}}" />
-    </view>
-    <view class="button-container">
-        <button class="save-button" bindtap="onSave">保存</button>
-    </view>
+    <form bindsubmit="onSave">
+        <view class="nickname-container">
+            <view class="nickname-label">昵称：</view>
+            <!-- <input type="nickname" class="nickname-input" name="nickname" placeholder="{{username}}" bindnicknamereview="onInputNickname"/> -->
+            <input type="nickname" class="nickname-input" name="nickname" placeholder="{{username}}" bindnicknamereview="onInputNickname"/>
+        </view>
+        <view class="button-container">
+            <button form-type="submit" role="button" class="save-button">保存</button>
+        </view>
+    </form>
 </view>

@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2024-07-30 09:36:18
  * @LastEditors: LetMeFly
- * @LastEditTime: 2024-07-30 10:59:21
+ * @LastEditTime: 2024-07-31 16:48:38
  */
 
 /*By ChatGPT*/
@@ -34,7 +34,6 @@
 .nickname-container {
     display: flex;
     align-items: center;
-    width: 80%;
     padding: 20rpx;
     background-color: #ffffff;
     border-radius: 20rpx;
@@ -61,7 +60,6 @@
 }
 
 .button-container {
-    width: 85%;
     margin-top: 20rpx;
     box-sizing: border-box;
 }

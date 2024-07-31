@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2024-07-30 09:36:18
  * @LastEditors: LetMeFly
- * @LastEditTime: 2024-07-31 16:06:36
+ * @LastEditTime: 2024-07-31 16:39:00
  */
 const app = getApp();
 Page({
@@ -19,24 +19,37 @@ Page({
     /**
      * 选择头像
      */
-    onChooseAvatar(e) {
-        const { avatarUrl } = e.detail;
+    onChooseAvatar(event) {
+        const { avatarUrl } = event.detail;
+        console.log(avatarUrl);
         this.setData({
             avatarURL: avatarUrl,
         });
     },
 
     /**
+     * 设置昵称
+     */
+    getUsername(event) {
+        console.log(event);
+        const val = event.detail.value.nickname;
+        this.setData({
+            username: val
+        });
+    },
+
+    /**
      * 保存头像和昵称并上传到服务器
      */
-    onSave() {
+    onSave(event) {
+        this.getUsername(event);
         const that = this;
-        wx.setStorage({key: 'avatarURL', data: that.avatarUrl});
-        wx.setStorage({key: 'username', data: that.username});
+        wx.setStorage({key: 'avatarURL', data: that.data.avatarURL});
+        wx.setStorage({key: 'username', data: that.data.username});
         app.myRequest({
             url: 'https://www.letmefly.xyz/LetHA/user/setAvatarAndNickname/',
             method: 'POST',
-            data: { avatarURL: that.avatarURL, nickname: that.username },
+            data: { avatarURL: that.data.avatarURL, nickname: that.data.username },
             success(response) {
                 if (response.data.code == 0) {
                     wx.showToast({

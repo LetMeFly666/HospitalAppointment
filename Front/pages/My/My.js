@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-07-03 21:19:26
  * @LastEditors: LetMeFly
- * @LastEditTime: 2024-07-30 09:36:29
+ * @LastEditTime: 2024-07-31 16:46:04
  */
 // pages/My/My.js
 Page({
@@ -74,7 +74,7 @@ Page({
             this.setData({avatarURL: defaultURL});
             wx.setStorage({key: 'avatarURL', data: defaultURL});
         }
-
+        
         const username = wx.getStorageSync('username');
         if (username) {
             this.setData({username: username});
@@ -84,13 +84,16 @@ Page({
             this.setData({username: defaultName});
             wx.setStorage({key: 'username', data: defaultName});
         }
+        
+        console.log(avatarURL);
+        console.log(username);
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad(options) {
-        this.setAvatarAndName();
+        
     },
 
     /**
@@ -104,7 +107,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow() {
-
+        this.setAvatarAndName();
     },
 
     /**
