@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2024-01-25 23:41:03
  * @LastEditors: LetMeFly
- * @LastEditTime: 2024-02-26 11:19:04
+ * @LastEditTime: 2024-07-26 16:27:38
 -->
 # 数据库描述
 
@@ -15,9 +15,11 @@
 |userid|INT|自定义的userid|
 |wx_openid|VARCHAR(255)|微信openid|
 |wx_session_key|VARCHAR(512)|微信session_key|
-|wx_unionid|VARCHAR(512)|微信unionid（May空？）|
+|wx_unionid|VARCHAR(512)|微信unionid（May空）|
 |warrant|VARCHAR(32)|自定义的warrant|
 |more|VARCHAR(128)|对用户的备注（可选）|
+|avatar_url|VARCHAR(511)|用户头像网址（可选）|
+|username|VARCHAR(63)|用户昵称（可选）|
 
 ## 就诊人管理
 

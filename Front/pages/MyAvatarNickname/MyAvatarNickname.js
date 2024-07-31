@@ -1,70 +1,66 @@
 /*
  * @Author: LetMeFly
- * @Date: 2023-07-03 21:19:26
+ * @Date: 2024-07-30 09:36:18
  * @LastEditors: LetMeFly
- * @LastEditTime: 2024-07-30 09:36:29
+ * @LastEditTime: 2024-07-31 16:06:36
  */
-// pages/My/My.js
+const app = getApp();
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        lastUpdateinfoTime: 0,
-        avatarURL: '',
-        username: '',
-    },
-
-    apply2be1caregiver() {
-        wx.navigateTo({url: '/pages/Apply2be1Caregiver/Apply2be1Caregiver'});
-    },
-
-    gotoUpdateInfo() {
-        const clickTime = Date.parse(new Date());  // 模拟器中仅支持秒级的时间戳（后3位都是0）
-        var notUpdate = false;
-        if (clickTime - this.data.lastUpdateinfoTime < 2000) {
-            notUpdate = true;
-        }
-        this.setData({
-            lastUpdateinfoTime: clickTime
-        });
-        if (notUpdate) {
-            wx.showToast({
-                title: '点地太快了惹',
-                icon: 'error',
-                duration: 500
-            });
-            return ;
-        }
-        // wx.showToast({
-        //     title: '信息更新成功！',
-        //     icon: 'success',
-        //     duration: 1000
-        // });
-        wx.navigateTo({url: '/pages/MyAvatarNickname/MyAvatarNickname'});        
-    },
-
-    make1phonecall() {
-        wx.makePhoneCall({
-            phoneNumber: '17795918257',
-        });
-    },
-
-    friendPage() {
-        wx.navigateTo({'url': '/pages/Friend/Friend'});
-    },
-
-    gotoOrder(event) {
-        const type = event.currentTarget.dataset.type;
-        wx.navigateTo({url: '/pages/MyOrder/MyOrder?type=' + type});
+        avatarURL: 'https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia07jQodd2FJGIYQfG0LAJGFxM4FbnQP6yfMxBgJ0F3YRqJCJ1aPAK2dQagdusBZg/0',
+        username: '请输入昵称',
+        // theme: 'light',
     },
 
     /**
-     * 设置头像为localStorage的头像、昵称
-     * More: 和/pages/MyAvatarNickname/MyAvatarNickname.js中的setOriginalAvatarAndUsername()一样
+     * 选择头像
      */
-    setAvatarAndName() {
+    onChooseAvatar(e) {
+        const { avatarUrl } = e.detail;
+        this.setData({
+            avatarURL: avatarUrl,
+        });
+    },
+
+    /**
+     * 保存头像和昵称并上传到服务器
+     */
+    onSave() {
+        const that = this;
+        wx.setStorage({key: 'avatarURL', data: that.avatarUrl});
+        wx.setStorage({key: 'username', data: that.username});
+        app.myRequest({
+            url: 'https://www.letmefly.xyz/LetHA/user/setAvatarAndNickname/',
+            method: 'POST',
+            data: { avatarURL: that.avatarURL, nickname: that.username },
+            success(response) {
+                if (response.data.code == 0) {
+                    wx.showToast({
+                        title: '保存成功',
+                        icon: 'success',
+                        duration: 1000
+                    });
+                    setTimeout(() => {
+                        // wx.navigateTo({url: '/pages/Friend/Friend'});
+                        wx.navigateBack();
+                    }, 1000);
+                }
+                else {
+                    app.show1toast_error(response.data.msg);
+                }
+            }
+        });
+    },
+
+    /**
+     * 获取原本的头像和昵称
+     * More: 和/pages/My/My.js中的setAvatarAndName()一样
+     */
+    setOriginalAvatarAndUsername() {
         const avatarURL = wx.getStorageSync('avatarURL');
         if (avatarURL) {
             this.setData({avatarURL: avatarURL});
@@ -90,7 +86,7 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad(options) {
-        this.setAvatarAndName();
+        this.setOriginalAvatarAndUsername();
     },
 
     /**
@@ -138,7 +134,7 @@ Page({
     shareData() {
         const that = this;
         return {
-            title: '个人中心 - 西安全心陪诊',
+            title: '头像昵称设置',
         }
     },
 

@@ -2,7 +2,7 @@
 Author: LetMeFly
 Date: 2023-08-17 16:37:36
 LastEditors: LetMeFly
-LastEditTime: 2024-01-25 11:09:17
+LastEditTime: 2024-07-30 11:14:41
 '''
 """HospitalAppointment URL Configuration
 
@@ -31,6 +31,7 @@ urlpatterns = [
     path('hello/', interface.User.helloWorld),
     path('hello/html/', baseFunction.HTML.html('helloWorld.html')),
     path('login/', interface.User.login),
+    path('user/setAvatarAndNickname/', interface.User.setAvatarAndNickname),
     path('user/apply2be1caregiver/', interface.User.apply2be1caregiver),
     path('user/add1friend/', interface.User.add1friend),
     path('user/getFriends/', interface.User.getFriends),

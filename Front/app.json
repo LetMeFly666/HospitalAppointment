@@ -14,7 +14,8 @@
     "pages/Friend/Friend",
     "pages/FriendAdd/FriendAdd",
     "pages/MyOrder/MyOrder",
-    "pages/Apply2be1Caregiver/Apply2be1Caregiver"
+    "pages/Apply2be1Caregiver/Apply2be1Caregiver",
+    "pages/MyAvatarNickname/MyAvatarNickname"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -52,5 +53,6 @@
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json",
-  "lazyCodeLoading": "requiredComponents"
+  "lazyCodeLoading": "requiredComponents",
+  "darkmode": true
 }

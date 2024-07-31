@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-08-15 22:11:19
  * @LastEditors: LetMeFly
- * @LastEditTime: 2024-02-26 16:09:59
+ * @LastEditTime: 2024-07-30 11:14:20
 -->
 # 后端接口
 
@@ -27,7 +27,36 @@
 
 ### 个人-登录
 
-```GET: user/login/```
+```GET: login/```
+
+### 个人-设置头像和昵称
+
+```POST: user/setAvatarAndNickname/```
+
+data:
+
++ ```warrant```: 授权令
++ ```avatarURL```：头像地址
++ ```nickname```：昵称
+
+response:
+
+成功：
+
+```json
+{
+    code: 0
+}
+```
+
+失败：
+
+```json
+{
+    code: -1,
+    msg: "头像地址过长/昵称过长"
+}
+```
 
 ### 个人-查询就诊人
 

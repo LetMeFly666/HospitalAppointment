@@ -105,6 +105,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "获取头像昵称",
+          "pathName": "pages/MyAvatarNickname/MyAvatarNickname",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

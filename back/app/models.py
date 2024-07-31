@@ -14,6 +14,8 @@ class User(models.Model):
     wx_unionid = models.CharField(max_length=512)
     warrant = models.CharField(max_length=32)
     more = models.CharField(max_length=128, null=True, blank=True)
+    avatar_url = models.CharField(max_length=511, null=True, blank=True)
+    username = models.CharField(max_length=63, null=True, blank=True)
 
 
 class Friend(models.Model):

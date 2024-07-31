@@ -2,7 +2,7 @@
 Author: LetMeFly
 Date: 2023-09-20 16:16:47
 LastEditors: LetMeFly
-LastEditTime: 2024-02-26 16:47:15
+LastEditTime: 2024-07-30 11:27:11
 Description: 人员相关（用户信息、 就诊人、陪诊员）
 '''
 from django.http import HttpResponse, JsonResponse
@@ -40,6 +40,19 @@ def login(request):
     else:
         warrant = userObject.values()[0].get('warrant')
     return JsonResponse({'warrant': warrant})
+
+
+def setAvatarAndNickname(request):
+    warrant = request.POST.get('warrant')
+    avatarURL = request.POST.get('avatarURL')
+    nickname = request.POST.get('nickname')
+    if len(avatarURL) > 511 or len(nickname) > 63:
+        return JsonResponse({'code': -1, 'msg': '头像地址过长/昵称过长'})
+    userObject = models.User.objects.get(warrant=warrant)
+    userObject.avatar_url = avatarURL
+    userObject.username = nickname
+    userObject.save()
+    return JsonResponse({'code': 0})
 
 
 def apply2be1caregiver(request):

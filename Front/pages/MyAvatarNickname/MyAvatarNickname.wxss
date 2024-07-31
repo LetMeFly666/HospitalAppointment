@@ -1,0 +1,81 @@
+/*
+ * @Author: LetMeFly
+ * @Date: 2024-07-30 09:36:18
+ * @LastEditors: LetMeFly
+ * @LastEditTime: 2024-07-30 10:59:21
+ */
+
+/*By ChatGPT*/
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    background-color: #f0f4f7;
+    padding-top: 100rpx;
+    box-sizing: border-box;
+}
+
+.avatar-button {
+    margin-bottom: 20rpx;
+    border: none;
+    background: none;
+}
+
+.avatar-image {
+    width: 200rpx;
+    height: 200rpx;
+    border-radius: 50%;
+    border: 4rpx solid #ffffff;
+    box-shadow: 0 4rpx 8rpx rgba(0, 0, 0, 0.1);
+}
+
+.nickname-container {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    padding: 20rpx;
+    background-color: #ffffff;
+    border-radius: 20rpx;
+    box-shadow: 0 4rpx 8rpx rgba(0, 0, 0, 0.1);
+    margin-top: 20rpx;
+}
+
+.nickname-label {
+    font-size: 32rpx;
+    color: #333;
+    margin-right: 20rpx;
+}
+
+.nickname-input {
+    flex-grow: 1;
+    font-size: 32rpx;
+    color: #333;
+    border: none;
+    outline: none;
+}
+
+.nickname-input::placeholder {
+    color: #999;
+}
+
+.button-container {
+    width: 85%;
+    margin-top: 20rpx;
+    box-sizing: border-box;
+}
+
+.save-button {
+    width: 100% !important;
+    padding: 20rpx;
+    margin: 0 !important; /* 为什么无法清除默认的margin */
+    background-color: #4957fe;
+    color: #ffffff;
+    text-align: center;
+    border-radius: 20rpx;
+    font-size: 32rpx;
+    box-shadow: 0 4rpx 8rpx rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+

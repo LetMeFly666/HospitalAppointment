@@ -2,17 +2,17 @@
  * @Author: LetMeFly
  * @Date: 2023-07-03 21:19:26
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-12-18 18:32:10
+ * @LastEditTime: 2024-07-30 09:34:27
 -->
 <!--pages/My/My.wxml-->
 
 <!-- 个人头像、姓名 -->
 <view id='viewForImageAndName'>
     <view id='viewForImageAndNameLeft'>
-        <image class='avatar' src='https://www.letmefly.xyz/LetHA/static/pic/expert/000-1.jpg' />
-        <view class='name'>小程序用户</view>
+        <image class='avatar' src='{{avatarURL}}' />
+        <view class='name'>{{username}}</view>
     </view>
-    <view id='viewForImageAndNameRight' bindtap='fakeUpdateInfo'>
+    <view id='viewForImageAndNameRight' bindtap='gotoUpdateInfo'>
         <view class='update-text'>更新信息</view>
         <image class='refresh-img' src='/images/icon/refresh.png' />
     </view>

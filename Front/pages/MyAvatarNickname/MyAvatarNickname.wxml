@@ -1,0 +1,22 @@
+<!--
+ * @Author: LetMeFly
+ * @Date: 2024-07-30 09:36:18
+ * @LastEditors: LetMeFly
+ * @LastEditTime: 2024-07-30 10:37:40
+-->
+<!--pages/MyAvatarNickname.wxml-->
+
+<!-- 头像昵称 -->
+
+<view class="container">
+    <button class="avatar-button" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+        <image class="avatar-image" src="{{avatarURL}}"></image>
+    </button>
+    <view class="nickname-container">
+        <view class="nickname-label">昵称：</view>
+        <input type="nickname" class="nickname-input" placeholder="{{username}}" />
+    </view>
+    <view class="button-container">
+        <button class="save-button" bindtap="onSave">保存</button>
+    </view>
+</view>
